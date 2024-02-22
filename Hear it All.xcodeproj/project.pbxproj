@@ -14,6 +14,7 @@
 		D7C243FD2B6A41ED005DD0FB /* Hear_it_AllTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C243FC2B6A41ED005DD0FB /* Hear_it_AllTests.swift */; };
 		D7C244072B6A41ED005DD0FB /* Hear_it_AllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */; };
 		D7C244092B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */; };
+		E3EBE6492B875CD000C779DD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E3EBE6482B875CD000C779DD /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		D7C244022B6A41ED005DD0FB /* Hear it AllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hear it AllUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear_it_AllUITests.swift; sourceTree = "<group>"; };
 		D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear_it_AllUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3EBE6482B875CD000C779DD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		D7C243DF2B6A41EC005DD0FB = {
 			isa = PBXGroup;
 			children = (
+				E3EBE6482B875CD000C779DD /* .gitignore */,
 				D7C243EA2B6A41EC005DD0FB /* Hear it All */,
 				D7C243FB2B6A41ED005DD0FB /* Hear it AllTests */,
 				D7C244052B6A41ED005DD0FB /* Hear it AllUITests */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7C243F32B6A41ED005DD0FB /* Preview Assets.xcassets in Resources */,
+				E3EBE6492B875CD000C779DD /* .gitignore in Resources */,
 				D7C243F02B6A41ED005DD0FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
