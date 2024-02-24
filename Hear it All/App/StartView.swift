@@ -1,13 +1,6 @@
-//
-//  ContentView.swift
-//  Hear it All
-//
-//  Created by Hussein on 31/01/2024.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+struct StartView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +13,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    StartView()
 }
