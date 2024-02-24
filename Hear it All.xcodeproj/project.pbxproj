@@ -14,7 +14,11 @@
 		D7C243FD2B6A41ED005DD0FB /* Hear_it_AllTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C243FC2B6A41ED005DD0FB /* Hear_it_AllTests.swift */; };
 		D7C244072B6A41ED005DD0FB /* Hear_it_AllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */; };
 		D7C244092B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */; };
+		E3D703E82B8A4332000813B9 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */; };
+		E3D703ED2B8A4981000813B9 /* SpeechToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechToTextView.swift */; };
+		E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */; };
 		E3EBE6492B875CD000C779DD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E3EBE6482B875CD000C779DD /* .gitignore */; };
+		E3FF4D3A2B8A3B6F00A132EB /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF4D392B8A3B6F00A132EB /* SpeechRecognition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +49,13 @@
 		D7C244022B6A41ED005DD0FB /* Hear it AllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hear it AllUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear_it_AllUITests.swift; sourceTree = "<group>"; };
 		D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear_it_AllUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
+		E3D703E92B8A46B9000813B9 /* Hear-it-AllUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-AllUITests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-All-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E3D703EC2B8A4981000813B9 /* SpeechToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextView.swift; sourceTree = "<group>"; };
+		E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModel.swift; sourceTree = "<group>"; };
 		E3EBE6482B875CD000C779DD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E3FF4D392B8A3B6F00A132EB /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +86,6 @@
 		D7C243DF2B6A41EC005DD0FB = {
 			isa = PBXGroup;
 			children = (
-				E3EBE6482B875CD000C779DD /* .gitignore */,
 				D7C243EA2B6A41EC005DD0FB /* Hear it All */,
 				D7C243FB2B6A41ED005DD0FB /* Hear it AllTests */,
 				D7C244052B6A41ED005DD0FB /* Hear it AllUITests */,
@@ -97,13 +106,12 @@
 		D7C243EA2B6A41EC005DD0FB /* Hear it All */ = {
 			isa = PBXGroup;
 			children = (
+				E3EBE6482B875CD000C779DD /* .gitignore */,
+				E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */,
 				E3FF4D342B8A2FC600A132EB /* App */,
 				E3FF4D352B8A302D00A132EB /* Services */,
 				E3FF4D362B8A303E00A132EB /* Utilities */,
-				E3FF4D262B8A2E2200A132EB /* Onboarding */,
-				E3FF4D242B8A2E0200A132EB /* Start listening */,
-				E3FF4D252B8A2E1900A132EB /* Listening activated */,
-				E3FF4D272B8A2E5100A132EB /* Settings */,
+				E3D703EB2B8A4931000813B9 /* MVVM */,
 				D7C243F12B6A41ED005DD0FB /* Preview Content */,
 			);
 			path = "Hear it All";
@@ -128,20 +136,32 @@
 		D7C244052B6A41ED005DD0FB /* Hear it AllUITests */ = {
 			isa = PBXGroup;
 			children = (
+				E3D703E92B8A46B9000813B9 /* Hear-it-AllUITests-Info.plist */,
 				D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */,
 				D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */,
 			);
 			path = "Hear it AllUITests";
 			sourceTree = "<group>";
 		};
-		E3FF4D242B8A2E0200A132EB /* Start listening */ = {
+		E3D703EB2B8A4931000813B9 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				E3FF4D242B8A2E0200A132EB /* Listen */,
+				E3FF4D262B8A2E2200A132EB /* Onboarding */,
+				E3FF4D252B8A2E1900A132EB /* Listening activated */,
+				E3FF4D272B8A2E5100A132EB /* Settings */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		E3FF4D242B8A2E0200A132EB /* Listen */ = {
 			isa = PBXGroup;
 			children = (
 				E3FF4D2D2B8A2F7100A132EB /* Model */,
 				E3FF4D2C2B8A2F6700A132EB /* View */,
 				E3FF4D2B2B8A2F4B00A132EB /* Viewmodel */,
 			);
-			path = "Start listening";
+			path = Listen;
 			sourceTree = "<group>";
 		};
 		E3FF4D252B8A2E1900A132EB /* Listening activated */ = {
@@ -198,6 +218,7 @@
 		E3FF4D2B2B8A2F4B00A132EB /* Viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -205,6 +226,7 @@
 		E3FF4D2C2B8A2F6700A132EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E3D703EC2B8A4981000813B9 /* SpeechToTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,6 +293,8 @@
 		E3FF4D352B8A302D00A132EB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E3FF4D392B8A3B6F00A132EB /* SpeechRecognition.swift */,
+				E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -413,8 +437,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D703E82B8A4332000813B9 /* AVPlayer+Ding.swift in Sources */,
 				D7C243EE2B6A41EC005DD0FB /* StartView.swift in Sources */,
 				D7C243EC2B6A41EC005DD0FB /* Hear_it_AllApp.swift in Sources */,
+				E3FF4D3A2B8A3B6F00A132EB /* SpeechRecognition.swift in Sources */,
+				E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */,
+				E3D703ED2B8A4981000813B9 /* SpeechToTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,9 +606,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hear it All/Preview Content\"";
-				DEVELOPMENT_TEAM = 579DK7H5M9;
+				DEVELOPMENT_TEAM = 77U6BBK6Y5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hear-it-All-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "App'en bruger din mikrofon til oversættelsen af tale og lyd, til tekst";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "App'en bruger din mikrofon for at optage dine omgivelser, mens du er i app'en. Du bestemmer selv om app'en må køre i baggrunden og optage - pr. default er dette slået fra.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -607,9 +638,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hear it All/Preview Content\"";
-				DEVELOPMENT_TEAM = 579DK7H5M9;
+				DEVELOPMENT_TEAM = 77U6BBK6Y5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hear-it-All-Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "App'en bruger din mikrofon til oversættelsen af tale og lyd, til tekst";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "App'en bruger din mikrofon for at optage dine omgivelser, mens du er i app'en. Du bestemmer selv om app'en må køre i baggrunden og optage - pr. default er dette slået fra.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -676,6 +710,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 579DK7H5M9;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hear-it-AllUITests-Info.plist";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "HgPrograms.Hear-it-AllUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -694,6 +729,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 579DK7H5M9;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hear-it-AllUITests-Info.plist";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "HgPrograms.Hear-it-AllUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
