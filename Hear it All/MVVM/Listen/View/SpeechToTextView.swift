@@ -2,13 +2,19 @@ import SwiftUI
 
 struct SpeechToTextView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
+    @State private var showChooseLanguages = false
     
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
-                Text("Tale")
-                    .fontWeight(.medium)
-                    .font(.system(size: 25))
+                HStack{
+                    Text("Tale")
+                        .fontWeight(.medium)
+                        .font(.system(size: 25))
+                    Text(speechRecognizer.language.emoji)
+                }.onTapGesture {
+                    showChooseLanguages.toggle()
+                }
                 Rectangle()
                     .frame(width: 105, height: 2)
                 
@@ -22,7 +28,7 @@ struct SpeechToTextView: View {
                     .frame(width: 350, height: 0)
                     .foregroundStyle(.clear)
             }.frame(maxWidth: 350)
-            .padding()
+                .padding()
             
             Spacer()
             
@@ -42,6 +48,9 @@ struct SpeechToTextView: View {
             }
             .contentTransition(.symbolEffect(.replace))
         }.backgroundStyle(Color.backgroundColor)
+            .sheet(isPresented: $showChooseLanguages){
+                ChooseLanguageView(viewModel: speechRecognizer, showThisSheet: $showChooseLanguages)
+            }
     }
 }
 

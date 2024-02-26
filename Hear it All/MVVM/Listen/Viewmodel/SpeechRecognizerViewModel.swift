@@ -7,16 +7,18 @@ class SpeechRecognizer: NSObject, ObservableObject {
     private var audioEngine = AVAudioEngine()
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "da-DE"))
     
+    @Published var language = languageModelData[0]
+    private var speechRecognizer: SFSpeechRecognizer?
     @Published var transcribedTextNewestTwenty: String = ""
     @Published var transcribedTextPastTwenty: String = ""
     @Published var isRecording = false
-
+    
     override init() {
         super.init()
+        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: self.language.locale_id))
     }
-
+    
     func startRecording() throws {
         // Check if recognizer is available
         if !(speechRecognizer?.isAvailable ?? false) {
@@ -74,5 +76,15 @@ class SpeechRecognizer: NSObject, ObservableObject {
         recognitionTask?.cancel()
         recognitionTask = nil
         isRecording = false
+    }
+    
+    func changeLanguage(to newLanguage: LanguageModel){
+        if isRecording {stopRecording()}
+        self.language = newLanguage
+        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: newLanguage.locale_id))
+        
+        if isRecording {
+            do {try startRecording()}catch{}
+        }
     }
 }

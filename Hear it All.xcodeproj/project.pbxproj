@@ -14,6 +14,9 @@
 		D7C243FD2B6A41ED005DD0FB /* Hear_it_AllTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C243FC2B6A41ED005DD0FB /* Hear_it_AllTests.swift */; };
 		D7C244072B6A41ED005DD0FB /* Hear_it_AllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */; };
 		D7C244092B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */; };
+		E30572692B8CD05800AF956D /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30572682B8CD05800AF956D /* LanguageModel.swift */; };
+		E305726C2B8CD72600AF956D /* ChooseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E305726B2B8CD72600AF956D /* ChooseLanguageView.swift */; };
+		E305726E2B8CEC5100AF956D /* SaveToStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E305726D2B8CEC5100AF956D /* SaveToStorage.swift */; };
 		E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */; };
 		E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */; };
 		E3D703E82B8A4332000813B9 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */; };
@@ -51,6 +54,9 @@
 		D7C244022B6A41ED005DD0FB /* Hear it AllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hear it AllUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear_it_AllUITests.swift; sourceTree = "<group>"; };
 		D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear_it_AllUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E30572682B8CD05800AF956D /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
+		E305726B2B8CD72600AF956D /* ChooseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageView.swift; sourceTree = "<group>"; };
+		E305726D2B8CEC5100AF956D /* SaveToStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToStorage.swift; sourceTree = "<group>"; };
 		E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtensions.swift; sourceTree = "<group>"; };
 		E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceUtils.swift; sourceTree = "<group>"; };
 		E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D703EC2B8A4981000813B9 /* SpeechToTextView.swift */,
+				E305726B2B8CD72600AF956D /* ChooseLanguageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 		E3FF4D2D2B8A2F7100A132EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E30572682B8CD05800AF956D /* LanguageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +307,7 @@
 			children = (
 				E3FF4D392B8A3B6F00A132EB /* SpeechRecognition.swift */,
 				E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */,
+				E305726D2B8CEC5100AF956D /* SaveToStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -444,11 +453,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D703E82B8A4332000813B9 /* AVPlayer+Ding.swift in Sources */,
+				E30572692B8CD05800AF956D /* LanguageModel.swift in Sources */,
 				D7C243EE2B6A41EC005DD0FB /* StartView.swift in Sources */,
 				D7C243EC2B6A41EC005DD0FB /* Hear_it_AllApp.swift in Sources */,
 				E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */,
 				E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */,
 				E3FF4D3A2B8A3B6F00A132EB /* SpeechRecognition.swift in Sources */,
+				E305726C2B8CD72600AF956D /* ChooseLanguageView.swift in Sources */,
+				E305726E2B8CEC5100AF956D /* SaveToStorage.swift in Sources */,
 				E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */,
 				E3D703ED2B8A4981000813B9 /* SpeechToTextView.swift in Sources */,
 			);
