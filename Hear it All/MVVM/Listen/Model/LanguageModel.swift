@@ -14,7 +14,6 @@ let languageModelData: [LanguageModel] = [
     LanguageModel(title: "Spansk", locale_id: "es-ES", emoji: "🇪🇸"),
     LanguageModel(title: "Fransk", locale_id: "fr-FR", emoji: "🇫🇷"),
     LanguageModel(title: "Tysk", locale_id: "de-DE", emoji: "🇩🇪"),
-    LanguageModel(title: "Urdu", locale_id: "ur_IN", emoji: "🇮🇳🇵🇰"),
     LanguageModel(title: "Japansk", locale_id: "ja_JP", emoji: "🇯🇵"),
     LanguageModel(title: "Kinesisk HK. SAR China", locale_id: "zh_Hant_HK", emoji: "🇨🇳"),
     LanguageModel(title: "Koreansk", locale_id: "ko_KR", emoji: "🇰🇷"),

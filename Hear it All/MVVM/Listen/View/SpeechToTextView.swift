@@ -18,11 +18,11 @@ struct SpeechToTextView: View {
                 Rectangle()
                     .frame(width: 105, height: 2)
                 
-                Text(speechRecognizer.transcribedTextNewestTwenty)
+                Text(speechRecognizer.transcribedText)
                     .bold()
                     .font(.system(size: 30))
                     .transition(.opacity)
-                    .animation(.easeInOut(duration: 0.2), value: speechRecognizer.transcribedTextNewestTwenty)
+                    .animation(.easeInOut(duration: 0.2), value: speechRecognizer.transcribedText)
                 
                 Rectangle().padding()
                     .frame(width: 350, height: 0)

@@ -17,6 +17,7 @@
 		E30572692B8CD05800AF956D /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30572682B8CD05800AF956D /* LanguageModel.swift */; };
 		E305726C2B8CD72600AF956D /* ChooseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E305726B2B8CD72600AF956D /* ChooseLanguageView.swift */; };
 		E305726E2B8CEC5100AF956D /* SaveToStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E305726D2B8CEC5100AF956D /* SaveToStorage.swift */; };
+		E30572702B8CF9C400AF956D /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E305726F2B8CF9C400AF956D /* LanguageHelper.swift */; };
 		E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */; };
 		E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */; };
 		E3D703E82B8A4332000813B9 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */; };
@@ -57,6 +58,7 @@
 		E30572682B8CD05800AF956D /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		E305726B2B8CD72600AF956D /* ChooseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageView.swift; sourceTree = "<group>"; };
 		E305726D2B8CEC5100AF956D /* SaveToStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToStorage.swift; sourceTree = "<group>"; };
+		E305726F2B8CF9C400AF956D /* LanguageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageHelper.swift; sourceTree = "<group>"; };
 		E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtensions.swift; sourceTree = "<group>"; };
 		E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceUtils.swift; sourceTree = "<group>"; };
 		E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			children = (
 				E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */,
 				E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */,
+				E305726F2B8CF9C400AF956D /* LanguageHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */,
 				E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */,
 				E3FF4D3A2B8A3B6F00A132EB /* SpeechRecognition.swift in Sources */,
+				E30572702B8CF9C400AF956D /* LanguageHelper.swift in Sources */,
 				E305726C2B8CD72600AF956D /* ChooseLanguageView.swift in Sources */,
 				E305726E2B8CEC5100AF956D /* SaveToStorage.swift in Sources */,
 				E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */,

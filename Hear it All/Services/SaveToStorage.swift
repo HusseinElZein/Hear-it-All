@@ -1,7 +1,7 @@
 import Foundation
 
 class LocalStorage {
-    static func save(_ value: String, forKey key: String) {
+    static func saveString(_ value: String, forKey key: String) {
         UserDefaults.standard.set(value, forKey: key)
     }
     

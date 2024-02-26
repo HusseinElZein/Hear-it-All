@@ -10,12 +10,13 @@ class SpeechRecognizer: NSObject, ObservableObject {
     
     @Published var language = languageModelData[0]
     private var speechRecognizer: SFSpeechRecognizer?
-    @Published var transcribedTextNewestTwenty: String = ""
-    @Published var transcribedTextPastTwenty: String = ""
+    @Published var transcribedText: String = ""
     @Published var isRecording = false
     
     override init() {
         super.init()
+        let locale_id = LocalStorage.getString(forKey: "locale_id") ?? "da-DE"
+        self.language = LanguageHelper.getLanguageModel(byLocaleId: locale_id) ?? languageModelData[0]
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: self.language.locale_id))
     }
     
@@ -57,7 +58,7 @@ class SpeechRecognizer: NSObject, ObservableObject {
                 let slicePoint = words.count - (words.count % 20)
                 let relevantWords = words.suffix(from: slicePoint)
                 withAnimation {
-                    self?.transcribedTextNewestTwenty = relevantWords.joined(separator: " ")
+                    self?.transcribedText = relevantWords.joined(separator: " ")
                 }
                 isFinal = result.isFinal
             }
@@ -80,8 +81,10 @@ class SpeechRecognizer: NSObject, ObservableObject {
     
     func changeLanguage(to newLanguage: LanguageModel){
         if isRecording {stopRecording()}
+        LocalStorage.saveString(newLanguage.locale_id, forKey: "locale_id")
         self.language = newLanguage
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: newLanguage.locale_id))
+        self.transcribedText = ""
         
         if isRecording {
             do {try startRecording()}catch{}
