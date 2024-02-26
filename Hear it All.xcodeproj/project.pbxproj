@@ -14,6 +14,8 @@
 		D7C243FD2B6A41ED005DD0FB /* Hear_it_AllTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C243FC2B6A41ED005DD0FB /* Hear_it_AllTests.swift */; };
 		D7C244072B6A41ED005DD0FB /* Hear_it_AllUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */; };
 		D7C244092B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */; };
+		E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */; };
+		E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */; };
 		E3D703E82B8A4332000813B9 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */; };
 		E3D703ED2B8A4981000813B9 /* SpeechToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechToTextView.swift */; };
 		E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */; };
@@ -49,6 +51,8 @@
 		D7C244022B6A41ED005DD0FB /* Hear it AllUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hear it AllUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C244062B6A41ED005DD0FB /* Hear_it_AllUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear_it_AllUITests.swift; sourceTree = "<group>"; };
 		D7C244082B6A41ED005DD0FB /* Hear_it_AllUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hear_it_AllUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtensions.swift; sourceTree = "<group>"; };
+		E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceUtils.swift; sourceTree = "<group>"; };
 		E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		E3D703E92B8A46B9000813B9 /* Hear-it-AllUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-AllUITests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-All-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -302,6 +306,8 @@
 		E3FF4D362B8A303E00A132EB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */,
+				E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -440,6 +446,8 @@
 				E3D703E82B8A4332000813B9 /* AVPlayer+Ding.swift in Sources */,
 				D7C243EE2B6A41EC005DD0FB /* StartView.swift in Sources */,
 				D7C243EC2B6A41EC005DD0FB /* Hear_it_AllApp.swift in Sources */,
+				E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */,
+				E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */,
 				E3FF4D3A2B8A3B6F00A132EB /* SpeechRecognition.swift in Sources */,
 				E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */,
 				E3D703ED2B8A4981000813B9 /* SpeechToTextView.swift in Sources */,

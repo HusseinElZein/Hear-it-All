@@ -2,24 +2,47 @@ import SwiftUI
 
 struct SpeechToTextView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
-
+    
     var body: some View {
         VStack {
-            Text(speechRecognizer.transcribedText)
-                .padding()
+            VStack(alignment: .leading) {
+                Text("Tale")
+                    .fontWeight(.medium)
+                    .font(.system(size: 25))
+                Rectangle()
+                    .frame(width: 105, height: 2)
+                
+                Text(speechRecognizer.transcribedTextPastTwenty)
+                Text(speechRecognizer.transcribedTextNewestTwenty)
+                    .bold()
+                    .font(.system(size: 30))
+                
+                Rectangle().padding()
+                    .frame(width: 350, height: 0)
+                    .foregroundStyle(.clear)
+            }.padding()
             
-            Button(speechRecognizer.isRecording ? "Stop Recording" : "Start Recording") {
-                if speechRecognizer.isRecording {
-                    speechRecognizer.stopRecording()
-                } else {
-                    try? speechRecognizer.startRecording()
+            
+            //The start and stop button
+            Button {
+                withAnimation {
+                    
+                    if speechRecognizer.isRecording {
+                        speechRecognizer.stopRecording()
+                    } else {
+                        try? speechRecognizer.startRecording()
+                    }
                 }
+            } label: {
+                Image(systemName: speechRecognizer.isRecording ?  "pause.circle.fill" : "play.circle.fill")
+                    .font(.system(size: 75))
+                    .foregroundStyle(Color.primaryColor)
             }
-            .padding()
-            .foregroundColor(.white)
-            .background(speechRecognizer.isRecording ? Color.red : Color.blue)
-            .cornerRadius(8)
-        }
-        .padding()
+            .contentTransition(.symbolEffect(.replace))
+        }.backgroundStyle(Color.backgroundColor)
     }
 }
+
+#Preview(body: {
+    SpeechToTextView()
+})

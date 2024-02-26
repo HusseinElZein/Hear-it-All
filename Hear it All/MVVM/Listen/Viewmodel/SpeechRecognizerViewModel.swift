@@ -8,12 +8,13 @@ class SpeechRecognizer: NSObject, ObservableObject {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "da-DE"))
     
-    @Published var transcribedText: String = ""
+    @Published var transcribedTextNewestTwenty: String = ""
+    @Published var transcribedTextPastTwenty: String = ""
     @Published var isRecording = false
 
     override init() {
         super.init()
-        speechRecognizer?.delegate = self
+        //speechRecognizer?.delegate = self
     }
 
     func startRecording() throws {
@@ -47,8 +48,14 @@ class SpeechRecognizer: NSObject, ObservableObject {
             var isFinal = false
             
             if let result = result {
-                self?.transcribedText = result.bestTranscription.formattedString
+                self?.transcribedTextNewestTwenty = result.bestTranscription.formattedString
                 isFinal = result.isFinal
+                
+                //Put the newest 20 words on the newest twenty
+                //if it succeeds 20 words, then put the last 20 words on the oldest
+                //and begin on the new one
+                
+                self?.updateTranscription()
             }
             
             if error != nil || isFinal {
@@ -67,12 +74,20 @@ class SpeechRecognizer: NSObject, ObservableObject {
         recognitionTask = nil
         isRecording = false
     }
-}
+    
+    func updateTranscription() {
+        let newWordCount = Words.wordCount(s: transcribedTextNewestTwenty)
 
-extension SpeechRecognizer: SFSpeechRecognizerDelegate {
-    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
-        DispatchQueue.main.async {
-            self.isRecording = available
+        if newWordCount > 20 {
+            // Calculate how many words to move to the past text
+            let wordsToMove = newWordCount - 20
+            
+            // First, update the past twenty
+            self.transcribedTextPastTwenty = transcribedTextNewestTwenty
+            
+            // Then, keep only the last 20 words in the newest twenty text
+            self.transcribedTextNewestTwenty = Words.keepLast20Words(from: transcribedTextNewestTwenty)
         }
     }
+
 }
