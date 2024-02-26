@@ -1,6 +1,7 @@
 import Foundation
 import Speech
 import AVFoundation
+import SwiftUI
 
 class SpeechRecognizer: NSObject, ObservableObject {
     private var audioEngine = AVAudioEngine()
@@ -14,7 +15,6 @@ class SpeechRecognizer: NSObject, ObservableObject {
 
     override init() {
         super.init()
-        //speechRecognizer?.delegate = self
     }
 
     func startRecording() throws {
@@ -48,21 +48,22 @@ class SpeechRecognizer: NSObject, ObservableObject {
             var isFinal = false
             
             if let result = result {
-                self?.transcribedTextNewestTwenty = result.bestTranscription.formattedString
+                let fullTranscription = result.bestTranscription.formattedString
+                let words = fullTranscription.split(whereSeparator: { $0.isWhitespace }).map(String.init)
+                
+                // Determine the slice point based on the total word count
+                let slicePoint = words.count - (words.count % 20)
+                let relevantWords = words.suffix(from: slicePoint)
+                withAnimation {
+                    self?.transcribedTextNewestTwenty = relevantWords.joined(separator: " ")
+                }
                 isFinal = result.isFinal
-                
-                //Put the newest 20 words on the newest twenty
-                //if it succeeds 20 words, then put the last 20 words on the oldest
-                //and begin on the new one
-                
-                self?.updateTranscription()
             }
             
             if error != nil || isFinal {
                 self?.stopRecording()
             }
         })
-        
         isRecording = true
     }
     
@@ -74,20 +75,4 @@ class SpeechRecognizer: NSObject, ObservableObject {
         recognitionTask = nil
         isRecording = false
     }
-    
-    func updateTranscription() {
-        let newWordCount = Words.wordCount(s: transcribedTextNewestTwenty)
-
-        if newWordCount > 20 {
-            // Calculate how many words to move to the past text
-            let wordsToMove = newWordCount - 20
-            
-            // First, update the past twenty
-            self.transcribedTextPastTwenty = transcribedTextNewestTwenty
-            
-            // Then, keep only the last 20 words in the newest twenty text
-            self.transcribedTextNewestTwenty = Words.keepLast20Words(from: transcribedTextNewestTwenty)
-        }
-    }
-
 }

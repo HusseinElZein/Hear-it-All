@@ -12,21 +12,23 @@ struct SpeechToTextView: View {
                 Rectangle()
                     .frame(width: 105, height: 2)
                 
-                Text(speechRecognizer.transcribedTextPastTwenty)
                 Text(speechRecognizer.transcribedTextNewestTwenty)
                     .bold()
                     .font(.system(size: 30))
+                    .transition(.opacity)
+                    .animation(.easeInOut(duration: 0.2), value: speechRecognizer.transcribedTextNewestTwenty)
                 
                 Rectangle().padding()
                     .frame(width: 350, height: 0)
                     .foregroundStyle(.clear)
-            }.padding()
+            }.frame(maxWidth: 350)
+            .padding()
             
+            Spacer()
             
             //The start and stop button
             Button {
                 withAnimation {
-                    
                     if speechRecognizer.isRecording {
                         speechRecognizer.stopRecording()
                     } else {
@@ -34,7 +36,7 @@ struct SpeechToTextView: View {
                     }
                 }
             } label: {
-                Image(systemName: speechRecognizer.isRecording ?  "pause.circle.fill" : "play.circle.fill")
+                Image(systemName: speechRecognizer.isRecording ? "pause.circle.fill" : "play.circle.fill")
                     .font(.system(size: 75))
                     .foregroundStyle(Color.primaryColor)
             }
