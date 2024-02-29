@@ -85,9 +85,5 @@ class SpeechRecognizer: NSObject, ObservableObject {
         self.language = newLanguage
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: newLanguage.locale_id))
         self.transcribedText = ""
-        
-        if isRecording {
-            do {try startRecording()}catch{}
-        }
     }
 }

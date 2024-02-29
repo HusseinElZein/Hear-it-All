@@ -91,7 +91,6 @@ struct SpeechAndSoundToTextView: View {
             .sheet(isPresented: $showChooseSounds) {
                 SoundsSelectionView(soundRecognizer: soundRecognizer, availableSounds: SoundRecognizer.fetchAllKnownSounds())
             }
-            .scrollIndicators(.never)
     }
 }
 
