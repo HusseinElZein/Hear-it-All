@@ -24,7 +24,6 @@
 		E3D703ED2B8A4981000813B9 /* SpeechToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechToTextView.swift */; };
 		E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */; };
 		E3EBE6492B875CD000C779DD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E3EBE6482B875CD000C779DD /* .gitignore */; };
-		E3FF4D3A2B8A3B6F00A132EB /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF4D392B8A3B6F00A132EB /* SpeechRecognition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +66,6 @@
 		E3D703EC2B8A4981000813B9 /* SpeechToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextView.swift; sourceTree = "<group>"; };
 		E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModel.swift; sourceTree = "<group>"; };
 		E3EBE6482B875CD000C779DD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = "Hear it All/.gitignore"; sourceTree = "<group>"; };
-		E3FF4D392B8A3B6F00A132EB /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,7 +305,6 @@
 		E3FF4D352B8A302D00A132EB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E3FF4D392B8A3B6F00A132EB /* SpeechRecognition.swift */,
 				E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */,
 				E305726D2B8CEC5100AF956D /* SaveToStorage.swift */,
 			);
@@ -461,7 +458,6 @@
 				D7C243EC2B6A41EC005DD0FB /* Hear_it_AllApp.swift in Sources */,
 				E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */,
 				E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */,
-				E3FF4D3A2B8A3B6F00A132EB /* SpeechRecognition.swift in Sources */,
 				E30572702B8CF9C400AF956D /* LanguageHelper.swift in Sources */,
 				E305726C2B8CD72600AF956D /* ChooseLanguageView.swift in Sources */,
 				E305726E2B8CEC5100AF956D /* SaveToStorage.swift in Sources */,

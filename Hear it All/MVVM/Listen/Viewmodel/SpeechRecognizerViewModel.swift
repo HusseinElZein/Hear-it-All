@@ -3,91 +3,84 @@ import Speech
 import AVFoundation
 import SwiftUI
 
-class SpeechRecognizer: NSObject, ObservableObject {
+import AVFoundation
+import SoundAnalysis
+import SwiftUI
+
+class SoundRecognizer: NSObject, ObservableObject {
     private var audioEngine = AVAudioEngine()
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
-    
-    @Published var language = languageModelData[0]
-    private var speechRecognizer: SFSpeechRecognizer?
-    @Published var transcribedText: String = ""
-    @Published var isRecording = false
-    
+    private var soundClassifier: SNClassifySoundRequest?
+    private var analysisQueue = DispatchQueue(label: "com.example.SoundAnalysis")
+
+    @Published var detectedSound: String = ""
+    @Published var isListening = false
+
     override init() {
         super.init()
-        let locale_id = LocalStorage.getString(forKey: "locale_id") ?? "da-DE"
-        self.language = LanguageHelper.getLanguageModel(byLocaleId: locale_id) ?? languageModelData[0]
-        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: self.language.locale_id))
+        // Initialize the sound classifier here with a specific model if necessary.
     }
-    
-    func startRecording() throws {
-        // Check if recognizer is available
-        if !(speechRecognizer?.isAvailable ?? false) {
-            throw NSError(domain: "SFSpeechRecognizerErrorDomain", code: -1, userInfo: [NSLocalizedDescriptionKey: "Speech recognition is not currently available."])
+
+    func startListening() throws {
+        let audioFormat = audioEngine.inputNode.inputFormat(forBus: 0)
+        // Assuming you have a trained sound classification model, you would initialize the request here.
+        // For demonstration purposes, we'll use a generic request initialization.
+        guard let model = try? SNClassifier(model: MLModel()) else {
+            print("Failed to load sound classification model")
+            return
         }
-        
-        // Configure the audio session
-        let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
-        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
-        
-        // Prepare the recognition request
-        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create a recognition request") }
-        recognitionRequest.shouldReportPartialResults = true
-        
-        // Configure the microphone input
-        let inputNode = audioEngine.inputNode
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
-            recognitionRequest.append(buffer)
+        soundClassifier = SNClassifySoundRequest(mlModel: model)
+
+        try audioEngine.inputNode.removeTap(onBus: 0) // Remove existing taps
+        audioEngine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: audioFormat) { [weak self] (buffer, time) in
+            // Analyze the audio buffer
+            try? self?.analyze(buffer: buffer, at: time)
         }
-        
+
         audioEngine.prepare()
         try audioEngine.start()
-        
-        // Start speech recognition
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { [weak self] (result, error) in
-            var isFinal = false
-            
-            if let result = result {
-                let fullTranscription = result.bestTranscription.formattedString
-                let words = fullTranscription.split(whereSeparator: { $0.isWhitespace }).map(String.init)
-                
-                // Determine the slice point based on the total word count
-                let slicePoint = words.count - (words.count % 20)
-                let relevantWords = words.suffix(from: slicePoint)
-                withAnimation {
-                    self?.transcribedText = relevantWords.joined(separator: " ")
-                }
-                isFinal = result.isFinal
-            }
-            
-            if error != nil || isFinal {
-                self?.stopRecording()
-            }
-        })
-        isRecording = true
+        isListening = true
     }
-    
-    func stopRecording() {
+
+    private func analyze(buffer: AVAudioPCMBuffer, at time: AVAudioTime) throws {
+        guard let soundClassifier = soundClassifier else { return }
+        
+        // Create a new analysis request for each buffer received
+        let request = SNAnalyzeAudioRequest(mlModel: soundClassifier.mlModel)
+        let analyzer = try SNAudioStreamAnalyzer(format: buffer.format)
+        
+        // Add a results observer
+        analyzer.add(request, withObserver: self)
+        
+        // Analyze the current audio buffer
+        try analyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
+    }
+
+    func stopListening() {
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
-        recognitionRequest?.endAudio()
-        recognitionTask?.cancel()
-        recognitionTask = nil
-        isRecording = false
-    }
-    
-    func changeLanguage(to newLanguage: LanguageModel){
-        if isRecording {stopRecording()}
-        LocalStorage.saveString(newLanguage.locale_id, forKey: "locale_id")
-        self.language = newLanguage
-        speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: newLanguage.locale_id))
-        self.transcribedText = ""
-        
-        if isRecording {
-            do {try startRecording()}catch{}
-        }
+        isListening = false
     }
 }
+
+// Extend SoundRecognizer to conform to SNResultsObserving for receiving analysis results.
+extension SoundRecognizer: SNResultsObserving {
+    func request(_ request: SNRequest, didProduce result: SNResult) {
+        // Handle the analysis result
+        // This example assumes a classification result, which may contain multiple classifications
+        guard let classificationResult = result as? SNClassificationResult,
+              let classification = classificationResult.classifications.first else { return }
+        
+        DispatchQueue.main.async {
+            self.detectedSound = classification.identifier // The type of sound detected
+        }
+    }
+
+    func request(_ request: SNRequest, didFailWithError error: Error) {
+        print("The analysis failed: \(error.localizedDescription)")
+    }
+
+    func requestDidComplete(_ request: SNRequest) {
+        print("The request completed successfully!")
+    }
+}
+
