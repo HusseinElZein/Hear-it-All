@@ -66,7 +66,7 @@
 		E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-All-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E3D703EC2B8A4981000813B9 /* SpeechToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextView.swift; sourceTree = "<group>"; };
 		E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModel.swift; sourceTree = "<group>"; };
-		E3EBE6482B875CD000C779DD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E3EBE6482B875CD000C779DD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = "Hear it All/.gitignore"; sourceTree = "<group>"; };
 		E3FF4D392B8A3B6F00A132EB /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +98,7 @@
 		D7C243DF2B6A41EC005DD0FB = {
 			isa = PBXGroup;
 			children = (
+				E3EBE6482B875CD000C779DD /* .gitignore */,
 				D7C243EA2B6A41EC005DD0FB /* Hear it All */,
 				D7C243FB2B6A41ED005DD0FB /* Hear it AllTests */,
 				D7C244052B6A41ED005DD0FB /* Hear it AllUITests */,
@@ -118,7 +119,6 @@
 		D7C243EA2B6A41EC005DD0FB /* Hear it All */ = {
 			isa = PBXGroup;
 			children = (
-				E3EBE6482B875CD000C779DD /* .gitignore */,
 				E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */,
 				E3FF4D342B8A2FC600A132EB /* App */,
 				E3FF4D352B8A302D00A132EB /* Services */,
