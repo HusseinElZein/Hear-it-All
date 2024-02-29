@@ -23,22 +23,19 @@ struct SpeechAndSoundToTextView: View {
                 
                 Rectangle().foregroundStyle(.clear).frame(width: 350, height: 250)
                     .overlay(
-                    Text(speechRecognizer.transcribedText)
-                        .bold()
-                        .font(.system(size: 25))
-                        .transition(.opacity)
-                        .lineLimit(8)
-                        .truncationMode(.head)
-                        .animation(.easeInOut(duration: 0.2), value: speechRecognizer.transcribedText),
-                    alignment: .topLeading
-                )
-                
-                
+                        Text(speechRecognizer.transcribedText)
+                            .bold()
+                            .font(.system(size: 25))
+                            .transition(.opacity)
+                            .lineLimit(8)
+                            .truncationMode(.head)
+                            .animation(.easeInOut(duration: 0.2), value: speechRecognizer.transcribedText),
+                        alignment: .topLeading
+                    )
                 Rectangle().padding()
                     .frame(width: 350, height: 0)
                     .foregroundStyle(.clear)
-                
-            }
+            }.padding(.top, 50)
             
             //All about recognizing sounds
             VStack(alignment: .leading) {
@@ -94,6 +91,7 @@ struct SpeechAndSoundToTextView: View {
             .sheet(isPresented: $showChooseSounds) {
                 SoundsSelectionView(soundRecognizer: soundRecognizer, availableSounds: SoundRecognizer.fetchAllKnownSounds())
             }
+            .scrollIndicators(.never)
     }
 }
 

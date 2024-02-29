@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SoundsSelectionView: View {
     @ObservedObject var soundRecognizer: SoundRecognizer
-    let availableSounds: [String] // This will now be passed in
+    let availableSounds: [String]
     
     var body: some View {
         List(availableSounds, id: \.self) { sound in
