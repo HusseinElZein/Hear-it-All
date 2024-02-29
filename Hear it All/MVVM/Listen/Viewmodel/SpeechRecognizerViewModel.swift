@@ -55,7 +55,7 @@ class SpeechRecognizer: NSObject, ObservableObject {
                 let words = fullTranscription.split(whereSeparator: { $0.isWhitespace }).map(String.init)
                 
                 // Determine the slice point based on the total word count
-                let slicePoint = words.count - (words.count % 20)
+                let slicePoint = words.count - (words.count % 28)
                 let relevantWords = words.suffix(from: slicePoint)
                 withAnimation {
                     self?.transcribedText = relevantWords.joined(separator: " ")

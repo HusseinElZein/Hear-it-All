@@ -2,7 +2,7 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        SpeechToTextView()
+        SpeechAndSoundToTextView()
             .backgroundStyle(Color.backgroundColor)
     }
 }
