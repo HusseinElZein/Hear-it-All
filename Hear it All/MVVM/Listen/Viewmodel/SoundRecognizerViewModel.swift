@@ -30,7 +30,8 @@ final class SoundRecognizer: ObservableObject {
         handler.onResult = { [weak self] result in
             DispatchQueue.main.async {
                 if let classification = result.classifications.first {
-                    if classification.confidence > 0.25 {
+                    if classification.confidence > 0.25
+                        && self?.userSelectedSounds.contains(classification.identifier) ?? false {
                         self?.detectedSound = classification.identifier.replacing("_", with: " ")
                     }
                 }
@@ -42,7 +43,6 @@ final class SoundRecognizer: ObservableObject {
         handler.onComplete = {
             print("Analysis completed.")
         }
-        
         resultsObserver = ResultsObserver(handler: handler)
     }
     

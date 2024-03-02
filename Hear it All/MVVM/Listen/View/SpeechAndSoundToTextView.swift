@@ -86,7 +86,7 @@ struct SpeechAndSoundToTextView: View {
             .contentTransition(.symbolEffect(.replace))
         }.backgroundStyle(Color.backgroundColor)
             .sheet(isPresented: $showChooseLanguages){
-                ChooseLanguageView(viewModel: speechRecognizer, showThisSheet: $showChooseLanguages)
+                ChooseLanguageView(viewModel: speechRecognizer, soundViewModel: soundRecognizer, showThisSheet: $showChooseLanguages)
             }
             .sheet(isPresented: $showChooseSounds) {
                 SoundsSelectionView(soundRecognizer: soundRecognizer, availableSounds: SoundRecognizer.fetchAllKnownSounds())
