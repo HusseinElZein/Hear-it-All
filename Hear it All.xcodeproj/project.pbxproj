@@ -25,6 +25,14 @@
 		E3D703E82B8A4332000813B9 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703E72B8A4332000813B9 /* AVPlayer+Ding.swift */; };
 		E3D703ED2B8A4981000813B9 /* SpeechAndSoundToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */; };
 		E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */; };
+		E3D70DD92B98B62D004435F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3D70DD82B98B62C004435F4 /* GoogleService-Info.plist */; };
+		E3D70DDC2B98B6D3004435F4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E3D70DDB2B98B6D3004435F4 /* FirebaseAuth */; };
+		E3D70DDE2B98B6D3004435F4 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = E3D70DDD2B98B6D3004435F4 /* FirebaseCrashlytics */; };
+		E3D70DE02B98B6D3004435F4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E3D70DDF2B98B6D3004435F4 /* FirebaseDatabase */; };
+		E3D70DE22B98B6D3004435F4 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3D70DE12B98B6D3004435F4 /* FirebaseDatabaseSwift */; };
+		E3D70DE42B98B6D3004435F4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E3D70DE32B98B6D3004435F4 /* FirebaseFirestore */; };
+		E3D70DE62B98B6D3004435F4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3D70DE52B98B6D3004435F4 /* FirebaseFirestoreSwift */; };
+		E3D70DE82B98B6D3004435F4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E3D70DE72B98B6D3004435F4 /* FirebaseStorage */; };
 		E3EBE6492B875CD000C779DD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E3EBE6482B875CD000C779DD /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +77,7 @@
 		E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-All-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechAndSoundToTextView.swift; sourceTree = "<group>"; };
 		E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModel.swift; sourceTree = "<group>"; };
+		E3D70DD82B98B62C004435F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3EBE6482B875CD000C779DD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = "Hear it All/.gitignore"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +86,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D70DE22B98B6D3004435F4 /* FirebaseDatabaseSwift in Frameworks */,
+				E3D70DE02B98B6D3004435F4 /* FirebaseDatabase in Frameworks */,
+				E3D70DDC2B98B6D3004435F4 /* FirebaseAuth in Frameworks */,
+				E3D70DE42B98B6D3004435F4 /* FirebaseFirestore in Frameworks */,
+				E3D70DE82B98B6D3004435F4 /* FirebaseStorage in Frameworks */,
+				E3D70DDE2B98B6D3004435F4 /* FirebaseCrashlytics in Frameworks */,
+				E3D70DE62B98B6D3004435F4 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +137,7 @@
 		D7C243EA2B6A41EC005DD0FB /* Hear it All */ = {
 			isa = PBXGroup;
 			children = (
+				E3D70DD82B98B62C004435F4 /* GoogleService-Info.plist */,
 				E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */,
 				E3FF4D342B8A2FC600A132EB /* App */,
 				E3FF4D352B8A302D00A132EB /* Services */,
@@ -160,10 +177,10 @@
 		E3D703EB2B8A4931000813B9 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				E3FF4D262B8A2E2200A132EB /* Onboarding+login sign up */,
 				E3FF4D242B8A2E0200A132EB /* Listen */,
-				E3FF4D262B8A2E2200A132EB /* Onboarding */,
-				E3FF4D252B8A2E1900A132EB /* Listening activated */,
 				E3FF4D272B8A2E5100A132EB /* Settings */,
+				E3FF4D252B8A2E1900A132EB /* Community */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -178,24 +195,24 @@
 			path = Listen;
 			sourceTree = "<group>";
 		};
-		E3FF4D252B8A2E1900A132EB /* Listening activated */ = {
+		E3FF4D252B8A2E1900A132EB /* Community */ = {
 			isa = PBXGroup;
 			children = (
 				E3FF4D302B8A2F9600A132EB /* Model */,
 				E3FF4D2F2B8A2F8F00A132EB /* View */,
 				E3FF4D2E2B8A2F8200A132EB /* Viewmodel */,
 			);
-			path = "Listening activated";
+			path = Community;
 			sourceTree = "<group>";
 		};
-		E3FF4D262B8A2E2200A132EB /* Onboarding */ = {
+		E3FF4D262B8A2E2200A132EB /* Onboarding+login sign up */ = {
 			isa = PBXGroup;
 			children = (
 				E3FF4D282B8A2F2000A132EB /* Model */,
 				E3FF4D292B8A2F2800A132EB /* View */,
 				E3FF4D2A2B8A2F3800A132EB /* Viewmodel */,
 			);
-			path = Onboarding;
+			path = "Onboarding+login sign up";
 			sourceTree = "<group>";
 		};
 		E3FF4D272B8A2E5100A132EB /* Settings */ = {
@@ -343,6 +360,15 @@
 			dependencies = (
 			);
 			name = "Hear it All";
+			packageProductDependencies = (
+				E3D70DDB2B98B6D3004435F4 /* FirebaseAuth */,
+				E3D70DDD2B98B6D3004435F4 /* FirebaseCrashlytics */,
+				E3D70DDF2B98B6D3004435F4 /* FirebaseDatabase */,
+				E3D70DE12B98B6D3004435F4 /* FirebaseDatabaseSwift */,
+				E3D70DE32B98B6D3004435F4 /* FirebaseFirestore */,
+				E3D70DE52B98B6D3004435F4 /* FirebaseFirestoreSwift */,
+				E3D70DE72B98B6D3004435F4 /* FirebaseStorage */,
+			);
 			productName = "Hear it All";
 			productReference = D7C243E82B6A41EC005DD0FB /* Hear it All.app */;
 			productType = "com.apple.product-type.application";
@@ -415,6 +441,9 @@
 				Base,
 			);
 			mainGroup = D7C243DF2B6A41EC005DD0FB;
+			packageReferences = (
+				E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = D7C243E92B6A41EC005DD0FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -432,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7C243F32B6A41ED005DD0FB /* Preview Assets.xcassets in Resources */,
+				E3D70DD92B98B62D004435F4 /* GoogleService-Info.plist in Resources */,
 				E3EBE6492B875CD000C779DD /* .gitignore in Resources */,
 				D7C243F02B6A41ED005DD0FB /* Assets.xcassets in Resources */,
 			);
@@ -638,6 +668,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hear-it-All-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hear it all";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "App'en bruger din mikrofon til oversættelsen af tale og lyd, til tekst";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "App'en bruger din mikrofon for at optage dine omgivelser, mens du er i app'en. Du bestemmer selv om app'en må køre i baggrunden og optage - pr. default er dette slået fra.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -670,6 +701,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hear-it-All-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Hear it all";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "App'en bruger din mikrofon til oversættelsen af tale og lyd, til tekst";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "App'en bruger din mikrofon for at optage dine omgivelser, mens du er i app'en. Du bestemmer selv om app'en må køre i baggrunden og optage - pr. default er dette slået fra.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -808,6 +840,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.22.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3D70DDB2B98B6D3004435F4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E3D70DDD2B98B6D3004435F4 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		E3D70DDF2B98B6D3004435F4 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E3D70DE12B98B6D3004435F4 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		E3D70DE32B98B6D3004435F4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E3D70DE52B98B6D3004435F4 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		E3D70DE72B98B6D3004435F4 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D7C243E02B6A41EC005DD0FB /* Project object */;
 }
