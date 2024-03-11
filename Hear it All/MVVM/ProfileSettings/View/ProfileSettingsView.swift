@@ -11,79 +11,87 @@ struct ProfileSettingsView: View {
     @State private var showingEditEmail = false
     @State private var showingEditPassword = false
     @State private var showingDeleteAccount = false
+    
+    @Bindable var vm = ProfileSettingsViewmodel()
     // Add more state variables as needed for other actions
-
+    
     var body: some View {
-        List {
-            Section(header:
-                        Circle()
-                        .fill(Color.gray.opacity(0.3))
-                        .frame(width: 100, height: 100)
-                        .overlay(Text("Profile Picture").foregroundColor(.white))
-                        .onTapGesture {
-                            showingEditProfilePicture.toggle()
-                        }
-            ) {
-                HStack {
-                    Image(systemName: "person.fill").foregroundColor(.blue)
-                    Text("Display Name")
-                    Spacer()
-                    Text(displayName)
+        
+        NavigationStack{
+            VStack{
+                Circle()
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(width: 100, height: 100)
+                    .overlay(Text("Profile Picture").foregroundColor(.white))
+                    .onTapGesture {
+                        showingEditProfilePicture.toggle()
+                    }
+            }
+            List {
+                Section(header:
+                            Text("")
+                ) {
+                    HStack {
+                        Image(systemName: "person.fill").foregroundColor(.blue)
+                        Text("Display Name")
+                        Spacer()
+                        Text(displayName)
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        showingEditDisplayName.toggle()
+                    }
+                    .sheet(isPresented: $showingEditDisplayName) {
+                        EditDisplayNameView(displayName: $displayName)
+                    }
+                    
+                    HStack {
+                        Image(systemName: "envelope.fill").foregroundColor(.red)
+                        Text("Email")
+                        Spacer()
+                        Text(email)
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        showingEditEmail.toggle()
+                    }
+                    .sheet(isPresented: $showingEditEmail) {
+                        EditEmailView(email: $email)
+                    }
+                    
+                    HStack {
+                        Image(systemName: "lock.fill").foregroundColor(.gray)
+                        Text("Password")
+                        Spacer()
+                        Text(String(repeating: "•", count: password.count))
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        showingEditPassword.toggle()
+                    }
+                    .sheet(isPresented: $showingEditPassword) {
+                        EditPasswordView(password: $password)
+                    }
                 }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    showingEditDisplayName.toggle()
-                }
-                .sheet(isPresented: $showingEditDisplayName) {
-                    EditDisplayNameView(displayName: $displayName)
-                }
-
-                HStack {
-                    Image(systemName: "envelope.fill").foregroundColor(.red)
-                    Text("Email")
-                    Spacer()
-                    Text(email)
-                }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    showingEditEmail.toggle()
-                }
-                .sheet(isPresented: $showingEditEmail) {
-                    EditEmailView(email: $email)
-                }
-
-                HStack {
-                    Image(systemName: "lock.fill").foregroundColor(.gray)
-                    Text("Password")
-                    Spacer()
-                    Text(String(repeating: "•", count: password.count))
-                }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    showingEditPassword.toggle()
-                }
-                .sheet(isPresented: $showingEditPassword) {
-                    EditPasswordView(password: $password)
+                
+                Section {
+                    Button("Sign Out") {
+                        vm.signOut()
+                    }
+                    
+                    Button("Delete Profile") {
+                        showingDeleteAccount.toggle()
+                    }
+                    .foregroundColor(.red)
+                    .sheet(isPresented: $showingDeleteAccount) {
+                        // Your delete confirmation view
+                        Text("Delete Account Sheet")
+                    }
                 }
             }
-
-            Section {
-                Button("Sign Out") {
-                    // Handle sign out action
-                }
-
-                Button("Delete Profile") {
-                    showingDeleteAccount.toggle()
-                }
-                .foregroundColor(.red)
-                .sheet(isPresented: $showingDeleteAccount) {
-                    // Your delete confirmation view
-                    Text("Delete Account Sheet")
-                }
-            }
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle("Profile", displayMode: .large)
         }
-        .listStyle(GroupedListStyle())
-        .navigationBarTitle("Profile", displayMode: .large)
     }
 }
 

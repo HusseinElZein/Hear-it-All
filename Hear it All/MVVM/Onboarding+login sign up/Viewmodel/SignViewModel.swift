@@ -26,10 +26,6 @@ class SignViewModel{
         }
     }
     
-    func signOut(){
-        try? DatabaseService.auth.signOut()
-    }
-    
     func signInCredsAcceptable(email: String, password: String) -> Bool{
         if !email.contains("@") || !email.contains("."){return false}
         if password.count < 6{return false}
