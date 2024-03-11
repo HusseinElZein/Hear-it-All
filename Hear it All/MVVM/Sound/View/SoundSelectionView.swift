@@ -28,8 +28,10 @@ struct SoundsSelectionView: View {
                         }
                     )) {
                         Text(sound.replacing("_", with: " "))
-                    }
+                    }.tint(.green)
                 }
+                .scrollContentBackground(.hidden)
+                .background(Color.backgroundColor)
             }.navigationTitle("Vælg lyde")
                 .navigationBarItems(trailing: Button(action: toggleAllSounds) {
                     Text(toggleButtonText)

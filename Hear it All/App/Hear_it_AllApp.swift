@@ -15,6 +15,16 @@ struct Hear_it_AllApp: App {
     var body: some Scene {
         WindowGroup {
             StartView().preferredColorScheme(.light)
+                .onAppear {
+                    UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "arrow.left.circle")
+                    
+                    UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+                    
+                    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+                    
+                    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: UIControl.State.highlighted)
+                    
+                }
         }
     }
 }

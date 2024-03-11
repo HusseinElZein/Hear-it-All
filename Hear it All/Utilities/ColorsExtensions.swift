@@ -16,13 +16,14 @@ extension Color {
     }
 }
 
-
-
 extension Color {
     public static var backgroundColor: Color {
         return Color(hex: "FBF0E5")
     }
     public static var primaryColor: Color {
         return Color(hex: "F7AD61")
+    }
+    public static var blueLinkColor: Color {
+        return Color(hex: "56A1E6")
     }
 }
