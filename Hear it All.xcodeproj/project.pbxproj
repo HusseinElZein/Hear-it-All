@@ -35,6 +35,7 @@
 		E33F47FB2B9F366B00AA142C /* CommunityPostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F47FA2B9F366B00AA142C /* CommunityPostsView.swift */; };
 		E354DAE52B9F44D7005AFD29 /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E354DAE42B9F44D7005AFD29 /* ProfileSettingsView.swift */; };
 		E354DAE72B9F4B47005AFD29 /* ProfileSettingsViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E354DAE62B9F4B47005AFD29 /* ProfileSettingsViewmodel.swift */; };
+		E37DD2AE2BA0B88F00F445DD /* NotificationInAppListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2AD2BA0B88F00F445DD /* NotificationInAppListener.swift */; };
 		E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */; };
 		E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */; };
 		E3D703ED2B8A4981000813B9 /* SpeechAndSoundToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */; };
@@ -100,6 +101,7 @@
 		E33F47FA2B9F366B00AA142C /* CommunityPostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityPostsView.swift; sourceTree = "<group>"; };
 		E354DAE42B9F44D7005AFD29 /* ProfileSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
 		E354DAE62B9F4B47005AFD29 /* ProfileSettingsViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewmodel.swift; sourceTree = "<group>"; };
+		E37DD2AD2BA0B88F00F445DD /* NotificationInAppListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInAppListener.swift; sourceTree = "<group>"; };
 		E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtensions.swift; sourceTree = "<group>"; };
 		E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceUtils.swift; sourceTree = "<group>"; };
 		E3D703E92B8A46B9000813B9 /* Hear-it-AllUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-AllUITests-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -444,6 +446,7 @@
 				E305726D2B8CEC5100AF956D /* SaveToStorage.swift */,
 				E300BDE52B9E027C00AA57C5 /* DatabaseService.swift */,
 				E300BDEF2B9E2EA000AA57C5 /* UserAuthListener.swift */,
+				E37DD2AD2BA0B88F00F445DD /* NotificationInAppListener.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				E3D901572B9B5C8F0050D935 /* SignInOrUpSubView.swift in Sources */,
 				E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */,
 				E354DAE52B9F44D7005AFD29 /* ProfileSettingsView.swift in Sources */,
+				E37DD2AE2BA0B88F00F445DD /* NotificationInAppListener.swift in Sources */,
 				E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */,
 				E300BDF02B9E2EA000AA57C5 /* UserAuthListener.swift in Sources */,
 				E30572702B8CF9C400AF956D /* LanguageHelper.swift in Sources */,

@@ -18,7 +18,7 @@ class SignViewModel{
         DatabaseService.auth.createUser(withEmail: email, password: password){authResult, error in
             if error == nil{
                 //If there is not an error
-                let profile = ProfileModel(displayName: displayName, email: email)
+                let profile = ProfileModel(displayName: displayName, email: email.lowercased())
                 try? DatabaseService.db.collection("profiles").document().setData(from: profile)
             }else{
                 //If there is an error

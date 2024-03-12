@@ -1,148 +1,213 @@
 import SwiftUI
+import PhotosUI
 
 
 struct ProfileSettingsView: View {
-    @State private var displayName: String = "Sara12"
-    @State private var email: String = "example@gmail.com"
-    @State private var password: String = "password"
     
     @State private var showingEditProfilePicture = false
     @State private var showingEditDisplayName = false
-    @State private var showingEditEmail = false
     @State private var showingEditPassword = false
     @State private var showingDeleteAccount = false
     
+    @State private var showDeleteConfirmation = false
+    
     @Bindable var vm = ProfileSettingsViewmodel()
-    // Add more state variables as needed for other actions
+    @State var password = ""
+    
+    @State private var avatarImage: UIImage?
+    @State private var photosPickerItem: PhotosPickerItem?
     
     var body: some View {
         
         NavigationStack{
-            VStack{
-                Circle()
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(width: 100, height: 100)
-                    .overlay(Text("Profile Picture").foregroundColor(.white))
-                    .onTapGesture {
-                        showingEditProfilePicture.toggle()
+            ZStack{
+                Color.backgroundColor.ignoresSafeArea()
+                VStack{
+                    VStack{
+                        PhotosPicker(selection: $photosPickerItem, matching: .images) {
+                            Group {
+                                if let urlString = vm.profile?.profilePhoto, let url = URL(string: urlString) {
+                                    AsyncImage(url: url) { phase in
+                                        switch phase {
+                                        case .success(let image):
+                                            image
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 100, height: 100)
+                                                .clipShape(Circle())
+                                        case .failure(_), .empty:
+                                            Circle()
+                                                .fill(Color.gray.opacity(0.3))
+                                                .frame(width: 100, height: 100)
+                                        @unknown default:
+                                            EmptyView()
+                                        }
+                                    }
+                                } else {
+                                    Circle()
+                                        .fill(Color.gray.opacity(0.3))
+                                        .frame(width: 100, height: 100)
+                                        .overlay(Text("Profilbillede").foregroundColor(.white))
+                                }
+                            }
+                        }
+                        if ((vm.profile?.profilePhoto?.isEmpty) != nil){
+                            Button(action: {
+                                showDeleteConfirmation = true
+                            }, label: {
+                                Image(systemName: "trash")
+                                    .foregroundStyle(.black)
+                            })
+                            .alert(isPresented: $showDeleteConfirmation) {
+                                Alert(
+                                    title: Text("Slet billede"),
+                                    message: Text("Er du sikker på, at du vil slette billedet?"),
+                                    primaryButton: .destructive(Text("Ja")) {
+                                        vm.deletePicture()
+                                    },
+                                    secondaryButton: .cancel(Text("Annullér"))
+                                )
+                            }
+                        }
+                    }.background(Color.backgroundColor)
+                    List {
+                        Section {
+                            HStack {
+                                Image(systemName: "person.fill").foregroundColor(.blue)
+                                Text("Visningsnavn")
+                                Spacer()
+                                Text(vm.profile?.displayName ?? "NoNameError")
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                showingEditDisplayName.toggle()
+                            }
+                            .sheet(isPresented: $showingEditDisplayName) {
+                                EditDisplayNameView(showMe: $showingEditDisplayName, vm: vm, displayName: vm.profile?.displayName ?? "NoNameError")
+                                    .presentationDetents([.medium])
+                            }
+                            
+                            HStack {
+                                Image(systemName: "envelope.fill").foregroundColor(.red)
+                                Text("Email")
+                                Spacer()
+                                Text(vm.profile?.email ?? "NoMailError")
+                            }
+                            .contentShape(Rectangle())
+                            
+                            HStack {
+                                Image(systemName: "lock.fill").foregroundColor(.gray)
+                                Text("Adgangskode")
+                                Spacer()
+                                Text(String(repeating: "•", count: 8))
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                showingEditPassword.toggle()
+                            }
+                            .sheet(isPresented: $showingEditPassword) {
+                                EditPasswordView(showMe: $showingEditPassword, vm: vm)
+                                    .presentationDetents([.medium])
+                            }
+                        }
+                        
+                        Section {
+                            Button("Log ud") {
+                                vm.signOut()
+                            }
+                            
+                            Button("Slet Profil") {
+                                showingDeleteAccount.toggle()
+                            }
+                            .foregroundColor(.red)
+                            .sheet(isPresented: $showingDeleteAccount) {
+                                // Your delete confirmation view
+                                DeleteAccountView(vm: vm)
+                                    .presentationDetents([.medium])
+                            }
+                        }
                     }
-            }
-            List {
-                Section(header:
-                            Text("")
-                ) {
-                    HStack {
-                        Image(systemName: "person.fill").foregroundColor(.blue)
-                        Text("Display Name")
-                        Spacer()
-                        Text(displayName)
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        showingEditDisplayName.toggle()
-                    }
-                    .sheet(isPresented: $showingEditDisplayName) {
-                        EditDisplayNameView(displayName: $displayName)
-                    }
-                    
-                    HStack {
-                        Image(systemName: "envelope.fill").foregroundColor(.red)
-                        Text("Email")
-                        Spacer()
-                        Text(email)
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        showingEditEmail.toggle()
-                    }
-                    .sheet(isPresented: $showingEditEmail) {
-                        EditEmailView(email: $email)
-                    }
-                    
-                    HStack {
-                        Image(systemName: "lock.fill").foregroundColor(.gray)
-                        Text("Password")
-                        Spacer()
-                        Text(String(repeating: "•", count: password.count))
-                    }
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        showingEditPassword.toggle()
-                    }
-                    .sheet(isPresented: $showingEditPassword) {
-                        EditPasswordView(password: $password)
+                    .scrollContentBackground(.hidden)
+                    .listStyle(GroupedListStyle())
+                    .navigationBarTitle("Profil", displayMode: .large)
+                    .background(Color.backgroundColor)
+                }
+                .onChange(of: photosPickerItem) { _, _ in
+                    // Whenever a new image is chosen
+                    Task{
+                        if let photosPickerItem,
+                           let data = try? await photosPickerItem.loadTransferable(type: Data.self){
+                            
+                            vm.changeProfilePicture(imageData: data)
+                            
+                            if let image = UIImage(data: data){
+                                avatarImage = image
+                            }
+                        }
+                        photosPickerItem = nil
                     }
                 }
-                
-                Section {
-                    Button("Sign Out") {
-                        vm.signOut()
-                    }
-                    
-                    Button("Delete Profile") {
-                        showingDeleteAccount.toggle()
-                    }
-                    .foregroundColor(.red)
-                    .sheet(isPresented: $showingDeleteAccount) {
-                        // Your delete confirmation view
-                        Text("Delete Account Sheet")
-                    }
-                }
             }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Profile", displayMode: .large)
         }
     }
 }
 
 struct EditDisplayNameView: View {
-    @Binding var displayName: String
+    @Binding var showMe: Bool
+    var vm: ProfileSettingsViewmodel
+    var displayName: String
+    @State var changedDisplayName = ""
     
     var body: some View {
         NavigationView {
             Form {
-                TextField("Display Name", text: $displayName)
+                TextField("Visningsnavn", text: $changedDisplayName)
+                    .textFieldStyle(.roundedBorder)
             }
-            .navigationBarTitle("Edit Display Name", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Done") {
-                // Dismiss the sheet
-            })
-        }
-    }
-}
-
-struct EditEmailView: View {
-    @Binding var email: String
-    
-    var body: some View {
-        NavigationView {
-            Form {
-                TextField("Email", text: $email)
-            }
-            .navigationBarTitle("Edit Email", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Done") {
-                // Dismiss the sheet
-            })
-        }
+            .navigationBarTitle("Skift Visningsnavn", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Skift") {
+                vm.changeDisplayName(to: displayName)
+            }.disabled(changedDisplayName.isEmpty || displayName.elementsEqual(changedDisplayName)))
+        }.onAppear(perform: {changedDisplayName = displayName})
     }
 }
 
 struct EditPasswordView: View {
-    @Binding var password: String
+    @Binding var showMe: Bool
+    var vm: ProfileSettingsViewmodel
+    @State var password = ""
     
     var body: some View {
         NavigationView {
             Form {
-                SecureField("Password", text: $password)
+                SecureField("Adgangskode", text: $password)
+                    .textFieldStyle(.roundedBorder)
             }
-            .navigationBarTitle("Edit Password", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Done") {
-                // Dismiss the sheet
-            })
+            .navigationBarTitle("Skift adgangskode", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Skift") {
+                vm.changePassword(to: password)
+            }.disabled(password.count < 6))
         }
     }
 }
 
+struct DeleteAccountView: View {
+    var vm: ProfileSettingsViewmodel
+    @State var password = ""
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                SecureField("Adgangskode", text: $password)
+                    .textFieldStyle(.roundedBorder)
+            }
+            .navigationBarTitle("Slet profil", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Slet") {
+                vm.deleteProfile(password: password)
+            }.disabled(password.count < 6))
+        }
+    }
+}
 
 #Preview {
     ProfileSettingsView()
