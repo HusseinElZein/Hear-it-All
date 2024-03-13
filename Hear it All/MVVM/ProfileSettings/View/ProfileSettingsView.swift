@@ -166,7 +166,7 @@ struct EditDisplayNameView: View {
             .background(Color.backgroundColor)
             .navigationBarTitle("Skift Visningsnavn", displayMode: .inline)
             .navigationBarItems(trailing: Button("Skift") {
-                vm.changeDisplayName(to: displayName)
+                vm.changeDisplayName(to: changedDisplayName)
                 showMe = false
             }.disabled(changedDisplayName.isEmpty || displayName.elementsEqual(changedDisplayName)))
         }

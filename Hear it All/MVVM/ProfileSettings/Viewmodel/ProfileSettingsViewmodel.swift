@@ -56,12 +56,13 @@ class ProfileSettingsViewmodel {
     }
     
     func changeDisplayName(to newName: String){
-        db.collection("profile").document(profile?.id ?? "noID").updateData(["displayName": newName])
+        db.collection("profiles").document(profile?.id ?? "noID").updateData(["displayName": newName])
         { error in
             if error != nil{
                 NotificationInApp.error = true
                 NotificationInApp.message = "Noget gik galt"
             }else{
+                self.profile?.displayName = newName
                 NotificationInApp.success = true
                 NotificationInApp.message = "Navn er nu skiftet"
             }

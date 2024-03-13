@@ -21,7 +21,7 @@ struct ForgotPasswordView: View {
                             .font(.title.bold())
                             .padding(.bottom, 25)
                             .padding(.leading)
-                        Text("Det kan jo ske! Men bliv ikke bekymret, vi sender dig et link til din email,")
+                        Text("Det kan jo ske! Men bliv ikke bekymret, vi sender dig et link til din email")
                             .foregroundStyle(.gray)
                             .padding([.bottom, .horizontal])
                             .padding(.bottom, 30)
