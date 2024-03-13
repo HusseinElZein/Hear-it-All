@@ -18,10 +18,10 @@ struct StartView: View {
             AlertToast(displayMode: .hud, type: .complete(.green), title: NotificationInApp.message)
         }
         .toast(isPresenting: $notificationListener.error, duration: 5) {
-            AlertToast(displayMode: .hud, type: .complete(.green), title: NotificationInApp.message)
+            AlertToast(displayMode: .hud, type: .error(.red), title: NotificationInApp.message)
         }
         .toast(isPresenting: $notificationListener.loading, duration: 2) {
-            AlertToast(displayMode: .banner(.pop), type: .loading)
+            AlertToast(displayMode: .alert, type: .loading)
         }
     }
 }

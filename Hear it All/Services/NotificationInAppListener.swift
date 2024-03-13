@@ -14,7 +14,7 @@ class NotificationInApp {
     
     static var loading: Bool = false {
         didSet {
-            NotificationInAppListener.shared.error = error
+            NotificationInAppListener.shared.loading = loading
         }
     }
     

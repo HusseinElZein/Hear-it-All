@@ -27,6 +27,7 @@ struct SignUpView: View {
                                 ).background(.white)
                                 .autocorrectionDisabled()
                                 .padding(.horizontal, 20)
+                                //.max
                         }
                         .padding(.top, 30)
                         

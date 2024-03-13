@@ -16,7 +16,6 @@ class ProfileSettingsViewmodel {
     }
     
     private func fetchProfileData() {
-        NotificationInApp.loading = true
         guard let email = auth.currentUser?.email else {
             return
         }
@@ -39,6 +38,7 @@ class ProfileSettingsViewmodel {
     func signOut(){
         NotificationInApp.loading = true
         try? auth.signOut()
+        NotificationInApp.loading = false
     }
     
     func changePassword(to newPasword: String){
@@ -110,12 +110,15 @@ class ProfileSettingsViewmodel {
             if error != nil {
                 return
             }
+            NotificationInApp.loading = false
             
             self.db.collection("profiles").document(profileId).updateData(["profilePhoto": FieldValue.delete()]) { error in
                 if error != nil {
+                    NotificationInApp.loading = false
                     NotificationInApp.error = true
                     NotificationInApp.message = "Noget gik galt"
                 } else {
+                    NotificationInApp.loading = false
                     self.profile?.profilePhoto = nil
                     NotificationInApp.success = true
                     NotificationInApp.message = "Billede er nu slettet"
@@ -149,14 +152,15 @@ class ProfileSettingsViewmodel {
             
             self.db.collection("profiles").document(self.profile?.id ?? "noID").delete()
             
-            
             // Delete the user
             user.delete { error in
                 if error != nil {
+                    NotificationInApp.loading = false
                     NotificationInApp.error = true
                     NotificationInApp.message = "Noget gik galt"
                     return
                 }else{
+                    NotificationInApp.loading = false
                     NotificationInApp.success = true
                     NotificationInApp.message = "Profil nu slettet"
                 }

@@ -9,12 +9,14 @@ class SignViewModel{
         DatabaseService.auth.signIn(withEmail: email, password: password){authResult, error in
             if error == nil{
                 //If there is not an error
+                NotificationInApp.loading = false
                 NotificationInApp.success = true
                 NotificationInApp.message = "Logget ind nu!"
             }else{
                 //If there is an error
+                NotificationInApp.loading = false
                 NotificationInApp.error = true
-                NotificationInApp.message = error?.localizedDescription ?? "Noget gik galt"
+                NotificationInApp.message = "Mail el. adgangskode er forkert"
             }
         }
     }
@@ -24,6 +26,7 @@ class SignViewModel{
         DatabaseService.auth.createUser(withEmail: email, password: password){authResult, error in
             if error == nil{
                 //If there is not an error
+                NotificationInApp.loading = false
                 let profile = ProfileModel(displayName: displayName, email: email.lowercased())
                 try? DatabaseService.db.collection("profiles").document().setData(from: profile)
                 
@@ -31,8 +34,9 @@ class SignViewModel{
                 NotificationInApp.message = "Oprettet ny profil!"
             }else{
                 //If there is an error
+                NotificationInApp.loading = false
                 NotificationInApp.error = true
-                NotificationInApp.message = error?.localizedDescription ?? "Noget gik galt"
+                NotificationInApp.message = "Mail el. adgangskode er forkert"
             }
         }
     }
@@ -56,10 +60,12 @@ class SignViewModel{
         NotificationInApp.loading = true
         DatabaseService.auth.sendPasswordReset(withEmail: email){
             error in
-            if let error = error{
+            if error != nil{
+                NotificationInApp.loading = false
                 NotificationInApp.success = true
                 NotificationInApp.message = "Mail sendt, tjek venligst din mail"
             }else{
+                NotificationInApp.loading = false
                 NotificationInApp.success = true
                 NotificationInApp.message = "Mail sendt, tjek venligst din mail"
             }
