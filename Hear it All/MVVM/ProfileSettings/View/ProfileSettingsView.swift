@@ -76,14 +76,14 @@ struct ProfileSettingsView: View {
                                 Image(systemName: "person.fill").foregroundColor(.blue)
                                 Text("Visningsnavn")
                                 Spacer()
-                                Text(vm.profile?.displayName ?? "NoNameError")
+                                Text(vm.profile?.displayName ?? "")
                             }
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 showingEditDisplayName.toggle()
                             }
                             .sheet(isPresented: $showingEditDisplayName) {
-                                EditDisplayNameView(showMe: $showingEditDisplayName, vm: vm, displayName: vm.profile?.displayName ?? "NoNameError")
+                                EditDisplayNameView(showMe: $showingEditDisplayName, vm: vm, displayName: vm.profile?.displayName ?? "")
                                     .presentationDetents([.medium])
                             }
                             
@@ -91,7 +91,7 @@ struct ProfileSettingsView: View {
                                 Image(systemName: "envelope.fill").foregroundColor(.red)
                                 Text("Email")
                                 Spacer()
-                                Text(vm.profile?.email ?? "NoMailError")
+                                Text(vm.profile?.email ?? "")
                             }
                             .contentShape(Rectangle())
                             
@@ -121,8 +121,7 @@ struct ProfileSettingsView: View {
                             }
                             .foregroundColor(.red)
                             .sheet(isPresented: $showingDeleteAccount) {
-                                // Your delete confirmation view
-                                DeleteAccountView(vm: vm)
+                                DeleteAccountView(showMe: $showingDeleteAccount, vm: vm)
                                     .presentationDetents([.medium])
                             }
                         }
@@ -164,11 +163,14 @@ struct EditDisplayNameView: View {
                 TextField("Visningsnavn", text: $changedDisplayName)
                     .textFieldStyle(.roundedBorder)
             }
+            .background(Color.backgroundColor)
             .navigationBarTitle("Skift Visningsnavn", displayMode: .inline)
             .navigationBarItems(trailing: Button("Skift") {
                 vm.changeDisplayName(to: displayName)
+                showMe = false
             }.disabled(changedDisplayName.isEmpty || displayName.elementsEqual(changedDisplayName)))
-        }.onAppear(perform: {changedDisplayName = displayName})
+        }
+        .onAppear(perform: {changedDisplayName = displayName})
     }
 }
 
@@ -183,15 +185,18 @@ struct EditPasswordView: View {
                 SecureField("Adgangskode", text: $password)
                     .textFieldStyle(.roundedBorder)
             }
+            .background(Color.backgroundColor)
             .navigationBarTitle("Skift adgangskode", displayMode: .inline)
             .navigationBarItems(trailing: Button("Skift") {
                 vm.changePassword(to: password)
+                showMe = false
             }.disabled(password.count < 6))
         }
     }
 }
 
 struct DeleteAccountView: View {
+    @Binding var showMe: Bool
     var vm: ProfileSettingsViewmodel
     @State var password = ""
     
@@ -201,6 +206,7 @@ struct DeleteAccountView: View {
                 SecureField("Adgangskode", text: $password)
                     .textFieldStyle(.roundedBorder)
             }
+            .background(Color.backgroundColor)
             .navigationBarTitle("Slet profil", displayMode: .inline)
             .navigationBarItems(trailing: Button("Slet") {
                 vm.deleteProfile(password: password)
