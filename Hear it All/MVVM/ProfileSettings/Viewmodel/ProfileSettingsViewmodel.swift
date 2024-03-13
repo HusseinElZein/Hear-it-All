@@ -69,6 +69,7 @@ class ProfileSettingsViewmodel {
     }
     
     func changeProfilePicture(imageData: Data) {
+        NotificationInApp.loading = true
         let storageRef = Storage.storage().reference()
         let profilePicRef = storageRef.child("profilePictures/\(profile?.id ?? "noID").jpg")
         
@@ -79,6 +80,9 @@ class ProfileSettingsViewmodel {
             
             profilePicRef.downloadURL { url, error in
                 guard let downloadURL = url else {
+                    NotificationInApp.loading = false
+                    NotificationInApp.error = true
+                    NotificationInApp.message = "Noget gik galt"
                     return
                 }
                 
@@ -93,6 +97,7 @@ class ProfileSettingsViewmodel {
                         NotificationInApp.success = true
                         NotificationInApp.message = "Profilbillede er nu uploadet!"
                     }
+                    NotificationInApp.loading = false
                 }
             }
         }
@@ -147,6 +152,8 @@ class ProfileSettingsViewmodel {
         let credential = EmailAuthProvider.credential(withEmail: profile?.email ?? "error", password: password)
         user.reauthenticate(with: credential) { authResult, error in
             if error != nil {
+                NotificationInApp.error = true
+                NotificationInApp.message = "Noget gik galt"
                 return
             }
             
