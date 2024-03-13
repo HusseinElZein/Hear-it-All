@@ -1,6 +1,5 @@
 import SplineRuntime
 import SwiftUI
-import AlertToast
 
 struct GenericStartView: View {
     let url = URL(string: "https://build.spline.design/58jK-KLVg5ccje6UgomS/scene.splineswift")!

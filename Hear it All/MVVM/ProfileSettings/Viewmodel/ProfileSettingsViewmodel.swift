@@ -16,6 +16,7 @@ class ProfileSettingsViewmodel {
     }
     
     private func fetchProfileData() {
+        NotificationInApp.loading = true
         guard let email = auth.currentUser?.email else {
             return
         }
@@ -36,6 +37,7 @@ class ProfileSettingsViewmodel {
     }
     
     func signOut(){
+        NotificationInApp.loading = true
         try? auth.signOut()
     }
     
@@ -43,18 +45,25 @@ class ProfileSettingsViewmodel {
         auth.currentUser?.updatePassword(to: newPasword){error in
             if error != nil{
                 //if error occured
+                NotificationInApp.error = true
+                NotificationInApp.message = "Prøv igen, eller log ud og ind igen"
             }else{
                 //if no error
+                NotificationInApp.success = true
+                NotificationInApp.message = "Koden er nu ændret!"
             }
         }
     }
     
     func changeDisplayName(to newName: String){
-        db.collection("profile").document(profile?.id ?? "noID").updateData(["displayName": newName]) { error in
+        db.collection("profile").document(profile?.id ?? "noID").updateData(["displayName": newName])
+        { error in
             if error != nil{
-                
+                NotificationInApp.error = true
+                NotificationInApp.message = "Noget gik galt"
             }else{
-                
+                NotificationInApp.success = true
+                NotificationInApp.message = "Navn er nu skiftet"
             }
         }
     }
@@ -78,8 +87,11 @@ class ProfileSettingsViewmodel {
                 // Update Firestore with the new profile picture URL
                 self.db.collection("profiles").document(self.profile?.id ?? "NoId").updateData(["profilePhoto": downloadURL.absoluteString]) { error in
                     if error != nil {
+                        NotificationInApp.error = true
+                        NotificationInApp.message = "Noget gik galt"
                     } else {
-                        
+                        NotificationInApp.success = true
+                        NotificationInApp.message = "Profilbillede er nu uploadet!"
                     }
                 }
             }
@@ -87,6 +99,7 @@ class ProfileSettingsViewmodel {
     }
     
     func deletePicture() {
+        NotificationInApp.loading = true
         guard let profileId = profile?.id else { return }
         
         let storageRef = Storage.storage().reference()
@@ -99,14 +112,21 @@ class ProfileSettingsViewmodel {
             }
             
             self.db.collection("profiles").document(profileId).updateData(["profilePhoto": FieldValue.delete()]) { error in
-                if error != nil {} else {
+                if error != nil {
+                    NotificationInApp.error = true
+                    NotificationInApp.message = "Noget gik galt"
+                } else {
                     self.profile?.profilePhoto = nil
+                    NotificationInApp.success = true
+                    NotificationInApp.message = "Billede er nu slettet"
                 }
             }
         }
     }
     
     func deleteProfile(password: String) {
+        NotificationInApp.loading = true
+        
         guard let user = Auth.auth().currentUser else{return}
         
         guard let profileId = profile?.id else { return }
@@ -130,11 +150,15 @@ class ProfileSettingsViewmodel {
             self.db.collection("profiles").document(self.profile?.id ?? "noID").delete()
             
             
-            
             // Delete the user
             user.delete { error in
                 if error != nil {
+                    NotificationInApp.error = true
+                    NotificationInApp.message = "Noget gik galt"
                     return
+                }else{
+                    NotificationInApp.success = true
+                    NotificationInApp.message = "Profil nu slettet"
                 }
             }
         }

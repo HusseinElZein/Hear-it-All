@@ -1,5 +1,4 @@
 import SwiftUI
-import AlertToast
 
 struct SignInOrUpSubView: View {
     @Bindable var viewModel = SignViewModel()
@@ -48,9 +47,7 @@ struct SignInOrUpSubView: View {
                 }
             }
         }.tint(.black)
-            .toast(isPresenting: $show, duration: 3) {
-                AlertToast(displayMode: .hud, type: .error(.red), title: "Noget gik galt")
-            }
+            
     }
 }
 
