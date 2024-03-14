@@ -29,7 +29,7 @@ class SeePostsViewModel{
     func toggleLike(for postId: String) {
         
         let postRef = db.collection("posts").document(postId)
-
+        
         db.runTransaction({ (transaction, errorPointer) -> Any? in
             let postDocument: DocumentSnapshot
             do {
@@ -38,7 +38,7 @@ class SeePostsViewModel{
                 errorPointer?.pointee = fetchError
                 return nil
             }
-
+            
             guard let oldLikes = postDocument.data()?["likesCount"] as? Int,
                   let likedBy = postDocument.data()?["likedBy"] as? [String] else {
                 let error = NSError(domain: "AppErrorDomain", code: -1, userInfo: [
@@ -47,12 +47,12 @@ class SeePostsViewModel{
                 errorPointer?.pointee = error
                 return nil
             }
-
+            
             var newLikes = oldLikes
             var updatedLikedBy = likedBy
             
             guard let userId = self.auth.currentUser?.uid else{return}
-
+            
             if likedBy.contains(userId) {
                 // User has already liked, so unlike the post
                 newLikes -= 1
@@ -62,7 +62,7 @@ class SeePostsViewModel{
                 newLikes += 1
                 updatedLikedBy.append(userId)
             }
-
+            
             transaction.updateData(["likesCount": newLikes, "likedBy": updatedLikedBy], forDocument: postRef)
             return nil
         }) { (_, error) in
@@ -72,5 +72,28 @@ class SeePostsViewModel{
                 print("Transaction successfully committed!")
             }
         }
+    }
+    
+    func getProfilePictureLinkForOwner(ownerId id: String) -> String {
+        
+        var link = ""
+        
+        db.collection("profiles").whereField("ownerId", isEqualTo: id)
+            .getDocuments { querySnapshot, error in
+                
+                if error != nil {
+                    return
+                }
+                
+                guard let document = querySnapshot?.documents.first else {
+                    return
+                }
+                
+                
+                if let profilePhotoLink = document.get("profilePhoto") as? String {
+                    link = profilePhotoLink
+                }
+            }
+        return link
     }
 }

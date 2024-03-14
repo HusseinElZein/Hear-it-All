@@ -159,6 +159,7 @@ struct EditDisplayNameView: View {
             Form {
                 TextField("Visningsnavn", text: $changedDisplayName)
                     .textFieldStyle(.roundedBorder)
+                    .submitLabel(.done)
             }
             .background(Color.backgroundColor)
             .navigationBarTitle("Skift Visningsnavn", displayMode: .inline)
@@ -181,6 +182,7 @@ struct EditPasswordView: View {
             Form {
                 SecureField("Adgangskode", text: $password)
                     .textFieldStyle(.roundedBorder)
+                    .submitLabel(.done)
             }
             .background(Color.backgroundColor)
             .navigationBarTitle("Skift adgangskode", displayMode: .inline)
@@ -202,6 +204,7 @@ struct DeleteAccountView: View {
             Form {
                 SecureField("Adgangskode", text: $password)
                     .textFieldStyle(.roundedBorder)
+                    .submitLabel(.done)
             }
             .background(Color.backgroundColor)
             .navigationBarTitle("Slet profil", displayMode: .inline)

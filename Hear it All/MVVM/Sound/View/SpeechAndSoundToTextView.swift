@@ -25,7 +25,7 @@ struct SpeechAndSoundToTextView: View {
                         Rectangle()
                             .frame(width: 105, height: 2)
                         
-                        Rectangle().foregroundStyle(.clear).frame(width: 350, height: 250)
+                        Rectangle().foregroundStyle(.clear).frame(width: 350, height: 220)
                             .overlay(
                                 Text(speechRecognizer.transcribedText)
                                     .bold()
@@ -87,7 +87,7 @@ struct SpeechAndSoundToTextView: View {
                         Image(systemName: speechRecognizer.isRecording ? "pause.circle.fill" : "play.circle.fill")
                             .font(.system(size: 75))
                             .foregroundStyle(Color.primaryColor)
-                    }.padding(.bottom, 30)
+                    }.padding(.bottom, 80)
                     .contentTransition(.symbolEffect(.replace))
                 }.background(Color.backgroundColor)
                     .sheet(isPresented: $showChooseLanguages){
@@ -111,7 +111,7 @@ struct SpeechAndSoundToTextView: View {
                         }
                     }
             }
-        }
+        }.tint(.black)
     }
 }
 

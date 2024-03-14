@@ -32,6 +32,7 @@ struct ForgotPasswordView: View {
                             .padding(.leading)
                         TextField("", text: $email)
                             .keyboardType(.emailAddress)
+                            .submitLabel(.done)
                             .padding(10)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)

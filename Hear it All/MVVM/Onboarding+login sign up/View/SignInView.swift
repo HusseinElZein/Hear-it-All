@@ -19,6 +19,7 @@ struct SignInView: View {
                                 .padding(.leading)
                             TextField("", text: $email)
                                 .keyboardType(.emailAddress)
+                                .submitLabel(.done)
                                 .padding(10)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
@@ -43,6 +44,7 @@ struct SignInView: View {
                                             .stroke(Color.gray, lineWidth: 1)
                                         
                                     ).background(.white)
+                                    .submitLabel(.done)
                                     .padding(.horizontal, 20)
                                 
                                 Button(action: {

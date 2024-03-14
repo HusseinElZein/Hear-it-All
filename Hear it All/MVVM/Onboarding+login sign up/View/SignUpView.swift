@@ -20,6 +20,7 @@ struct SignUpView: View {
                             
                             TextField("", text: $displayName)
                                 .keyboardType(.default)
+                                .submitLabel(.done)
                                 .padding(10)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
@@ -39,6 +40,7 @@ struct SignUpView: View {
                             
                             TextField("", text: $email)
                                 .keyboardType(.emailAddress)
+                                .submitLabel(.done)
                                 .padding(10)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)

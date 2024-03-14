@@ -26,4 +26,7 @@ extension Color {
     public static var blueLinkColor: Color {
         return Color(hex: "56A1E6")
     }
+    public static var postBackgroundColor: Color {
+        return Color(hex: "FFFAF0")
+    }
 }

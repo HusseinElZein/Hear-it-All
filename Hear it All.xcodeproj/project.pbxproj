@@ -40,6 +40,8 @@
 		E37DD2B22BA215E500F445DD /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B12BA215E500F445DD /* CreatePostViewModel.swift */; };
 		E37DD2B42BA2497A00F445DD /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B32BA2497A00F445DD /* CreatePostView.swift */; };
 		E37DD2B62BA24A1400F445DD /* SeePostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B52BA24A1400F445DD /* SeePostsViewModel.swift */; };
+		E395D73A2BA3400A00FE1E5B /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395D7392BA3400A00FE1E5B /* DateUtil.swift */; };
+		E395D73C2BA3A13500FE1E5B /* KeyboardUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */; };
 		E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */; };
 		E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */; };
 		E3D703ED2B8A4981000813B9 /* SpeechAndSoundToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */; };
@@ -110,6 +112,8 @@
 		E37DD2B12BA215E500F445DD /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
 		E37DD2B32BA2497A00F445DD /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		E37DD2B52BA24A1400F445DD /* SeePostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostsViewModel.swift; sourceTree = "<group>"; };
+		E395D7392BA3400A00FE1E5B /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUtil.swift; sourceTree = "<group>"; };
 		E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtensions.swift; sourceTree = "<group>"; };
 		E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceUtils.swift; sourceTree = "<group>"; };
 		E3D703E92B8A46B9000813B9 /* Hear-it-AllUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-AllUITests-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -469,6 +473,8 @@
 				E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */,
 				E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */,
 				E305726F2B8CF9C400AF956D /* LanguageHelper.swift */,
+				E395D7392BA3400A00FE1E5B /* DateUtil.swift */,
+				E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -631,12 +637,14 @@
 				E354DAE72B9F4B47005AFD29 /* ProfileSettingsViewmodel.swift in Sources */,
 				E30572692B8CD05800AF956D /* LanguageModel.swift in Sources */,
 				D7C243EE2B6A41EC005DD0FB /* StartView.swift in Sources */,
+				E395D73C2BA3A13500FE1E5B /* KeyboardUtil.swift in Sources */,
 				E33F47F92B9F35A700AA142C /* CustomTabBar.swift in Sources */,
 				D7C243EC2B6A41EC005DD0FB /* Hear_it_AllApp.swift in Sources */,
 				E300BDE82B9E030800AA57C5 /* ProfileModel.swift in Sources */,
 				E3D901572B9B5C8F0050D935 /* SignInOrUpSubView.swift in Sources */,
 				E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */,
 				E354DAE52B9F44D7005AFD29 /* ProfileSettingsView.swift in Sources */,
+				E395D73A2BA3400A00FE1E5B /* DateUtil.swift in Sources */,
 				E37DD2AE2BA0B88F00F445DD /* NotificationInAppListener.swift in Sources */,
 				E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */,
 				E300BDF02B9E2EA000AA57C5 /* UserAuthListener.swift in Sources */,
