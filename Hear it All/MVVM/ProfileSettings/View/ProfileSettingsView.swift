@@ -18,8 +18,6 @@ struct ProfileSettingsView: View {
     @State private var photosPickerItem: PhotosPickerItem?
     
     var body: some View {
-        
-        NavigationStack{
             ZStack{
                 Color.backgroundColor.ignoresSafeArea()
                 VStack{
@@ -147,7 +145,6 @@ struct ProfileSettingsView: View {
                     }
                 }
             }
-        }
     }
 }
 
