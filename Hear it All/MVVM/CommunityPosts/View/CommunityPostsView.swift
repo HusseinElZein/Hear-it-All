@@ -134,13 +134,13 @@ struct PostView: View {
 
 #Preview {
     PostView(post: PostModel(
-        title: "How I found my purpose as half deaf",
+        titleText: "How I found my purpose as half deaf",
+        contentText: "k",
         ownerId: "Dette er indholdet",
-        theText: "k",
         date: "k",
         photo: "k",
-        comments: [""],
         likesCount: 2,
+        comments: [""],
         likedBy: [""]),
              ownerPhotoLink: "", ownerName: "Sara12")
 }

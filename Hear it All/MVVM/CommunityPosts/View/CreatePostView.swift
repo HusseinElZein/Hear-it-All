@@ -1,54 +1,33 @@
 import SwiftUI
+import PhotosUI
 
 
 struct CreatePostView: View {
-    @State private var titleText: String = ""
-    @State private var contentText: String = ""
+    @State var viewModel = CreatePostViewModel()
     
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading, spacing: 10) {
-                
-                HStack {
-                    Circle()
-                        .fill(Color.gray)
-                        .frame(width: 50, height: 50)
-                        .overlay(Text("S").foregroundStyle(.white))
-                    
-                    VStack(alignment: .leading) {
-                        Text("Sara12").bold()
-                        Text("2h ago").font(.subheadline)
-                    }
-                    Spacer()
-                }
-                .padding([.leading, .trailing])
-                
-                Divider()
-                
-                TextEditorApproachView(text: $titleText,
+            VStack{
+                TextEditorApproachView(text: $viewModel.post.titleText,
                                        fontType: .title,
                                        placeholder: "Indtast titel",
                                        sizeOfBox: 100)
-                .onChange(of: titleText) { _, newValue in
-                    titleText = newValue.replacingOccurrences(of: "\n", with: "")
+                .onChange(of: viewModel.post.titleText) { _, newValue in
+                    viewModel.post.titleText = newValue.replacingOccurrences(of: "\n", with: "")
                 }
                 
-                Image("postImage")
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(10)
-                    .padding([.leading, .trailing])
+                PickPhotoForPost(vm: viewModel)
+                    .padding(.bottom, 50)
                 
-                TextEditorApproachView(text: $contentText,
+                TextEditorApproachView(text: $viewModel.post.contentText,
                                        placeholder: "Skriv din tekst her")
-                    .padding(.bottom, 100)
+                .padding(.bottom, 100)
             }
-            
             .toolbar(content: {
                 ToolbarItem {
                     Button("Upload") {
-                        // Action for Upload
-                    }
+                        viewModel.uploadPost()
+                    }.disabled(!viewModel.isPostAcceptable())
                 }
             })
         }
@@ -66,12 +45,15 @@ struct TextEditorApproachView: View {
     var body: some View {
         VStack {
             ZStack(alignment: .topLeading) {
+                Text(text.isEmpty ? placeholder : "")
+                    .padding()
+                    .opacity(text.isEmpty ? 0.7 : 0)
+                    .underline()
                 TextEditor(text: $text)
                     .font(fontType)
                     .scrollContentBackground(.hidden)
-                    .background(Color.postBackgroundColor)
                     .clipShape(RoundedRectangle(cornerRadius: 5))
-                    .frame(minHeight: sizeOfBox == nil ? 40 : sizeOfBox, alignment: .leading)
+                    .frame(minHeight: sizeOfBox == nil ? 50 : sizeOfBox, alignment: .leading)
                     .cornerRadius(6.0)
                     .multilineTextAlignment(.leading)
                     .padding(9)
@@ -82,13 +64,73 @@ struct TextEditorApproachView: View {
                             }
                         }
                     }
-                Text(text.isEmpty ? placeholder : "")
-                    .padding()
-                    .opacity(text.isEmpty ? 0.7 : 0)
             }
         }
     }
 }
+
+
+struct PickPhotoForPost: View {
+    @State private var avatarImage: UIImage?
+    @State private var photosPickerItem: PhotosPickerItem?
+    
+    var vm: CreatePostViewModel
+    
+    var body: some View {
+        PhotosPicker(selection: $photosPickerItem, matching: .images) {
+            Group{
+                if let image = avatarImage{
+                    VStack{
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 300, height: 200)
+                            .cornerRadius(10)
+                        
+                        Button(action: {
+                            avatarImage = nil
+                            photosPickerItem = nil
+                        }, label: {
+                            Image(systemName: "trash")
+                        })
+                    }
+                }
+                else{
+                    Rectangle()
+                        .fill(Color.gray.opacity(0.3))
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(10)
+                        .overlay(
+                            VStack {
+                                Image(systemName: "photo.on.rectangle.angled")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.white)
+                                Text("Vælg foto for dit indlæg")
+                                    .foregroundColor(.white)
+                                    .padding(.top, 5)
+                            })
+                }
+            }
+        }
+        .onChange(of: photosPickerItem) { _, _ in
+            // Whenever a new image is chosen
+            Task{
+                if let photosPickerItem,
+                   let data = try? await photosPickerItem.loadTransferable(type: Data.self){
+                    
+                    vm.choosePhoto(imageData: data)
+                    
+                    if let image = UIImage(data: data){
+                        avatarImage = image
+                    }
+                }
+                photosPickerItem = nil
+            }
+        }
+    }
+}
+
+
 
 #Preview {
     CreatePostView()

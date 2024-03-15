@@ -14,7 +14,8 @@ struct StartView: View {
                 GenericStartView()
                     .backgroundStyle(Color.backgroundColor)
             }
-        }.toast(isPresenting: $notificationListener.success, duration: 5) {
+        }
+        .toast(isPresenting: $notificationListener.success, duration: 5) {
             AlertToast(displayMode: .hud, type: .complete(.green), title: NotificationInApp.message)
         }
         .toast(isPresenting: $notificationListener.error, duration: 5) {

@@ -28,6 +28,8 @@
 		E30572702B8CF9C400AF956D /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E305726F2B8CF9C400AF956D /* LanguageHelper.swift */; };
 		E30F9ADE2B90CED4007CAC23 /* SoundRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F9ADD2B90CED4007CAC23 /* SoundRecognizerViewModel.swift */; };
 		E30F9AE02B90E72C007CAC23 /* SoundSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F9ADF2B90E72C007CAC23 /* SoundSelectionView.swift */; };
+		E33A54922BA4A6DC001DF339 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A54912BA4A6DC001DF339 /* CreatePostView.swift */; };
+		E33A54942BA4A84B001DF339 /* OpenPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33A54932BA4A84B001DF339 /* OpenPostView.swift */; };
 		E33F47EB2B9F1D4700AA142C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F47EA2B9F1D4700AA142C /* ForgotPasswordView.swift */; };
 		E33F47EE2B9F2AEA00AA142C /* SoundSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F47ED2B9F2AEA00AA142C /* SoundSettingsView.swift */; };
 		E33F47F02B9F2FB200AA142C /* SoundSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F47EF2B9F2FB200AA142C /* SoundSettingsViewModel.swift */; };
@@ -38,7 +40,6 @@
 		E37DD2AE2BA0B88F00F445DD /* NotificationInAppListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2AD2BA0B88F00F445DD /* NotificationInAppListener.swift */; };
 		E37DD2B02BA1EDDF00F445DD /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2AF2BA1EDDF00F445DD /* PostModel.swift */; };
 		E37DD2B22BA215E500F445DD /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B12BA215E500F445DD /* CreatePostViewModel.swift */; };
-		E37DD2B42BA2497A00F445DD /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B32BA2497A00F445DD /* CreatePostView.swift */; };
 		E37DD2B62BA24A1400F445DD /* SeePostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B52BA24A1400F445DD /* SeePostsViewModel.swift */; };
 		E395D73A2BA3400A00FE1E5B /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395D7392BA3400A00FE1E5B /* DateUtil.swift */; };
 		E395D73C2BA3A13500FE1E5B /* KeyboardUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */; };
@@ -100,6 +101,8 @@
 		E305726F2B8CF9C400AF956D /* LanguageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageHelper.swift; sourceTree = "<group>"; };
 		E30F9ADD2B90CED4007CAC23 /* SoundRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecognizerViewModel.swift; sourceTree = "<group>"; };
 		E30F9ADF2B90E72C007CAC23 /* SoundSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSelectionView.swift; sourceTree = "<group>"; };
+		E33A54912BA4A6DC001DF339 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		E33A54932BA4A84B001DF339 /* OpenPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPostView.swift; sourceTree = "<group>"; };
 		E33F47EA2B9F1D4700AA142C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		E33F47ED2B9F2AEA00AA142C /* SoundSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsView.swift; sourceTree = "<group>"; };
 		E33F47EF2B9F2FB200AA142C /* SoundSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsViewModel.swift; sourceTree = "<group>"; };
@@ -110,7 +113,6 @@
 		E37DD2AD2BA0B88F00F445DD /* NotificationInAppListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationInAppListener.swift; sourceTree = "<group>"; };
 		E37DD2AF2BA1EDDF00F445DD /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		E37DD2B12BA215E500F445DD /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
-		E37DD2B32BA2497A00F445DD /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		E37DD2B52BA24A1400F445DD /* SeePostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostsViewModel.swift; sourceTree = "<group>"; };
 		E395D7392BA3400A00FE1E5B /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUtil.swift; sourceTree = "<group>"; };
@@ -410,7 +412,8 @@
 			isa = PBXGroup;
 			children = (
 				E33F47FA2B9F366B00AA142C /* CommunityPostsView.swift */,
-				E37DD2B32BA2497A00F445DD /* CreatePostView.swift */,
+				E33A54912BA4A6DC001DF339 /* CreatePostView.swift */,
+				E33A54932BA4A84B001DF339 /* OpenPostView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -644,12 +647,13 @@
 				E3D901572B9B5C8F0050D935 /* SignInOrUpSubView.swift in Sources */,
 				E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */,
 				E354DAE52B9F44D7005AFD29 /* ProfileSettingsView.swift in Sources */,
+				E33A54942BA4A84B001DF339 /* OpenPostView.swift in Sources */,
 				E395D73A2BA3400A00FE1E5B /* DateUtil.swift in Sources */,
+				E33A54922BA4A6DC001DF339 /* CreatePostView.swift in Sources */,
 				E37DD2AE2BA0B88F00F445DD /* NotificationInAppListener.swift in Sources */,
 				E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */,
 				E300BDF02B9E2EA000AA57C5 /* UserAuthListener.swift in Sources */,
 				E30572702B8CF9C400AF956D /* LanguageHelper.swift in Sources */,
-				E37DD2B42BA2497A00F445DD /* CreatePostView.swift in Sources */,
 				E305726C2B8CD72600AF956D /* ChooseLanguageView.swift in Sources */,
 				E305726E2B8CEC5100AF956D /* SaveToStorage.swift in Sources */,
 				E33F47FB2B9F366B00AA142C /* CommunityPostsView.swift in Sources */,

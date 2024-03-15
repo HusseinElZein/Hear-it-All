@@ -24,7 +24,6 @@ struct SignInView: View {
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 8)
                                         .stroke(Color.gray, lineWidth: 1)
-                                    
                                 ).background(.white)
                                 .padding(.horizontal, 20)
                         }
@@ -42,7 +41,6 @@ struct SignInView: View {
                                     .overlay(
                                         RoundedRectangle(cornerRadius: 8)
                                             .stroke(Color.gray, lineWidth: 1)
-                                        
                                     ).background(.white)
                                     .submitLabel(.done)
                                     .padding(.horizontal, 20)
