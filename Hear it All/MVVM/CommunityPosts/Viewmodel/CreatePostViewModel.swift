@@ -40,8 +40,7 @@ class CreatePostViewModel{
     var post = PostModel(titleText: "",
                          contentText: "",
                          ownerId: "",
-                         date: "",
-                         likesCount: 0)
+                         date: "")
     
     
     func choosePhoto(imageData: Data){

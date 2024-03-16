@@ -43,6 +43,8 @@
 		E37DD2B62BA24A1400F445DD /* SeePostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B52BA24A1400F445DD /* SeePostsViewModel.swift */; };
 		E395D73A2BA3400A00FE1E5B /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395D7392BA3400A00FE1E5B /* DateUtil.swift */; };
 		E395D73C2BA3A13500FE1E5B /* KeyboardUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */; };
+		E398550D2BA61A780015CFDE /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E398550C2BA61A780015CFDE /* CommentModel.swift */; };
+		E398550F2BA61B260015CFDE /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E398550E2BA61B260015CFDE /* CommentView.swift */; };
 		E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */; };
 		E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */; };
 		E3D703ED2B8A4981000813B9 /* SpeechAndSoundToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */; };
@@ -116,6 +118,8 @@
 		E37DD2B52BA24A1400F445DD /* SeePostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostsViewModel.swift; sourceTree = "<group>"; };
 		E395D7392BA3400A00FE1E5B /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUtil.swift; sourceTree = "<group>"; };
+		E398550C2BA61A780015CFDE /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		E398550E2BA61B260015CFDE /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtensions.swift; sourceTree = "<group>"; };
 		E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceUtils.swift; sourceTree = "<group>"; };
 		E3D703E92B8A46B9000813B9 /* Hear-it-AllUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-AllUITests-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -414,6 +418,7 @@
 				E33F47FA2B9F366B00AA142C /* CommunityPostsView.swift */,
 				E33A54912BA4A6DC001DF339 /* CreatePostView.swift */,
 				E33A54932BA4A84B001DF339 /* OpenPostView.swift */,
+				E398550E2BA61B260015CFDE /* CommentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				E37DD2AF2BA1EDDF00F445DD /* PostModel.swift */,
+				E398550C2BA61A780015CFDE /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -638,6 +644,7 @@
 				E300BDE62B9E027C00AA57C5 /* DatabaseService.swift in Sources */,
 				E33F47EB2B9F1D4700AA142C /* ForgotPasswordView.swift in Sources */,
 				E354DAE72B9F4B47005AFD29 /* ProfileSettingsViewmodel.swift in Sources */,
+				E398550F2BA61B260015CFDE /* CommentView.swift in Sources */,
 				E30572692B8CD05800AF956D /* LanguageModel.swift in Sources */,
 				D7C243EE2B6A41EC005DD0FB /* StartView.swift in Sources */,
 				E395D73C2BA3A13500FE1E5B /* KeyboardUtil.swift in Sources */,
@@ -659,6 +666,7 @@
 				E33F47FB2B9F366B00AA142C /* CommunityPostsView.swift in Sources */,
 				E37DD2B62BA24A1400F445DD /* SeePostsViewModel.swift in Sources */,
 				E30F9AE02B90E72C007CAC23 /* SoundSelectionView.swift in Sources */,
+				E398550D2BA61A780015CFDE /* CommentModel.swift in Sources */,
 				E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */,
 				E33F47F02B9F2FB200AA142C /* SoundSettingsViewModel.swift in Sources */,
 				E33F47EE2B9F2AEA00AA142C /* SoundSettingsView.swift in Sources */,

@@ -2,7 +2,7 @@ import SwiftUI
 
 
 struct CommunityPostsView: View {
-    @Bindable var seePostsViewModel = SeePostsViewModel()
+    @StateObject var seePostsViewModel = SeePostsViewModel()
     
     var body: some View {
         NavigationView{
@@ -17,6 +17,16 @@ struct CommunityPostsView: View {
                                 .padding(.top, 30)
                         }
                     }
+                    VStack{
+                        ForEach($seePostsViewModel.posts, id: \.id) { $post in
+                            PostView(post: $post) {
+                                seePostsViewModel.toggleLike(postId: post.id ?? "")
+                            }
+                        }
+                    }
+                    .padding(.bottom, 65)
+                }.refreshable {
+                    seePostsViewModel.loadAllPosts()
                 }
             }
             .navigationTitle("Indlæg")
@@ -55,62 +65,73 @@ struct AddPostButton: View {
 }
 
 struct PostView: View {
-    var post: PostModel
-    var ownerPhotoLink: String
-    var ownerName: String
+    @Binding var post: PostModel
+    var likeButtonAction: () -> Void
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                AsyncImage(url: URL(string: ownerPhotoLink)) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                    default:
-                        Circle()
-                            .fill(Color.gray)
-                            .frame(width: 40, height: 40)
-                            .overlay(Text(ownerName.first.map(String.init) ?? "")
-                                .foregroundColor(.white))
+        VStack{
+            VStack(alignment: .leading, spacing: 10){
+                HStack {
+                    AsyncImage(url: URL(string: post.ownerUrlPhoto ?? "")) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 40, height: 40)
+                                .clipShape(Circle())
+                        default:
+                            Circle()
+                                .fill(Color.gray)
+                                .frame(width: 40, height: 40)
+                                .overlay(Text(post.ownerName?.first.map(String.init) ?? "")
+                                    .foregroundColor(.white))
+                        }
                     }
+                    VStack(alignment: .leading) {
+                        Text(post.ownerName ?? "").font(.headline)
+                        Text(DateUtil.getTimeAgo(from: post.date))
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    
+                    Spacer()
                 }
+                .padding([.horizontal, .top])
                 
-                VStack(alignment: .leading) {
-                    Text(ownerName).font(.headline)
-                    Text("2h ago").font(.subheadline)
-                }
-                
-                Spacer()
+                // Post title
+                Text(post.titleText)
+                    .font(.title3)
+                    .padding(.horizontal)
             }
-            .padding([.horizontal, .top])
-            
-            // Post title
-            Text("How I found my purpose as half deaf")
-                .font(.title3)
-                .padding(.horizontal)
             
             // Post image
-            if post.photo != nil{
-                Image("postImage") // Replace with actual image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
+            if let url = URL(string: post.photo ?? ""){
+                AsyncImage(url: url) { image in
+                    image.image?
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 300, height: 200)
+                        .cornerRadius(10)
+                }
             }
             
             // Like and comment count
             HStack {
                 Button(action: {
-                    // Handle like action
+                    likeButtonAction()
                 }) {
                     Image(systemName: "heart")
-                        .foregroundStyle(.black)
+                        .symbolVariant(post.isLiked ?? false ? .fill : .none)
+                        .foregroundStyle(post.isLiked ?? false ? .red : .black)
                 }
-                Text("200 likes")
+                Group{
+                    if post.likesCount == 1{
+                        Text("\(post.likesCount) like")
+                    }else{
+                        Text("\(post.likesCount) likes")
+                    }
+                }
                 
                 Spacer()
                 
@@ -122,6 +143,7 @@ struct PostView: View {
                 }
                 Text("120 comments")
             }
+            .animation(.easeInOut, value: post.likesCount)
             .padding([.horizontal, .bottom])
             .font(.subheadline)
         }
@@ -133,7 +155,7 @@ struct PostView: View {
 }
 
 #Preview {
-    PostView(post: PostModel(
+    PostView(post: .constant( PostModel(
         titleText: "How I found my purpose as half deaf",
         contentText: "k",
         ownerId: "Dette er indholdet",
@@ -141,6 +163,5 @@ struct PostView: View {
         photo: "k",
         likesCount: 2,
         comments: [""],
-        likedBy: [""]),
-             ownerPhotoLink: "", ownerName: "Sara12")
+        ownerName: "saraawa")), likeButtonAction: {})
 }
