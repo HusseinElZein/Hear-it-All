@@ -29,4 +29,7 @@ extension Color {
     public static var postBackgroundColor: Color {
         return Color(hex: "FFFAF0")
     }
+    public static var overlayDarkColor: Color {
+        return Color(hex: "353535")
+    }
 }

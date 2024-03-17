@@ -4,10 +4,11 @@ import PhotosUI
 
 struct CreatePostView: View {
     @State var viewModel = CreatePostViewModel()
-    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
-        ScrollView{
-            VStack{
+        ScrollView {
+            VStack {
                 TextEditorApproachView(text: $viewModel.post.titleText,
                                        fontType: .title,
                                        placeholder: "Indtast titel",
@@ -23,18 +24,21 @@ struct CreatePostView: View {
                                        placeholder: "Skriv din tekst her")
                 .padding(.bottom, 100)
             }
-            .toolbar(content: {
+            .toolbar {
                 ToolbarItem {
                     Button("Upload") {
                         viewModel.uploadPost()
-                    }.disabled(!viewModel.isPostAcceptable())
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    .disabled(!viewModel.isPostAcceptable())
                 }
-            })
+            }
         }
         .background(Color.backgroundColor)
         .tint(.black)
     }
 }
+
 
 struct TextEditorApproachView: View {
     @Binding var text: String

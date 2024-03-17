@@ -19,7 +19,7 @@ struct CommunityPostsView: View {
                     }
                     VStack{
                         ForEach($seePostsViewModel.posts, id: \.id) { $post in
-                            PostView(post: $post) {
+                            PostView(post: $post, vm: seePostsViewModel) {
                                 seePostsViewModel.toggleLike(postId: post.id ?? "")
                             }
                         }
@@ -66,53 +66,71 @@ struct AddPostButton: View {
 
 struct PostView: View {
     @Binding var post: PostModel
+    var vm: SeePostsViewModel
     var likeButtonAction: () -> Void
     
     var body: some View {
         VStack{
-            VStack(alignment: .leading, spacing: 10){
-                HStack {
-                    AsyncImage(url: URL(string: post.ownerUrlPhoto ?? "")) { phase in
-                        switch phase {
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
-                        default:
-                            Circle()
-                                .fill(Color.gray)
-                                .frame(width: 40, height: 40)
-                                .overlay(Text(post.ownerName?.first.map(String.init) ?? "")
-                                    .foregroundColor(.white))
+            VStack(spacing: 10){
+                NavigationLink {
+                    OpenPostView(post: $post)
+                } label: {
+                    VStack{
+                        HStack {
+                            AsyncImage(url: URL(string: post.ownerUrlPhoto ?? "")) { phase in
+                                switch phase {
+                                case .success(let image):
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(Circle())
+                                default:
+                                    Circle()
+                                        .fill(Color.gray)
+                                        .frame(width: 40, height: 40)
+                                        .overlay(Text(post.ownerName?.first.map(String.init) ?? "")
+                                            .foregroundColor(.white))
+                                }
+                            }
+                            VStack(alignment: .leading) {
+                                Text(post.ownerName ?? "")
+                                    .font(.headline)
+                                    .foregroundStyle(.black)
+                                Text(DateUtil.getTimeAgo(from: post.date))
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                            
+                            Spacer()
+                        }
+                        .padding([.horizontal, .top])
+                        
+                        HStack(){
+                            Text(post.titleText)
+                                .font(.title3)
+                                .multilineTextAlignment(.leading)
+                                .padding(.horizontal)
+                                .foregroundStyle(.black)
+                            Spacer()
                         }
                     }
-                    VStack(alignment: .leading) {
-                        Text(post.ownerName ?? "").font(.headline)
-                        Text(DateUtil.getTimeAgo(from: post.date))
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                    }
-                    
-                    Spacer()
                 }
-                .padding([.horizontal, .top])
-                
-                // Post title
-                Text(post.titleText)
-                    .font(.title3)
-                    .padding(.horizontal)
-            }
-            
-            // Post image
-            if let url = URL(string: post.photo ?? ""){
-                AsyncImage(url: url) { image in
-                    image.image?
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 300, height: 200)
-                        .cornerRadius(10)
+                NavigationLink {
+                    OpenPostView(post: $post)
+                } label: {
+                    VStack{
+                        // Post image
+                        if let url = URL(string: post.photo ?? ""){
+                            AsyncImage(url: url) { image in
+                                image.image?
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 300, height: 200)
+                                    .cornerRadius(10)
+                            }
+                        }
+                    }
                 }
             }
             
@@ -141,10 +159,10 @@ struct PostView: View {
                     Image(systemName: "message")
                         .foregroundStyle(.black)
                 }
-                Text("120 comments")
+                Text("\(post.commentsCount ?? 0) kommentarer")
             }
             .animation(.easeInOut, value: post.likesCount)
-            .padding([.horizontal, .bottom])
+            .padding([.horizontal, .bottom, .top])
             .font(.subheadline)
         }
         .background(Color.postBackgroundColor)
@@ -159,9 +177,10 @@ struct PostView: View {
         titleText: "How I found my purpose as half deaf",
         contentText: "k",
         ownerId: "Dette er indholdet",
-        date: "k",
-        photo: "k",
+        date: "08/09/2023 22:30",
+        photo: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG98ZW58MHx8MHx8fDA%3D",
         likesCount: 2,
         comments: [""],
-        ownerName: "saraawa")), likeButtonAction: {})
+        ownerName: "saraawa")), vm: SeePostsViewModel(), likeButtonAction: {}
+    )
 }
