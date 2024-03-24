@@ -4,6 +4,7 @@ import PhotosUI
 
 struct OpenPostView: View {
     @Binding var post: PostModel
+    var likeButtonAction: () -> Void
     
     var body: some View {
         ScrollView{
@@ -71,7 +72,7 @@ struct OpenPostView: View {
             }
         }
         .overlay(alignment: .bottom, content: {
-            LikeOrCommentOverlay()
+            LikeOrCommentOverlay(post: $post, likeButtonAction: likeButtonAction)
                 .padding(.bottom, 65)
         })
         .background(Color.backgroundColor)
@@ -82,6 +83,8 @@ struct OpenPostView: View {
 
 struct LikeOrCommentOverlay: View {
     @Binding var post: PostModel
+    var likeButtonAction: () -> Void
+    @State var showCommentsSheet = false
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
@@ -91,25 +94,31 @@ struct LikeOrCommentOverlay: View {
                 HStack{
                     Spacer()
                     Button {
+                        likeButtonAction()
                     } label: {
                         Image(systemName: "heart")
+                            .symbolVariant(post.isLiked ?? false ? .fill : .none)
                             .foregroundStyle(.white)
+                            .animation(.easeInOut, value: post.isLiked)
                     }
                     Spacer()
-                    Button(action: {}, label: {
+                    Button(action: {
+                        showCommentsSheet = true
+                    }, label: {
                         Image(systemName: "message")
                             .foregroundStyle(.white)
                     })
-                    
                     Spacer()
                 }
             }
+            .sheet(isPresented: $showCommentsSheet, content: {
+                CommentView(postId: post.id ?? "")
+            })
     }
 }
 
 
 #Preview {
     OpenPostView(
-        post: .constant(PostModel(titleText: "This is a test title", contentText: "This is test content text is it a good test? Is it working at the moment?", ownerId: "Some id", date: "08/09/2001 23:30"))
-    )
+        post: .constant(PostModel(titleText: "This is a test title", contentText: "This is test content text is it a good test? Is it working at the moment?", ownerId: "Some id", date: "08/09/2001 23:30")), likeButtonAction: {})
 }

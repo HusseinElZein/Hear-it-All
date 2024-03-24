@@ -41,6 +41,9 @@ struct CommunityPostsView: View {
                 }
             }
         }.tint(.black)
+            .onAppear {
+                seePostsViewModel.loadAllPosts()
+            }
     }
 }
 
@@ -74,7 +77,7 @@ struct PostView: View {
         VStack{
             VStack(spacing: 10){
                 NavigationLink {
-                    OpenPostView(post: $post)
+                    OpenPostView(post: $post, likeButtonAction: likeButtonAction)
                 } label: {
                     VStack{
                         HStack {
@@ -118,7 +121,7 @@ struct PostView: View {
                     }
                 }
                 NavigationLink {
-                    OpenPostView(post: $post)
+                    OpenPostView(post: $post, likeButtonAction: likeButtonAction)
                 } label: {
                     VStack{
                         // Post image

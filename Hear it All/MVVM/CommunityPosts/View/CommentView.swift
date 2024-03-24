@@ -14,20 +14,20 @@ struct CommentView: View {
             .onAppear {
                 viewModel.loadAllComments(for: postId)
             }
+            .padding(.top)
             
             CommentInputView(postId: postId, viewModel: viewModel)
         }.background(Color.backgroundColor)
     }
 }
 
-struct OneComment: View {
+private struct OneComment: View {
     @Binding var comment: CommentModel
-
-    var onDelete: (() -> Void)?
+    
+    var onDelete: () -> Void
     
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
-            // Profile Image
             if let imageUrl = comment.profilePhotoUrl, let url = URL(string: imageUrl) {
                 AsyncImage(url: url) { phase in
                     switch phase {
@@ -43,52 +43,45 @@ struct OneComment: View {
                 }
                 .frame(width: 50, height: 50)
                 .clipShape(Circle())
-            } else {
-                Image(systemName: "person.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-                    .background(Color.gray.opacity(0.3))
             }
-
+            
             // Comment details
             VStack(alignment: .leading, spacing: 4) {
-                // User Name and Timestamp
                 HStack {
                     Text(comment.displayName ?? "")
                         .font(.system(size: 14, weight: .semibold))
-                    
                     Spacer()
-                    
                     Text(DateUtil.getTimeAgo(from: comment.date))
                         .font(.system(size: 12))
                         .foregroundColor(.gray)
                 }
                 
+                
                 // Comment Text
                 Text(comment.contentText)
                     .font(.system(size: 14))
                     .foregroundColor(.primary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // Delete Button
                 if comment.isOwned == true {
                     Button("slet", action: {
-                        onDelete?()
+                        onDelete()
                     })
                     .font(.system(size: 12))
                     .foregroundColor(.red)
                 }
             }
-            Spacer()
         }
-        .background(.white.opacity(0.8))
         .padding(.horizontal)
         .padding(.vertical, 8)
+        .background(Color.white.opacity(0.8))
+        .cornerRadius(8) // Add a corner radius if desired
     }
 }
 
 
-struct CommentInputView: View {
+private struct CommentInputView: View {
     var postId: String
     @StateObject var viewModel: CommentViewModel
     @State private var newCommentText = ""
