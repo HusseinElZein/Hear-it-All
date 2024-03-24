@@ -68,6 +68,7 @@ struct PostView: View {
     @Binding var post: PostModel
     var vm: SeePostsViewModel
     var likeButtonAction: () -> Void
+    @State var showCommentSheet = false
     
     var body: some View {
         VStack{
@@ -142,24 +143,28 @@ struct PostView: View {
                     Image(systemName: "heart")
                         .symbolVariant(post.isLiked ?? false ? .fill : .none)
                         .foregroundStyle(post.isLiked ?? false ? .red : .black)
-                }
-                Group{
-                    if post.likesCount == 1{
-                        Text("\(post.likesCount) like")
-                    }else{
-                        Text("\(post.likesCount) likes")
+                    Group{
+                        if post.likesCount == 1{
+                            Text("\(post.likesCount) like")
+                        }else{
+                            Text("\(post.likesCount) likes")
+                        }
                     }
                 }
+                
                 
                 Spacer()
                 
                 Button(action: {
-                    // Handle comment action
+                    showCommentSheet = true
                 }) {
                     Image(systemName: "message")
                         .foregroundStyle(.black)
-                }
-                Text("\(post.commentsCount ?? 0) kommentarer")
+                    Text("kommentarer")
+                }.sheet(isPresented: $showCommentSheet, content: {
+                    CommentView(postId: post.id ?? "")
+                })
+                
             }
             .animation(.easeInOut, value: post.likesCount)
             .padding([.horizontal, .bottom, .top])
@@ -180,7 +185,6 @@ struct PostView: View {
         date: "08/09/2023 22:30",
         photo: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG98ZW58MHx8MHx8fDA%3D",
         likesCount: 2,
-        comments: [""],
         ownerName: "saraawa")), vm: SeePostsViewModel(), likeButtonAction: {}
     )
 }

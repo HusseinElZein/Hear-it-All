@@ -81,6 +81,7 @@ struct OpenPostView: View {
 
 
 struct LikeOrCommentOverlay: View {
+    @Binding var post: PostModel
     
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
