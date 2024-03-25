@@ -16,4 +16,5 @@ struct PostModel: Codable, Identifiable {
     var ownerUrlPhoto: String?
     var ownerName: String?
     var isLiked: Bool?
+    var isOwned: Bool?
 }

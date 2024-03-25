@@ -15,7 +15,7 @@ struct CustomTabBar: View {
                 if selection == 0 {
                     SpeechAndSoundToTextView()
                 } else if selection == 1 {
-                    CommunityPostsView()
+                    SeePostsView()
                 }
             }.overlay(alignment: .bottom){
                 HStack {

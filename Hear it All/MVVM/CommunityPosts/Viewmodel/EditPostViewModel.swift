@@ -5,7 +5,7 @@ import FirebaseStorage
 
 
 @Observable
-class CreatePostViewModel{
+class EditPostViewModel{
     private var db = DatabaseService.db
     private var auth = DatabaseService.auth
     
@@ -37,7 +37,7 @@ class CreatePostViewModel{
         }
     }
     
-    var post = PostModel(titleText: "",
+    var post: PostModel = PostModel(titleText: "",
                          contentText: "",
                          ownerId: "",
                          date: "")
@@ -84,7 +84,7 @@ class CreatePostViewModel{
         }
     }
     
-    func uploadPost() {
+    func updatePost() {
         post.ownerId = profile?.id ?? "noId"
         post.date = DateUtil.getDateNow()
         

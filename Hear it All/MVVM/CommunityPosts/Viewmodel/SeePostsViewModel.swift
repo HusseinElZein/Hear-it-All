@@ -8,12 +8,14 @@ class SeePostsViewModel : ObservableObject{
     let db = DatabaseService.db
     let auth = DatabaseService.auth
     
+    var profile: ProfileModel?
+    
     @Published var likedPosts = [String]()
     @Published var posts = [PostModel]()
     
     init(){
+        fetchProfileData()
         fetchLikedPosts()
-        loadAllPosts()
     }
     
     func loadAllPosts() {
@@ -32,8 +34,11 @@ class SeePostsViewModel : ObservableObject{
                     if likedPosts.contains(posts[i].id ?? ""){
                         posts[i].isLiked = true
                     }
+                    if posts[i].ownerId == profile?.id{
+                        posts[i].isOwned = true
+                    }
                 }
-
+                
                 // Sort posts by date
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
@@ -44,9 +49,7 @@ class SeePostsViewModel : ObservableObject{
                     }
                     return firstDate > secondDate
                 }
-
                 self.posts = posts
-                
                 NotificationInApp.loading = false
             } catch {
                 NotificationInApp.loading = false
@@ -78,10 +81,10 @@ class SeePostsViewModel : ObservableObject{
         guard let userEmail = auth.currentUser?.email else {
             return
         }
-
+        
         let profilesRef = db.collection("profiles")
         let postRef = db.collection("posts").document(postId)
-
+        
         profilesRef.whereField("email", isEqualTo: userEmail).getDocuments { [weak self] querySnapshot, _ in
             guard let self = self, let profileDocument = querySnapshot?.documents.first else {
                 return
@@ -114,8 +117,8 @@ class SeePostsViewModel : ObservableObject{
                             return false
                         }
                     } completion: { _, error in
-                        if let error = error {
-                            print("Transaction failed: \(error.localizedDescription)")
+                        if error != nil {
+                            
                         } else {
                             // Ensures UI updates occur on the main thread.
                             DispatchQueue.main.async {
@@ -144,7 +147,7 @@ class SeePostsViewModel : ObservableObject{
     
     func getProfilePictureLinkAndNameForOwner(ownerId: String) async -> (url: String?, name: String?) {
         let documentReference = db.collection("profiles").document(ownerId)
-
+        
         do {
             let document = try await documentReference.getDocument()
             let profilePhotoLink = document.data()?["profilePhoto"] as? String
@@ -153,6 +156,36 @@ class SeePostsViewModel : ObservableObject{
         } catch {
             // Handle the error appropriately, maybe log it or return default values
             return (nil, nil)
+        }
+    }
+    
+    private func fetchProfileData() {
+        guard let email = auth.currentUser?.email else {
+            return
+        }
+        
+        let query = db.collection("profiles").whereField("email", isEqualTo: email)
+        
+        query.getDocuments { (querySnapshot, error) in
+            
+            if error != nil{return}
+            
+            guard let document = querySnapshot?.documents.first else {return}
+            
+            do {
+                let profile = try document.data(as: ProfileModel.self)
+                self.profile = profile
+            } catch {}
+        }
+    }
+    
+    func deletePost(postId: String) {
+        db.collection("posts").document(postId).delete { error in
+            if error != nil {
+                
+            } else {
+                // Successfully deleted post
+            }
         }
     }
 }

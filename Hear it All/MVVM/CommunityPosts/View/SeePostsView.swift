@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-struct CommunityPostsView: View {
+struct SeePostsView: View {
     @StateObject var seePostsViewModel = SeePostsViewModel()
     
     var body: some View {
@@ -41,31 +41,42 @@ struct CommunityPostsView: View {
                 }
             }
         }.tint(.black)
-            .onAppear {
-                seePostsViewModel.loadAllPosts()
-            }
     }
 }
 
 #Preview {
-    CommunityPostsView()
+    SeePostsView()
 }
 
 struct AddPostButton: View {
     var body: some View {
-        HStack {
-            Text("Opret post")
-                .font(.system(size: 16, weight: .medium, design: .default))
-            Spacer()
-            Image(systemName: "plus")
+        VStack{
+            HStack {
+                Text("Opret post")
+                    .font(.system(size: 16, weight: .medium, design: .default))
+                    .foregroundColor(.white)
+
+                Spacer()
+
+                Image(systemName: "plus")
+                    .foregroundColor(.white)
+            }
+            .padding(.vertical, 22)
+            .padding(.horizontal)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.orange, Color.purple]), startPoint: .leading, endPoint: .trailing)
+            )
+            .cornerRadius(15)
+            .shadow(color: Color.orange.opacity(0.3), radius: 10, x: 0, y: 10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom), lineWidth: 1)
+            )
         }
-        .padding()
-        .foregroundColor(.white)
-        .background(Color.gray)
-        .cornerRadius(5)
-        .padding(.horizontal, 25)
+        .padding(.horizontal)
     }
 }
+
 
 struct PostView: View {
     @Binding var post: PostModel
@@ -154,8 +165,6 @@ struct PostView: View {
                         }
                     }
                 }
-                
-                
                 Spacer()
                 
                 Button(action: {
@@ -167,11 +176,23 @@ struct PostView: View {
                 }.sheet(isPresented: $showCommentSheet, content: {
                     CommentView(postId: post.id ?? "")
                 })
-                
             }
             .animation(.easeInOut, value: post.likesCount)
             .padding([.horizontal, .bottom, .top])
             .font(.subheadline)
+            
+            
+            if post.isOwned ?? false{
+                Menu {
+                    Button("Redigér", action: {})
+                    Button("Slet", action: {})
+                } label: {
+                    Image(systemName: "ellipsis")
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(.gray)
+                }
+                .padding(.bottom, 5)
+            }
         }
         .background(Color.postBackgroundColor)
         .cornerRadius(5)
