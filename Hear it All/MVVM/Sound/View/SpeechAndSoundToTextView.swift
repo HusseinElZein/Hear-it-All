@@ -67,6 +67,10 @@ struct SpeechAndSoundToTextView: View {
                     
                     Spacer()
                     
+                    Button("Crash") {
+                      fatalError("Crash was triggered")
+                    }
+                    
                     //The start and stop button
                     Button {
                         withAnimation {
