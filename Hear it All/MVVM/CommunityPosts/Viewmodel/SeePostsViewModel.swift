@@ -3,7 +3,10 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-
+/// A view model class for managing the display and interaction with posts.
+/// It fetches and paginates posts, manages likes, comments, and deletion of posts.
+///
+/// - Author: Hussein El-Zein
 class SeePostsViewModel : ObservableObject{
     let db = DatabaseService.db
     let auth = DatabaseService.auth
@@ -19,6 +22,7 @@ class SeePostsViewModel : ObservableObject{
         loadPosts()
     }
     
+    /// Refreshes the posts list by resetting the pagination and fetching the first set of posts again.
     func refreshPosts(){
         lastDocumentSnapshot = nil
         self.posts = []
@@ -26,8 +30,13 @@ class SeePostsViewModel : ObservableObject{
         loadPosts()
     }
     
+    /// Indicates whether the post loading process is ongoing.
     @Published var isLoading = false
+    
+    /// The last document snapshot used for paginating the posts.
     private var lastDocumentSnapshot: DocumentSnapshot?
+    
+    /// Loads the next set of posts, paginated, from Firestore.
     func loadPosts(limit: Int = 6) {
         guard !isLoading else { return }
 
@@ -71,7 +80,7 @@ class SeePostsViewModel : ObservableObject{
         }
     }
 
-    
+    /// Fetches the list of post IDs that the current user has liked
     private func fetchLikedPosts() {
         guard let userEmail = auth.currentUser?.email else {
             return

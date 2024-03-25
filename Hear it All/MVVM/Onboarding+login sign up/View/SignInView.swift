@@ -1,5 +1,7 @@
 import SwiftUI
 
+
+///To sign in
 struct SignInView: View {
     var viewModel: SignViewModel
     @State var email = ""
@@ -72,7 +74,7 @@ struct SignInView: View {
                         .disabled(!viewModel.signInCredsAcceptable(email: email, password: password))
                 }.background(Color.backgroundColor)
                     .sheet(isPresented: $showForgotPassword, content: {
-                        ForgotPasswordView(viewModel: viewModel)
+                        ForgotPasswordView(viewModel: viewModel, showMe: $showForgotPassword)
                     })
             }
         }

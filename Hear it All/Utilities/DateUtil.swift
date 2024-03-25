@@ -1,6 +1,7 @@
 import Foundation
 
-
+///The date in milliseconds, used on posts and comments. If it is 2 years ago, 2 months ago, etc., and to sort posts
+///You get date now to upload now, and getTimeAgo to see how much time ago it was
 class DateUtil {
     
     static func getDateNow() -> String {

@@ -1,6 +1,8 @@
 import Foundation
 import SwiftUI
 
+
+///In order to quicly copy paste hex code into the color, from for example Figma
 extension Color {
     init(hex: String) {
         var cleanHexCode = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -16,6 +18,7 @@ extension Color {
     }
 }
 
+///The colors used throughout the application
 extension Color {
     public static var backgroundColor: Color {
         return Color(hex: "FBF0E5")

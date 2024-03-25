@@ -1,14 +1,9 @@
-//
-//  ForgotPasswordView.swift
-//  Hear it All
-//
-//  Created by Hussein El-Zein on 11/03/2024.
-//
-
 import SwiftUI
 
+///To forget password
 struct ForgotPasswordView: View {
     var viewModel: SignViewModel
+    @Binding var showMe: Bool
     @State var email = ""
     
     var body: some View {
@@ -44,6 +39,7 @@ struct ForgotPasswordView: View {
                 
                 Button {
                     viewModel.forgotPassword(email: email)
+                    showMe = false
                 } label: {
                     Text("Send mail")
                         .padding(.vertical, 10)
@@ -60,5 +56,5 @@ struct ForgotPasswordView: View {
 }
 
 #Preview {
-    ForgotPasswordView(viewModel: SignViewModel())
+    ForgotPasswordView(viewModel: SignViewModel(), showMe: .constant(true))
 }

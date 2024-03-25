@@ -2,6 +2,8 @@ import Foundation
 import Combine
 import FirebaseAuth
 
+
+///The listener that the app start uses to determine which screen to show
 @Observable
 class UserAuthenticationListener{
     var isUserAuthenticated: Bool = false

@@ -5,6 +5,9 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 
+/// A view model class for managing profile settings.
+///
+/// - Author: Hussein El-Zein
 @Observable
 class ProfileSettingsViewmodel {
     var profile: ProfileModel?

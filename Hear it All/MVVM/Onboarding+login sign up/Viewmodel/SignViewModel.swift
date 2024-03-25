@@ -1,6 +1,8 @@
 import Foundation
 import FirebaseAuth
 
+
+///Used to sign in, sign up, or forgot password
 @Observable
 class SignViewModel{
     
@@ -8,12 +10,10 @@ class SignViewModel{
         NotificationInApp.loading = true
         DatabaseService.auth.signIn(withEmail: email, password: password){authResult, error in
             if error == nil{
-                //If there is not an error
                 NotificationInApp.loading = false
                 NotificationInApp.success = true
                 NotificationInApp.message = "Logget ind nu!"
             }else{
-                //If there is an error
                 NotificationInApp.loading = false
                 NotificationInApp.error = true
                 NotificationInApp.message = "Mail el. adgangskode er forkert"
@@ -25,7 +25,6 @@ class SignViewModel{
         NotificationInApp.loading = true
         DatabaseService.auth.createUser(withEmail: email, password: password){authResult, error in
             if error == nil{
-                //If there is not an error
                 NotificationInApp.loading = false
                 let profile = ProfileModel(displayName: displayName, email: email.lowercased())
                 try? DatabaseService.db.collection("profiles").document().setData(from: profile)
@@ -33,7 +32,6 @@ class SignViewModel{
                 NotificationInApp.success = true
                 NotificationInApp.message = "Oprettet ny profil!"
             }else{
-                //If there is an error
                 NotificationInApp.loading = false
                 NotificationInApp.error = true
                 NotificationInApp.message = "Mail el. adgangskode er forkert"
@@ -41,6 +39,7 @@ class SignViewModel{
         }
     }
     
+    ///To disable button or be able to sign in, there are some criteria for the input
     func signInCredsAcceptable(email: String, password: String) -> Bool{
         if !email.contains("@") || !email.contains("."){return false}
         if password.count < 6{return false}
@@ -48,6 +47,7 @@ class SignViewModel{
         return true
     }
     
+    ///To disable button or be able to sign up, there are some criteria for the input
     func signUpCredsAcceptable(displayName: String, email: String, password: String) -> Bool{
         if displayName.isEmpty{return false}
         if !email.contains("@") || !email.contains("."){return false}

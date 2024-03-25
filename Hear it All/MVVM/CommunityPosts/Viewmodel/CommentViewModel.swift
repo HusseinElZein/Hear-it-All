@@ -3,6 +3,11 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+
+/// A view model class for managing comments related to a specific post.
+/// It handles fetching, adding, and deleting comments, as well as fetching additional profile data for comment authors.
+///
+/// - Author: Hussein El-Zein
 class CommentViewModel: ObservableObject {
     let db = DatabaseService.db
     let auth = DatabaseService.auth
@@ -45,15 +50,12 @@ class CommentViewModel: ObservableObject {
         }
     }
 
-    // Assuming fetchComments is an async function
     func fetchComments(for postId: String) async -> [CommentModel] {
-        // Fetch comments asynchronously
         do {
             let querySnapshot = try await db.collection("posts").document(postId).collection("comments").getDocuments()
             var comments = querySnapshot.documents.compactMap { document -> CommentModel? in
                 try? document.data(as: CommentModel.self)
             }
-            // Process each comment
             for i in 0..<comments.count {
                 let (url, name) = await getProfilePictureLinkAndNameForOwner(ownerId: comments[i].ownerId)
                 comments[i].profilePhotoUrl = url
@@ -84,6 +86,7 @@ class CommentViewModel: ObservableObject {
         loadAllComments(for: postId)
     }
     
+    /// Fetches the profile picture URL and display name for a given user (comment owner).
     func getProfilePictureLinkAndNameForOwner(ownerId: String) async -> (url: String?, name: String?) {
         let documentReference = db.collection("profiles").document(ownerId)
         do {

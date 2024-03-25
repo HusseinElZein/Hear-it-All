@@ -241,7 +241,6 @@
 		E33F47EC2B9F2A6800AA142C /* ProfileSettings */ = {
 			isa = PBXGroup;
 			children = (
-				E33F47F72B9F34FB00AA142C /* Model */,
 				E33F47F62B9F34F600AA142C /* View */,
 				E33F47F52B9F34E800AA142C /* Viewmodel */,
 			);
@@ -251,18 +250,9 @@
 		E33F47F12B9F34B500AA142C /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				E33F47F42B9F34DE00AA142C /* Model */,
 				E33F47F32B9F34D800AA142C /* View */,
-				E33F47F22B9F34D000AA142C /* Viewmodel */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		E33F47F22B9F34D000AA142C /* Viewmodel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Viewmodel;
 			sourceTree = "<group>";
 		};
 		E33F47F32B9F34D800AA142C /* View */ = {
@@ -271,13 +261,6 @@
 				E33F47F82B9F35A700AA142C /* CustomTabBar.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E33F47F42B9F34DE00AA142C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E33F47F52B9F34E800AA142C /* Viewmodel */ = {
@@ -294,13 +277,6 @@
 				E354DAE42B9F44D7005AFD29 /* ProfileSettingsView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E33F47F72B9F34FB00AA142C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E3D703EB2B8A4931000813B9 /* MVVM */ = {
@@ -349,7 +325,6 @@
 		E3FF4D272B8A2E5100A132EB /* SoundSettings */ = {
 			isa = PBXGroup;
 			children = (
-				E3FF4D332B8A2FBB00A132EB /* Model */,
 				E3FF4D322B8A2FA900A132EB /* View */,
 				E3FF4D312B8A2FA000A132EB /* Viewmodel */,
 			);
@@ -458,13 +433,6 @@
 				E3C22A662BB1C84000FD3E08 /* PrivacyPolicyView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		E3FF4D332B8A2FBB00A132EB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E3FF4D342B8A2FC600A132EB /* App */ = {

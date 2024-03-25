@@ -3,6 +3,10 @@ import Speech
 import AVFoundation
 import SwiftUI
 
+/// A class responsible for handling speech recognition using Apple's `SFSpeechRecognizer`.
+/// This class manages the audio session, speech recognition request, and processing of recognized text.
+///
+/// - Author: Hussein El-Zein
 class SpeechRecognizer: NSObject, ObservableObject {
     private var audioEngine = AVAudioEngine()
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -91,6 +95,7 @@ class SpeechRecognizer: NSObject, ObservableObject {
         self.transcribedText = ""
     }
     
+    /// Toggles the speech recognition process on or off based on the given parameters.
     func handleToggle(isEnabled: Bool, wordsToCount: Int){
         self.wordsToCount = wordsToCount
         if !isEnabled {return}

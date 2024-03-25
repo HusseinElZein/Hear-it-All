@@ -1,5 +1,6 @@
 import SwiftUI
 
+///Choosing whether to sign in or sign up
 struct SignInOrUpSubView: View {
     @Bindable var viewModel = SignViewModel()
     @State var show = true

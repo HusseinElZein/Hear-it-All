@@ -1,12 +1,15 @@
 import Foundation
 
-struct LanguageModel: Identifiable { /*, Codable*/
+
+///Language model to choose different languges
+struct LanguageModel: Identifiable {
     var id : String = UUID().uuidString
     var title: String
     var locale_id: String
     var emoji: String
 }
 
+///Language data list to choose from easily
 let languageModelData: [LanguageModel] = [
     LanguageModel(title: "Dansk", locale_id: "da-DE", emoji: "🇩🇰"),
     LanguageModel(title: "Engelsk", locale_id: "en-US", emoji: "🇺🇸"),

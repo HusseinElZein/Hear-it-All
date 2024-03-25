@@ -1,7 +1,10 @@
 import SwiftUI
 import PhotosUI
 
-
+/// A view for displaying the full details of a post, including the option to like or comment on the post.
+/// This view presents the post's content in a scrollable format with an overlay for interaction.
+///
+/// - Author: Hussein El-Zein
 struct OpenPostView: View {
     @Binding var post: PostModel
     var likeButtonAction: () -> Void
@@ -81,6 +84,10 @@ struct OpenPostView: View {
 }
 
 
+/// A view overlay providing like and comment buttons for a post.
+/// This overlay allows users to interact with the post directly from the view.
+///
+/// - Author: Hussein El-Zein
 struct LikeOrCommentOverlay: View {
     @Binding var post: PostModel
     var likeButtonAction: () -> Void

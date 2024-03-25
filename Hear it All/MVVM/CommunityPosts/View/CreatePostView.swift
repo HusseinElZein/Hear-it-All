@@ -1,7 +1,10 @@
 import SwiftUI
 import PhotosUI
 
-
+/// A view for creating and uploading a new post.
+/// This view includes text editors for title and content, and a photo picker for adding an image to the post.
+///
+/// - Author: Hussein El-Zein
 struct CreatePostView: View {
     @State var viewModel = CreatePostViewModel()
     @Binding var posts: [PostModel]
@@ -42,7 +45,7 @@ struct CreatePostView: View {
     }
 }
 
-
+/// A custom text editor view that supports placeholder text and customized font and sizing.
 struct TextEditorApproachView: View {
     @Binding var text: String
     var fontType: Font?
@@ -76,7 +79,7 @@ struct TextEditorApproachView: View {
     }
 }
 
-
+/// A view for selecting a photo to attach to the post, with a preview and option to remove the selected photo.
 struct PickPhotoForPost: View {
     @State private var avatarImage: UIImage?
     @State private var photosPickerItem: PhotosPickerItem?

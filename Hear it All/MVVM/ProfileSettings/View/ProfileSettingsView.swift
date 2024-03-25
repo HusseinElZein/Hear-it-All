@@ -1,7 +1,10 @@
 import SwiftUI
 import PhotosUI
 
-
+/// A view model class for editing and updating an existing post.
+/// It manages the post data, handles image selection, and updates the post and associated image in Firestore.
+///
+/// - Author: Hussein El-Zein
 struct ProfileSettingsView: View {
     
     @State private var showingEditProfilePicture = false

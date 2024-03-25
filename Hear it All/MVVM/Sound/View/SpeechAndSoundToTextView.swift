@@ -1,5 +1,11 @@
 import SwiftUI
 
+
+/// A view that combines speech and sound recognition into a single user interface.
+/// This view uses two main components: `SpeechRecognizer` and `SoundRecognizer` to handle the respective functionalities.
+/// The user can interact with the view to start or stop the recognition processes and navigate to settings or selection screens.
+///
+/// - Author: Hussein El-Zein
 struct SpeechAndSoundToTextView: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @StateObject private var soundRecognizer = SoundRecognizer()

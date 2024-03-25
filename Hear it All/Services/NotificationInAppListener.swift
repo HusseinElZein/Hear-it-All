@@ -1,5 +1,9 @@
 import Foundation
 
+
+///Same as NotificationInAppListener:
+///This is heavily used throughout the application. The notification is a pop up from the top of the screen, either an error
+///or success, with its message. These errors/succsesses get set from the viewmodels
 class NotificationInApp {
     static var success: Bool = false {
         didSet {
@@ -25,6 +29,9 @@ class NotificationInApp {
     }
 }
 
+///Same as NotificationInApp:
+///This is heavily used throughout the application. The notification is a pop up from the top of the screen, either an error
+///or success, with its message. These errors/succsesses get set from the viewmodels
 class NotificationInAppListener: ObservableObject {
     static let shared = NotificationInAppListener()
 

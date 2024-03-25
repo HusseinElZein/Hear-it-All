@@ -1,5 +1,9 @@
 import SwiftUI
 
+/// A view for selecting the sounds to be recognized by the application.
+/// Users can search for and select various sounds from the provided list, which updates the `SoundRecognizer` view model with the user's selections.
+///
+/// - Author: Hussein El-Zein
 struct SoundsSelectionView: View {
     @ObservedObject var soundRecognizer: SoundRecognizer
     let availableSounds: [String]

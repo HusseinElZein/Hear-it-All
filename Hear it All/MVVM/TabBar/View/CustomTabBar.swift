@@ -1,6 +1,6 @@
 import SwiftUI
 
-
+///Custom nice animated looking tab bar
 struct CustomTabBar: View {
     @State private var selection: Int = 0
     @State private var isKeyboardVisible = false
@@ -59,6 +59,7 @@ struct CustomTabBar: View {
     }
 }
 
+///Each icon in the tab bar
 struct TabIconView: View {
     var iconName: String
     var isSelected: Bool

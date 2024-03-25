@@ -1,5 +1,9 @@
 import SwiftUI
 
+/// A view for selecting the language for speech recognition.
+/// This view displays a list of languages that the user can select from. Selecting a language updates the `SpeechRecognizer` and `SoundRecognizer` view models and closes the view.
+///
+/// - Author: Hussein El-Zein
 struct ChooseLanguageView: View {
     @ObservedObject var viewModel: SpeechRecognizer
     @ObservedObject var soundViewModel: SoundRecognizer

@@ -1,5 +1,10 @@
 import SwiftUI
 
+
+/// A view presenting the privacy policy.
+/// This view displays detailed information about what data is collected, how it is used, and the user's rights regarding their personal information.
+///
+/// - Author: Hussein El-Zein
 struct PrivacyPolicyView: View {
     var body: some View {
         ScrollView {
@@ -38,7 +43,8 @@ struct PrivacyPolicyView: View {
                     
                     Section(header: Text("Log Files").bold()) {
                         Text("Hear it All follows a standard procedure of using log files. These files log visitors when they use apps. The information collected by log files include, device type, and what kind of crash that crashed the app")
-                    }.padding(.bottom, 45)
+                            .padding(.bottom, 45)
+                    }
                 }
             }
             .padding()

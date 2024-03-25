@@ -1,6 +1,9 @@
 import SwiftUI
 
-
+/// A view for displaying a list of posts with functionality to create new posts and navigate to profile settings.
+/// It uses a `SeePostsViewModel` to manage the state and actions related to the posts displayed.
+///
+/// - Author: Hussein El-Zein
 struct SeePostsView: View {
     @StateObject var seePostsViewModel = SeePostsViewModel()
     
@@ -52,6 +55,9 @@ struct SeePostsView: View {
     SeePostsView()
 }
 
+/// A view component representing a button for creating new posts.
+///
+/// - Author: Hussein El-Zein
 struct AddPostButton: View {
     var body: some View {
         VStack{
@@ -81,7 +87,9 @@ struct AddPostButton: View {
     }
 }
 
-
+/// A view for displaying individual post details, including like and comment interaction.
+///
+/// - Author: Hussein El-Zein
 struct PostView: View {
     @Binding var post: PostModel
     var vm: SeePostsViewModel

@@ -1,5 +1,9 @@
 import SwiftUI
 
+/// A view for displaying and managing comments on a specific post.
+/// Users can view existing comments and add new ones.
+///
+/// - Author: Hussein El-Zein
 struct CommentView: View {
     var postId: String
     @StateObject var viewModel = CommentViewModel()
@@ -26,6 +30,10 @@ struct CommentView: View {
     }
 }
 
+/// A view representing a single comment in the comment list, including display name, profile photo, and content.
+/// It also provides a delete option if the comment is owned by the current user.
+///
+/// - Author: Hussein El-Zein
 private struct OneComment: View {
     @Binding var comment: CommentModel
     
@@ -39,15 +47,33 @@ private struct OneComment: View {
                     case .success(let image):
                         image.resizable().aspectRatio(contentMode: .fill)
                     case .failure(_):
-                        Image(systemName: "person.fill").resizable()
+                        Circle()
+                            .fill(Color.gray)
+                            .frame(width: 50, height: 50)
+                            .overlay(Text(comment.displayName?.first.map(String.init) ?? "")
+                                .foregroundColor(.white))
                     case .empty:
-                        ProgressView()
+                        Circle()
+                            .fill(Color.gray)
+                            .frame(width: 50, height: 50)
+                            .overlay(Text(comment.displayName?.first.map(String.init) ?? "")
+                                .foregroundColor(.white))
                     @unknown default:
-                        EmptyView()
+                        Circle()
+                            .fill(Color.gray)
+                            .frame(width: 50, height: 50)
+                            .overlay(Text(comment.displayName?.first.map(String.init) ?? "")
+                                .foregroundColor(.white))
                     }
                 }
                 .frame(width: 50, height: 50)
                 .clipShape(Circle())
+            }else{
+                Circle()
+                    .fill(Color.gray)
+                    .frame(width: 50, height: 50)
+                    .overlay(Text(comment.displayName?.first.map(String.init) ?? "")
+                        .foregroundColor(.white))
             }
             
             // Comment details
@@ -84,7 +110,10 @@ private struct OneComment: View {
     }
 }
 
-
+/// A view for inputting a new comment with a text field and a post button.
+/// It interacts with the comment view model to add new comments to the post.
+///
+/// - Author: Hussein El-Zein
 private struct CommentInputView: View {
     var postId: String
     @StateObject var viewModel: CommentViewModel

@@ -4,6 +4,11 @@ import FirebaseFirestoreSwift
 import FirebaseStorage
 
 
+/// A view model class for creating and uploading new posts.
+/// It manages the data entry for a new post, handles image selection, uploads the post and associated image,
+/// and verifies the post's content before submission.
+///
+/// - Author: Hussein El-Zein
 @Observable
 class CreatePostViewModel{
     private var db = DatabaseService.db
@@ -11,12 +16,10 @@ class CreatePostViewModel{
     
     var imageData: Data?
     
-    var profile: ProfileModel?
-    
     init(){
         fetchProfileData()
     }
-    
+    var profile: ProfileModel?
     private func fetchProfileData() {
         guard let email = auth.currentUser?.email else {
             return
@@ -47,6 +50,7 @@ class CreatePostViewModel{
         self.imageData = imageData
     }
     
+    /// Uploads the selected photo to Firebase Storage and updates the Firestore post document with the photo URL.
     func insertPhoto(documentId: String){
         guard let imgData = imageData else {
             return
@@ -101,6 +105,7 @@ class CreatePostViewModel{
         } catch{}
     }
     
+    /// Checks if the post meets the minimum criteria for content and title length.
     func isPostAcceptable() -> Bool{
         if post.contentText.count < 20{return false}
         if post.titleText.count < 3{return false}

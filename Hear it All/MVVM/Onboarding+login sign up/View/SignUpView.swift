@@ -1,5 +1,7 @@
 import SwiftUI
 
+
+///To sign up
 struct SignUpView: View {
     var viewModel: SignViewModel
     @State var displayName = ""

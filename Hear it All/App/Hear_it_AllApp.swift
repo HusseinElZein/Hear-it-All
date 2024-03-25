@@ -1,6 +1,8 @@
 import SwiftUI
 import FirebaseCore
 
+
+///Having this delegate only for configuring firebase for now
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -9,6 +11,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
+///The main app, configuring the UIKit stuff such as back button
 @main
 struct Hear_it_AllApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate

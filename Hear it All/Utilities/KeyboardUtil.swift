@@ -1,8 +1,7 @@
 import Foundation
 import SwiftUI
 
-class KeyboardUtil{}
-
+///Used to hide keyboard
 #if canImport(UIKit)
 extension View {
     func hideKeyboard() {

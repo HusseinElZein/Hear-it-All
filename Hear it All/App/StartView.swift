@@ -2,6 +2,9 @@ import SwiftUI
 import FirebaseAuth
 import AlertToast
 
+
+///This view determines which screen to start on.
+///It has a listener that changes screens based on if the user is logged in or not
 struct StartView: View {
     @Bindable var authListener = UserAuthenticationListener()
     @ObservedObject private var notificationListener = NotificationInAppListener.shared

@@ -3,7 +3,10 @@ import Combine
 import AVFoundation
 import SoundAnalysis
 
-
+/// A class responsible for recognizing and analyzing sounds in real-time audio input.
+/// Utilizes Apple's `SoundAnalysis` framework to identify sounds from a predefined set and manages audio input through `AVAudioEngine`.
+///
+/// - Author: Hussein El-Zein
 final class SoundRecognizer: ObservableObject {
     @Published var detectedSound = ""
     @Published var isListening = false
@@ -83,6 +86,7 @@ final class SoundRecognizer: ObservableObject {
         streamAnalyzer = nil
     }
     
+    /// Toggles the sound recognition process based on user interaction.
     func handleToggle(isEnabled: Bool){
         if !isEnabled {return}
         if isListening {stopListening()}
@@ -90,12 +94,14 @@ final class SoundRecognizer: ObservableObject {
     }
 }
 
+/// Handles callbacks for sound analysis results, including success, error, and completion events.
 final class SoundAnalysisHandler {
     var onResult: ((SNClassificationResult) -> Void)?
     var onError: ((Error) -> Void)?
     var onComplete: (() -> Void)?
 }
 
+/// An observer class that receives sound analysis results and forwards them to a `SoundAnalysisHandler`.
 class ResultsObserver: NSObject, SNResultsObserving {
     let handler: SoundAnalysisHandler
     
@@ -118,6 +124,7 @@ class ResultsObserver: NSObject, SNResultsObserving {
     }
 }
 
+/// Fetches and returns a sorted list of all known sound classifications supported by the sound analysis framework.
 extension SoundRecognizer {
     static func fetchAllKnownSounds() -> [String] {
         do {

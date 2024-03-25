@@ -1,7 +1,7 @@
 import SwiftUI
 import PhotosUI
 
-
+///Not used, scratched for now and not fully implemented
 struct EditPostView: View {
     @State var viewModel = EditPostViewModel()
     @Environment(\.presentationMode) var presentationMode

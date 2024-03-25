@@ -1,6 +1,7 @@
 import SplineRuntime
 import SwiftUI
 
+///This shows the splineview 3d animation always, but with the view beneath it that changes based on user interaction
 struct GenericStartView: View {
     let url = URL(string: "https://build.spline.design/58jK-KLVg5ccje6UgomS/scene.splineswift")!
     

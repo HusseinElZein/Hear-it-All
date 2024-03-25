@@ -1,6 +1,11 @@
 import SwiftUI
 import Combine
 
+/// A view model class responsible for managing and persisting user settings related to sound and speech recognition features.
+/// This class encapsulates the logic for enabling/disabling speech and sound recognition and adjusting relevant settings,
+/// with changes persistently stored in `UserDefaults`.
+///
+/// - Author: Hussein El-Zein
 @Observable
 class SoundSettingsViewModel {
     var speechRecognitionEnabled: Bool {

@@ -2,6 +2,9 @@ import Foundation
 import FirebaseFirestoreSwift
 
 
+/// This model includes properties for storing post information, including metadata and user interaction details.
+///
+/// - Author: Hussein El-Zein
 struct PostModel: Codable, Identifiable {
     @DocumentID var id: String?
     var titleText: String

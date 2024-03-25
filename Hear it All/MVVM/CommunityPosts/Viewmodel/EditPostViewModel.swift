@@ -3,7 +3,10 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseStorage
 
-
+/// !!Not used!!
+/// It manages the post data, handles image selection, and updates the post and associated image in Firestore.
+///
+/// - Author: Hussein El-Zein
 @Observable
 class EditPostViewModel{
     private var db = DatabaseService.db
