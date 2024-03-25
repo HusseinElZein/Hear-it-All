@@ -82,6 +82,12 @@ final class SoundRecognizer: ObservableObject {
         audioEngine.stop()
         streamAnalyzer = nil
     }
+    
+    func handleToggle(isEnabled: Bool){
+        if !isEnabled {return}
+        if isListening {stopListening()}
+        else{startListening()}
+    }
 }
 
 final class SoundAnalysisHandler {

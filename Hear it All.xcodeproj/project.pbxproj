@@ -307,8 +307,8 @@
 				E3FF4D262B8A2E2200A132EB /* Onboarding+login sign up */,
 				E33F47F12B9F34B500AA142C /* TabBar */,
 				E3FF4D242B8A2E0200A132EB /* Sound */,
-				E3FF4D252B8A2E1900A132EB /* CommunityPosts */,
 				E3FF4D272B8A2E5100A132EB /* SoundSettings */,
+				E3FF4D252B8A2E1900A132EB /* CommunityPosts */,
 				E33F47EC2B9F2A6800AA142C /* ProfileSettings */,
 			);
 			path = MVVM;

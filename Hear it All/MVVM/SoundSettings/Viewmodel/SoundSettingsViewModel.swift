@@ -21,6 +21,12 @@ class SoundSettingsViewModel {
         }
     }
     
+    func resetNumberOfWords(){
+        withAnimation {
+            numberOfWords = 28.0
+        }
+    }
+    
     init() {
         self.speechRecognitionEnabled = UserDefaults.standard.object(forKey: "speechRecognitionEnabled") as? Bool ?? true
         self.numberOfWords = UserDefaults.standard.object(forKey: "numberOfWords") as? Double ?? 26.0

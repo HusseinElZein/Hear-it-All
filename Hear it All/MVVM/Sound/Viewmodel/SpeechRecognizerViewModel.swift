@@ -12,6 +12,7 @@ class SpeechRecognizer: NSObject, ObservableObject {
     private var speechRecognizer: SFSpeechRecognizer?
     @Published var transcribedText: String = ""
     @Published var isRecording = false
+    @Published private var wordsToCount = 28
     
     override init() {
         super.init()
@@ -54,9 +55,11 @@ class SpeechRecognizer: NSObject, ObservableObject {
                 let fullTranscription = result.bestTranscription.formattedString
                 let words = fullTranscription.split(whereSeparator: { $0.isWhitespace }).map(String.init)
                 
-                // Determine the slice point based on the total word count
-                let slicePoint = words.count - (words.count % 28)
-                let relevantWords = words.suffix(from: slicePoint)
+                let counterForWords = self?.wordsToCount ?? 28
+                
+                // Calculate the start index for slicing the words array to get the last set of up to 10 words
+                let sliceStartIndex = max(0, words.count - (words.count % counterForWords) - (words.count % counterForWords == 0 ? counterForWords : 0))
+                let relevantWords = words.suffix(from: sliceStartIndex)
                 withAnimation {
                     self?.transcribedText = relevantWords.joined(separator: " ")
                 }
@@ -71,6 +74,7 @@ class SpeechRecognizer: NSObject, ObservableObject {
     }
     
     func stopRecording() {
+        transcribedText = ""
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
         recognitionRequest?.endAudio()
@@ -85,5 +89,12 @@ class SpeechRecognizer: NSObject, ObservableObject {
         self.language = newLanguage
         speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: newLanguage.locale_id))
         self.transcribedText = ""
+    }
+    
+    func handleToggle(isEnabled: Bool, wordsToCount: Int){
+        self.wordsToCount = wordsToCount
+        if !isEnabled {return}
+        if isRecording {stopRecording()}
+        else{try? startRecording()}
     }
 }

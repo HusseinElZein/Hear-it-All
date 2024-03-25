@@ -70,21 +70,12 @@ struct SpeechAndSoundToTextView: View {
                     //The start and stop button
                     Button {
                         withAnimation {
-                            
-                            if soundRecognizer.isListening{
-                                soundRecognizer.stopListening()
-                            }else {
-                                soundRecognizer.startListening()
-                            }
-                            
-                            if speechRecognizer.isRecording {
-                                speechRecognizer.stopRecording()
-                            } else {
-                                try? speechRecognizer.startRecording()
-                            }
+                            speechRecognizer.handleToggle(isEnabled: settingsVm.speechRecognitionEnabled,
+                                                          wordsToCount: Int(settingsVm.numberOfWords))
+                            soundRecognizer.handleToggle(isEnabled: settingsVm.soundRecognitionEnabled)
                         }
                     } label: {
-                        Image(systemName: speechRecognizer.isRecording ? "pause.circle.fill" : "play.circle.fill")
+                        Image(systemName: (speechRecognizer.isRecording || soundRecognizer.isListening) ? "pause.circle.fill" : "play.circle.fill")
                             .font(.system(size: 75))
                             .foregroundStyle(Color.primaryColor)
                     }.padding(.bottom, 80)

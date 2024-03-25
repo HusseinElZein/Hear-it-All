@@ -10,14 +10,29 @@ struct SoundSettingsView: View {
                     Toggle(isOn: $viewModel.speechRecognitionEnabled) {
                         Text("Talegenkendelse")
                     }.tint(.green)
-                }
-                Section(header: Text("Antal ord inden sætningen opdateres \n\(String(format: "%.0f", viewModel.numberOfWords))")) {
-                    Slider(value: $viewModel.numberOfWords, in: 10...26, step: 1).tint(.blue)
+                        .disabled(!viewModel.soundRecognitionEnabled)
+                    VStack{
+                        HStack{
+                            Text("Antal ord inden sætningen opdateres: \(String(format: "%.0f", viewModel.numberOfWords))")
+                                .font(.footnote)
+                            Spacer()
+                        }
+                        Slider(value: $viewModel.numberOfWords, in: 10...40, step: 1)
+                            .tint(Color.primaryColor)
+                            .disabled(!viewModel.speechRecognitionEnabled)
+                        Button("Reset") {
+                            viewModel.resetNumberOfWords()
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .disabled(!viewModel.speechRecognitionEnabled || Int(viewModel.numberOfWords) == 28)
+                        .animation(.easeInOut, value: viewModel.numberOfWords)
+                    }
                 }
                 Section(header: Text("Lydkendelse")) {
                     Toggle(isOn: $viewModel.soundRecognitionEnabled) {
                         Text("Lydkendelse")
                     }.tint(.green)
+                        .disabled(!viewModel.speechRecognitionEnabled)
                 }
                 Section(header: Text("Profilindstillinger")) {
                     NavigationLink {
