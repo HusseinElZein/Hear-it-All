@@ -43,7 +43,7 @@ struct SoundSettingsView: View {
                 }
 
                 Section {
-                    NavigationLink(destination: Text("Info om privatlivspolitik")) {
+                    NavigationLink(destination: PrivacyPolicyView()) {
                         Text("Info om privatlivspolitik")
                     }
                 }
