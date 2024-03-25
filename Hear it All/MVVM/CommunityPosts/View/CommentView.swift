@@ -7,8 +7,9 @@ struct CommentView: View {
     var body: some View {
         VStack {
             if viewModel.comments.isEmpty{
-                Text("Vær den første til at kommentere!")
+                Text("Vær den første til at kommentere!😃")
                     .font(.headline)
+                    .padding(.top)
             }
             List($viewModel.comments, id: \.id) { $comment in
                 OneComment(comment: $comment, onDelete: {viewModel.deleteComment(postId: postId, commentId: comment.id ?? "")})
@@ -59,7 +60,6 @@ private struct OneComment: View {
                         .font(.system(size: 12))
                         .foregroundColor(.gray)
                 }
-                
                 
                 // Comment Text
                 Text(comment.contentText)

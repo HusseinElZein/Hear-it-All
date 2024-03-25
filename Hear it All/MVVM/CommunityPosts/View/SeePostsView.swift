@@ -11,22 +11,26 @@ struct SeePostsView: View {
                 ScrollView{
                     VStack{
                         NavigationLink {
-                            CreatePostView()
+                            CreatePostView(posts: $seePostsViewModel.posts, resetPosts: {seePostsViewModel.refreshPosts()})
                         } label: {
                             AddPostButton()
                                 .padding(.top, 30)
                         }
                     }
-                    VStack{
+                    LazyVStack{
                         ForEach($seePostsViewModel.posts, id: \.id) { $post in
                             PostView(post: $post, vm: seePostsViewModel) {
                                 seePostsViewModel.toggleLike(postId: post.id ?? "")
+                            }.onAppear {
+                                if $post.id == seePostsViewModel.posts.last?.id {
+                                    seePostsViewModel.loadPosts()
+                                }
                             }
                         }
                     }
                     .padding(.bottom, 65)
                 }.refreshable {
-                    seePostsViewModel.loadAllPosts()
+                    seePostsViewModel.refreshPosts()
                 }
             }
             .navigationTitle("Indlæg")
@@ -181,11 +185,10 @@ struct PostView: View {
             .padding([.horizontal, .bottom, .top])
             .font(.subheadline)
             
-            
             if post.isOwned ?? false{
                 Menu {
-                    Button("Redigér", action: {})
-                    Button("Slet", action: {})
+                    //Button("Redigér", action: {})
+                    Button("Slet", action: {vm.deletePost(postId: post.id ?? "")})
                 } label: {
                     Image(systemName: "ellipsis")
                         .frame(width: 24, height: 24)

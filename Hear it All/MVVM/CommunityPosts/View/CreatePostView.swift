@@ -4,6 +4,8 @@ import PhotosUI
 
 struct CreatePostView: View {
     @State var viewModel = CreatePostViewModel()
+    @Binding var posts: [PostModel]
+    var resetPosts: () -> Void
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -28,6 +30,7 @@ struct CreatePostView: View {
                 ToolbarItem {
                     Button("Upload") {
                         viewModel.uploadPost()
+                        resetPosts()
                         presentationMode.wrappedValue.dismiss()
                     }
                     .disabled(!viewModel.isPostAcceptable())
@@ -137,6 +140,5 @@ struct PickPhotoForPost: View {
 
 
 #Preview {
-    CreatePostView()
-    //TextEditorApproachView(text: .constant(""))
+    CreatePostView(posts: .constant([PostModel(titleText: "", contentText: "", ownerId: "", date: "")]), resetPosts:{})
 }

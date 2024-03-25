@@ -88,7 +88,6 @@ class CreatePostViewModel{
         post.ownerId = profile?.id ?? "noId"
         post.date = DateUtil.getDateNow()
         
-        let db = Firestore.firestore()
         let collectionRef = db.collection("posts")
         
         let docRef = collectionRef.document()

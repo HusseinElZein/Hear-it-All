@@ -16,46 +16,61 @@ class SeePostsViewModel : ObservableObject{
     init(){
         fetchProfileData()
         fetchLikedPosts()
+        loadPosts()
     }
     
-    func loadAllPosts() {
+    func refreshPosts(){
+        lastDocumentSnapshot = nil
+        self.posts = []
+        isLoading = false
+        loadPosts()
+    }
+    
+    @Published var isLoading = false
+    private var lastDocumentSnapshot: DocumentSnapshot?
+    func loadPosts(limit: Int = 6) {
+        guard !isLoading else { return }
+
+        isLoading = true
+
         Task { @MainActor in
-            NotificationInApp.loading = true
             do {
-                let querySnapshot = try await db.collection("posts").getDocuments()
-                var posts = querySnapshot.documents.compactMap { document -> PostModel? in
+                var query = db.collection("posts").order(by: "date", descending: true).limit(to: limit)
+                if let lastSnapshot = lastDocumentSnapshot {
+                    query = query.start(afterDocument: lastSnapshot)
+                }
+
+                let querySnapshot = try await query.getDocuments()
+                var newPosts = querySnapshot.documents.compactMap { document -> PostModel? in
                     try? document.data(as: PostModel.self)
                 }
-                for i in 0..<posts.count {
-                    let (url, name) = await getProfilePictureLinkAndNameForOwner(ownerId: posts[i].ownerId)
-                    posts[i].ownerUrlPhoto = url
-                    posts[i].ownerName = name
-                    
-                    if likedPosts.contains(posts[i].id ?? ""){
-                        posts[i].isLiked = true
-                    }
-                    if posts[i].ownerId == profile?.id{
-                        posts[i].isOwned = true
-                    }
-                }
                 
-                // Sort posts by date
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
-                posts.sort { firstPost, secondPost in
-                    guard let firstDate = dateFormatter.date(from: firstPost.date),
-                          let secondDate = dateFormatter.date(from: secondPost.date) else {
-                        return false
+                for i in 0..<newPosts.count {
+                    let (url, name) = await getProfilePictureLinkAndNameForOwner(ownerId: newPosts[i].ownerId)
+                    newPosts[i].ownerUrlPhoto = url
+                    newPosts[i].ownerName = name
+                    
+                    if likedPosts.contains(newPosts[i].id ?? ""){
+                        newPosts[i].isLiked = true
                     }
-                    return firstDate > secondDate
+                    if newPosts[i].ownerId == profile?.id {
+                        newPosts[i].isOwned = true
+                    }
                 }
-                self.posts = posts
-                NotificationInApp.loading = false
+
+                if !newPosts.isEmpty {
+                    lastDocumentSnapshot = querySnapshot.documents.last
+                    self.posts.append(contentsOf: newPosts)
+                }
+
+                isLoading = false
             } catch {
-                NotificationInApp.loading = false
+                print("Error loading posts: \(error)")
+                isLoading = false
             }
         }
     }
+
     
     private func fetchLikedPosts() {
         guard let userEmail = auth.currentUser?.email else {
@@ -180,11 +195,12 @@ class SeePostsViewModel : ObservableObject{
     }
     
     func deletePost(postId: String) {
-        db.collection("posts").document(postId).delete { error in
+        db.collection("posts").document(postId).delete { [weak self] error in
             if error != nil {
-                
             } else {
-                // Successfully deleted post
+                DispatchQueue.main.async {
+                    self?.posts.removeAll { $0.id == postId }
+                }
             }
         }
     }

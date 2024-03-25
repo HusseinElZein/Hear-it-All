@@ -1,20 +1,19 @@
 import Foundation
 
+
 class DateUtil {
     
     static func getDateNow() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        return formatter.string(from: Date())
+        let now = Date()
+        return String(Int64(now.timeIntervalSince1970 * 1000))
     }
     
-    static func getTimeAgo(from dateString: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        guard let pastDate = formatter.date(from: dateString) else {
+    static func getTimeAgo(from millisecondsString: String) -> String {
+        guard let milliseconds = Int64(millisecondsString) else {
             return "Invalid date"
         }
-        
+
+        let pastDate = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
         let components = Calendar.current.dateComponents([.minute, .hour, .day, .month, .year], from: pastDate, to: Date())
 
         if let year = components.year, year > 0 {
