@@ -16,7 +16,7 @@ struct EditPostView: View {
             VStack {
                 TextEditorApproachView(text: $editedPost.titleText,
                                        fontType: .title,
-                                       placeholder: "Indtast titel",
+                                       placeholder: Localized.CreatePostLocalized.insert_title,
                                        sizeOfBox: 100)
                 .onChange(of: editedPost.titleText) { _, newValue in
                     viewModel.post.titleText = newValue.replacingOccurrences(of: "\n", with: "")
@@ -26,12 +26,12 @@ struct EditPostView: View {
                     .padding(.bottom, 50)
                 
                 TextEditorApproachView(text: $editedPost.contentText,
-                                       placeholder: "Skriv din tekst her")
+                                       placeholder: Localized.CreatePostLocalized.insert_text)
                 .padding(.bottom, 100)
             }
             .toolbar {
                 ToolbarItem {
-                    Button("Opdatér") {
+                    Button(Localized.CreatePostLocalized.update) {
                         viewModel.updatePost()
                         presentationMode.wrappedValue.dismiss()
                     }
@@ -80,7 +80,7 @@ struct PicForPost: View {
                                 Image(systemName: "photo.on.rectangle.angled")
                                     .font(.largeTitle)
                                     .foregroundColor(.white)
-                                Text("Vælg foto for dit indlæg")
+                                Text(Localized.CreatePostLocalized.insert_photo)
                                     .foregroundColor(.white)
                                     .padding(.top, 5)
                             })

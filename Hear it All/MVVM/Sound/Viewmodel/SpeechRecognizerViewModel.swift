@@ -38,7 +38,7 @@ class SpeechRecognizer: NSObject, ObservableObject {
         
         // Prepare the recognition request
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create a recognition request") }
+        guard let recognitionRequest = recognitionRequest else {return}
         recognitionRequest.shouldReportPartialResults = true
         
         // Configure the microphone input

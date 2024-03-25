@@ -69,7 +69,7 @@ class CreatePostViewModel{
                 guard let downloadURL = url else {
                     NotificationInApp.loading = false
                     NotificationInApp.error = true
-                    NotificationInApp.message = "Noget gik galt"
+                    NotificationInApp.message = Localized.CreatePostLocalized.something_wrong
                     return
                 }
                 
@@ -77,10 +77,10 @@ class CreatePostViewModel{
                 self.db.collection("posts").document(documentId).updateData(["photo": downloadURL.absoluteString]) { error in
                     if error != nil {
                         NotificationInApp.error = true
-                        NotificationInApp.message = "Noget gik galt"
+                        NotificationInApp.message = Localized.CreatePostLocalized.something_wrong
                     } else {
                         NotificationInApp.success = true
-                        NotificationInApp.message = "Indlæg er nu postet!"
+                        NotificationInApp.message = Localized.CreatePostLocalized.now_posted
                     }
                     NotificationInApp.loading = false
                 }

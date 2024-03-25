@@ -74,7 +74,6 @@ class SeePostsViewModel : ObservableObject{
 
                 isLoading = false
             } catch {
-                print("Error loading posts: \(error)")
                 isLoading = false
             }
         }

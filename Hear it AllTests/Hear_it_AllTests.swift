@@ -1,10 +1,3 @@
-//
-//  Hear_it_AllTests.swift
-//  Hear it AllTests
-//
-//  Created by Hussein on 31/01/2024.
-//
-
 import XCTest
 @testable import Hear_it_All
 

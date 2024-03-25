@@ -1,0 +1,904 @@
+{
+  "sourceLanguage" : "da",
+  "strings" : {
+    "" : {
+
+    },
+    "- Forbedre og udvide vores app" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- Improve and expand our app"
+          }
+        }
+      }
+    },
+    "- Forstå og analysere, hvordan du bruger vores app" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- Understand and analyze how you use our app"
+          }
+        }
+      }
+    },
+    "- Levere, drive og vedligeholde vores app" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- Deliver, operate and maintain our app"
+          }
+        }
+      }
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%lld like" : {
+
+    },
+    "%lld likes" : {
+
+    },
+    "Adgangskode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        }
+      }
+    },
+    "Annullér" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "Antal ord inden sætningen opdateres:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Number of words before the sentence is updated:"
+          }
+        }
+      }
+    },
+    "år siden" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "y ago"
+          }
+        }
+      }
+    },
+    "Arabisk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arabic"
+          }
+        }
+      }
+    },
+    "Billede er nu slettet" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Picture now deleted"
+          }
+        }
+      }
+    },
+    "d siden" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "d ago"
+          }
+        }
+      }
+    },
+    "Dansk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danish"
+          }
+        }
+      }
+    },
+    "De personoplysninger, som du bliver bedt om at give, og årsagerne til, at du bliver bedt om at give dem, vil blive gjort klart for dig på det tidspunkt, vi beder dig om at give dine personoplysninger." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The personal data that you are asked to provide and the reasons why you are asked to provide it will be made clear to you at the time we ask you to provide your personal data."
+          }
+        }
+      }
+    },
+    "Det kan jo ske! Men bliv ikke bekymret, vi sender dig et link til din email" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It can happen! But don't worry, we'll send you a link to your email"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "Engelsk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
+          }
+        }
+      }
+    },
+    "er" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "s"
+          }
+        }
+      }
+    },
+    "Er du sikker på, at du vil slette billedet?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure to delete the picture?"
+          }
+        }
+      }
+    },
+    "Færdig" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "Fransk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "French"
+          }
+        }
+      }
+    },
+    "Glemt adgangskode?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forgot password?"
+          }
+        }
+      }
+    },
+    "Gyldig fra: 25. marts 2024" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valid from: 25 March 2024"
+          }
+        }
+      }
+    },
+    "Hear it All" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hear it All"
+          }
+        }
+      }
+    },
+    "Hear it All følger en standard procedure for brug af logfiler. Disse filer logger besøgende, når de bruger apps. De oplysninger, der indsamles af logfiler, inkluderer enhedstype og hvilken type nedbrud, der fik appen til at gå ned" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hear it All follows a standard procedure for using log files. These files log visitors when they use apps. The information collected by logs includes device type and the type of crash that caused the app to crash"
+          }
+        }
+      }
+    },
+    "Hos Hear it All, tilgængelig fra WSAudiology, er et af vores primære prioriteter privatlivets fred for vores brugere. Dette dokument med privatlivspolitik indeholder typer af oplysninger, der indsamles og registreres af Hear it All, og hvordan vi anvender dem." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "At Hear it All, available from WSAudiology, one of our top priorities is the privacy of our users. This privacy policy document describes the types of information collected and recorded by Hear it All and how we use it."
+          }
+        }
+      }
+    },
+    "Hvis du har yderligere spørgsmål eller behøver mere information om vores privatlivspolitik, så tøv ikke med at kontakte os." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you have any further questions or need more information about our privacy policy, please do not hesitate to contact us."
+          }
+        }
+      }
+    },
+    "Hvordan vi bruger dine oplysninger" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How we use your information"
+          }
+        }
+      }
+    },
+    "Indlæg" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posts"
+          }
+        }
+      }
+    },
+    "Indlæg er nu postet!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Post is now uploaded"
+          }
+        }
+      }
+    },
+    "Indstillinger" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "Indtast titel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter title"
+          }
+        }
+      }
+    },
+    "Info om privatlivspolitik" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info on privacy policy"
+          }
+        }
+      }
+    },
+    "Ja" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        }
+      }
+    },
+    "Japansk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Japanese"
+          }
+        }
+      }
+    },
+    "Kinesisk HK. SAR China" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese HK. SAR China"
+          }
+        }
+      }
+    },
+    "Koden er nu ændret!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password is changed!"
+          }
+        }
+      }
+    },
+    "Kommentarer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comments"
+          }
+        }
+      }
+    },
+    "Koreansk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Korean"
+          }
+        }
+      }
+    },
+    "Lige nu" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Just now"
+          }
+        }
+      }
+    },
+    "Log ind" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign in"
+          }
+        }
+      }
+    },
+    "Log ud" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign out"
+          }
+        }
+      }
+    },
+    "Logfiler" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logs"
+          }
+        }
+      }
+    },
+    "Lydgenkendelse" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sound recognition"
+          }
+        }
+      }
+    },
+    "m siden" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "m ago"
+          }
+        }
+      }
+    },
+    "Mail el. adgangskode er forkert" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wrong mail or password"
+          }
+        }
+      }
+    },
+    "Mail sendt, tjek venligst din mail" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mail sent, check your inbox"
+          }
+        }
+      }
+    },
+    "måned" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "month"
+          }
+        }
+      }
+    },
+    "Når du registrerer dig for en konto, kan vi bede om dine kontaktoplysninger, herunder ting som visningsnavn, e-mailadresse og evt. posts og profilbillede." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you register for an account, we may ask for your contact information, including things like your display name, email address, and any posts and profile picture."
+          }
+        }
+      }
+    },
+    "Navn er nu ændret!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name is changed!"
+          }
+        }
+      }
+    },
+    "Noget gik galt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong"
+          }
+        }
+      }
+    },
+    "Opdatér" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update"
+          }
+        }
+      }
+    },
+    "Oplysninger, vi indsamler" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Information, we collect"
+          }
+        }
+      }
+    },
+    "Opret post" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create post"
+          }
+        }
+      }
+    },
+    "Opret profil" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create profile"
+          }
+        }
+      }
+    },
+    "Oprettet ny profil!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Created new profile"
+          }
+        }
+      }
+    },
+    "Post" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Post"
+          }
+        }
+      }
+    },
+    "Privatlivspolitik for Hear it All" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy Policy for Hear it All"
+          }
+        }
+      }
+    },
+    "Profil" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile"
+          }
+        }
+      }
+    },
+    "Profil nu slettet" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile is now deleted"
+          }
+        }
+      }
+    },
+    "Profilbillede" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile picture"
+          }
+        }
+      }
+    },
+    "Profilbillede er nu uploadet!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile picture changed!"
+          }
+        }
+      }
+    },
+    "Profilindstillinger" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profile settings"
+          }
+        }
+      }
+    },
+    "Prøv igen, eller log ud og ind igen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try again, or sign out and in again"
+          }
+        }
+      }
+    },
+    "Reset" : {
+
+    },
+    "Russisk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Russian"
+          }
+        }
+      }
+    },
+    "Send mail" : {
+
+    },
+    "siden" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ago"
+          }
+        }
+      }
+    },
+    "Skift" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change"
+          }
+        }
+      }
+    },
+    "Skift adgangskode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change password"
+          }
+        }
+      }
+    },
+    "Skift visningsnavn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change display name"
+          }
+        }
+      }
+    },
+    "Skriv din tekst her" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter your content here"
+          }
+        }
+      }
+    },
+    "Slå alle fra" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn all off"
+          }
+        }
+      }
+    },
+    "Slå alle til" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn all on"
+          }
+        }
+      }
+    },
+    "Slet" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "Slet billede" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete picture"
+          }
+        }
+      }
+    },
+    "Slet profil" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete profile"
+          }
+        }
+      }
+    },
+    "Søg efter lyde" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search sounds"
+          }
+        }
+      }
+    },
+    "Spansk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spanish"
+          }
+        }
+      }
+    },
+    "t siden" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "h ago"
+          }
+        }
+      }
+    },
+    "Tale" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speech"
+          }
+        }
+      }
+    },
+    "Talegenkendelse" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speech recognition"
+          }
+        }
+      }
+    },
+    "Tilføj en kommentar..." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add a comment..."
+          }
+        }
+      }
+    },
+    "Tysk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "German"
+          }
+        }
+      }
+    },
+    "Upload" : {
+
+    },
+    "Vælg foto for dit indlæg" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose photo for your post"
+          }
+        }
+      }
+    },
+    "Vælg hvordan du vil bruge en profil" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose you you want to use a profile"
+          }
+        }
+      }
+    },
+    "Vælg lyde" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose sounds"
+          }
+        }
+      }
+    },
+    "Vælg sprog" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose language"
+          }
+        }
+      }
+    },
+    "Vær den første til at kommentere!😃" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Be the first to comment😃"
+          }
+        }
+      }
+    },
+    "Vi bruger de oplysninger, vi indsamler, på forskellige måder, herunder til at:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We use the information we collect in various ways, including to:"
+          }
+        }
+      }
+    },
+    "Visningsnavn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display name"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

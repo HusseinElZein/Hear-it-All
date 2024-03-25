@@ -15,7 +15,7 @@ struct SignUpView: View {
                 VStack{
                     VStack(spacing: 20){
                         VStack(alignment: .leading){
-                            Text("Visningsnavn")
+                            Text(Localized.ProfileLocalized.display_name)
                                 .font(.callout)
                                 .foregroundColor(.gray)
                                 .padding(.leading)
@@ -53,7 +53,7 @@ struct SignUpView: View {
                         }
                         
                         VStack(alignment: .leading){
-                            Text("Adgangskode")
+                            Text(Localized.ProfileLocalized.password)
                                 .font(.callout)
                                 .foregroundColor(.gray)
                                 .padding(.leading)
@@ -76,7 +76,7 @@ struct SignUpView: View {
                                          email: email,
                                          password: password)
                     } label: {
-                        Text("Opret Profil")
+                        Text(Localized.ProfileLocalized.sign_up)
                             .padding(.vertical, 10)
                             .padding(.horizontal, 120)
                             .foregroundStyle(.white)

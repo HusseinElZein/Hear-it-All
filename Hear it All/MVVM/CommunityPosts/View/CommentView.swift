@@ -11,7 +11,7 @@ struct CommentView: View {
     var body: some View {
         VStack {
             if viewModel.comments.isEmpty{
-                Text("Vær den første til at kommentere!😃")
+                Text(Localized.CommentsLocalized.be_first)
                     .font(.headline)
                     .padding(.top)
             }
@@ -95,7 +95,7 @@ private struct OneComment: View {
                 
                 // Delete Button
                 if comment.isOwned == true {
-                    Button("slet", action: {
+                    Button(Localized.SeePostsLocalized.delete, action: {
                         onDelete()
                     })
                     .font(.system(size: 12))
@@ -121,7 +121,7 @@ private struct CommentInputView: View {
     
     var body: some View {
         HStack {
-            TextField("Tilføj en kommentar...", text: $newCommentText)
+            TextField(Localized.CommentsLocalized.add_comment, text: $newCommentText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
             Button("Post") {

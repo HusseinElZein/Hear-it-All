@@ -36,11 +36,11 @@ struct SoundsSelectionView: View {
                 }
                 .scrollContentBackground(.hidden)
                 .background(Color.backgroundColor)
-            }.navigationTitle("Vælg lyde")
+            }.navigationTitle(Localized.SoundsLocalized.choose_sounds)
                 .navigationBarItems(trailing: Button(action: toggleAllSounds) {
                     Text(toggleButtonText)
                 })
-        }.searchable(text: $search, prompt: "Søg efter lyde")
+        }.searchable(text: $search, prompt: Localized.SoundsLocalized.search_sounds)
     }
 }
 
@@ -50,7 +50,7 @@ extension SoundsSelectionView {
     }
     
     private var toggleButtonText: String {
-        areAllSoundsSelected ? "Slå alle fra" : "Slå alle til"
+        areAllSoundsSelected ? Localized.SoundsLocalized.all_off : Localized.SoundsLocalized.all_on
     }
     
     private func toggleAllSounds() {
@@ -59,7 +59,7 @@ extension SoundsSelectionView {
         } else {
             soundRecognizer.userSelectedSounds = Set(availableSounds)
         }
-        soundRecognizer.saveSelectedSounds() // Save after updating
+        soundRecognizer.saveSelectedSounds()
     }
 }
 

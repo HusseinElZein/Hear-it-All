@@ -81,7 +81,6 @@ class CommentViewModel: ObservableObject {
             }
             
         } catch {
-            print("Error commenting on post: \(error)")
         }
         loadAllComments(for: postId)
     }
@@ -95,7 +94,6 @@ class CommentViewModel: ObservableObject {
             let displayName = document.data()?["displayName"] as? String
             return (profilePhotoLink, displayName)
         } catch {
-            print("Error fetching profile info: \(error)")
             return (nil, nil)
         }
     }

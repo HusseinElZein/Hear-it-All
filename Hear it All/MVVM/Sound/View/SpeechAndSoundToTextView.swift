@@ -21,7 +21,7 @@ struct SpeechAndSoundToTextView: View {
                     //All about speech
                     VStack(alignment: .leading) {
                         HStack{
-                            Text("Tale")
+                            Text(Localized.SoundsLocalized.speech)
                                 .fontWeight(.medium)
                                 .font(.system(size: 20))
                             Text(speechRecognizer.language.emoji)
@@ -50,7 +50,7 @@ struct SpeechAndSoundToTextView: View {
                     //All about recognizing sounds
                     VStack(alignment: .leading) {
                         HStack{
-                            Text("Lydgenkendelse")
+                            Text(Localized.SoundsLocalized.sound_recognition)
                                 .fontWeight(.medium)
                                 .font(.system(size: 20))
                             Image(systemName: "hifispeaker")

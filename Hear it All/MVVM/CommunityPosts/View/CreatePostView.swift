@@ -16,7 +16,7 @@ struct CreatePostView: View {
             VStack {
                 TextEditorApproachView(text: $viewModel.post.titleText,
                                        fontType: .title,
-                                       placeholder: "Indtast titel",
+                                       placeholder: Localized.CreatePostLocalized.insert_title,
                                        sizeOfBox: 100)
                 .onChange(of: viewModel.post.titleText) { _, newValue in
                     viewModel.post.titleText = newValue.replacingOccurrences(of: "\n", with: "")
@@ -26,7 +26,7 @@ struct CreatePostView: View {
                     .padding(.bottom, 50)
                 
                 TextEditorApproachView(text: $viewModel.post.contentText,
-                                       placeholder: "Skriv din tekst her")
+                                       placeholder: Localized.CreatePostLocalized.insert_text)
                 .padding(.bottom, 100)
             }
             .toolbar {
@@ -69,7 +69,7 @@ struct TextEditorApproachView: View {
                     .padding(9)
                     .toolbar {
                         ToolbarItemGroup(placement: .keyboard) {
-                            Button("Færdig") {
+                            Button(Localized.CreatePostLocalized.done) {
                                 hideKeyboard()
                             }
                         }
@@ -115,7 +115,7 @@ struct PickPhotoForPost: View {
                                 Image(systemName: "photo.on.rectangle.angled")
                                     .font(.largeTitle)
                                     .foregroundColor(.white)
-                                Text("Vælg foto for dit indlæg")
+                                Text(Localized.CreatePostLocalized.insert_photo)
                                     .foregroundColor(.white)
                                     .padding(.top, 5)
                             })
@@ -139,8 +139,6 @@ struct PickPhotoForPost: View {
         }
     }
 }
-
-
 
 #Preview {
     CreatePostView(posts: .constant([PostModel(titleText: "", contentText: "", ownerId: "", date: "")]), resetPosts:{})

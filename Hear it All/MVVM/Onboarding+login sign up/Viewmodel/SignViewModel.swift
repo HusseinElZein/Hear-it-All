@@ -12,11 +12,11 @@ class SignViewModel{
             if error == nil{
                 NotificationInApp.loading = false
                 NotificationInApp.success = true
-                NotificationInApp.message = "Logget ind nu!"
+                NotificationInApp.message = Localized.ProfileLocalized.logged_in_message
             }else{
                 NotificationInApp.loading = false
                 NotificationInApp.error = true
-                NotificationInApp.message = "Mail el. adgangskode er forkert"
+                NotificationInApp.message = Localized.ProfileLocalized.mail_wrong_message
             }
         }
     }
@@ -30,11 +30,11 @@ class SignViewModel{
                 try? DatabaseService.db.collection("profiles").document().setData(from: profile)
                 
                 NotificationInApp.success = true
-                NotificationInApp.message = "Oprettet ny profil!"
+                NotificationInApp.message = Localized.ProfileLocalized.created_profile_message
             }else{
                 NotificationInApp.loading = false
                 NotificationInApp.error = true
-                NotificationInApp.message = "Mail el. adgangskode er forkert"
+                NotificationInApp.message = Localized.ProfileLocalized.mail_wrong_message
             }
         }
     }
@@ -63,11 +63,11 @@ class SignViewModel{
             if error != nil{
                 NotificationInApp.loading = false
                 NotificationInApp.success = true
-                NotificationInApp.message = "Mail sendt, tjek venligst din mail"
+                NotificationInApp.message = Localized.ProfileLocalized.mail_sent_message
             }else{
                 NotificationInApp.loading = false
                 NotificationInApp.success = true
-                NotificationInApp.message = "Mail sendt, tjek venligst din mail"
+                NotificationInApp.message = Localized.ProfileLocalized.mail_sent_message
             }
         }
     }

@@ -36,7 +36,7 @@ struct SeePostsView: View {
                     seePostsViewModel.refreshPosts()
                 }
             }
-            .navigationTitle("Indlæg")
+            .navigationTitle(Localized.SeePostsLocalized.posts)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
@@ -62,7 +62,7 @@ struct AddPostButton: View {
     var body: some View {
         VStack{
             HStack {
-                Text("Opret post")
+                Text(Localized.SeePostsLocalized.create_post)
                     .font(.system(size: 16, weight: .medium, design: .default))
                     .foregroundColor(.white)
 
@@ -184,7 +184,7 @@ struct PostView: View {
                 }) {
                     Image(systemName: "message")
                         .foregroundStyle(.black)
-                    Text("kommentarer")
+                    Text(Localized.SeePostsLocalized.comments)
                 }.sheet(isPresented: $showCommentSheet, content: {
                     CommentView(postId: post.id ?? "")
                 })
@@ -196,7 +196,7 @@ struct PostView: View {
             if post.isOwned ?? false{
                 Menu {
                     //Button("Redigér", action: {})
-                    Button("Slet", action: {vm.deletePost(postId: post.id ?? "")})
+                    Button(Localized.SeePostsLocalized.delete, action: {vm.deletePost(postId: post.id ?? "")})
                 } label: {
                     Image(systemName: "ellipsis")
                         .frame(width: 24, height: 24)

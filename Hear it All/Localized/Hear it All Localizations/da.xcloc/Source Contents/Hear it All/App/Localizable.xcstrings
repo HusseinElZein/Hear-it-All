@@ -1,0 +1,295 @@
+{
+  "sourceLanguage" : "da",
+  "strings" : {
+    "" : {
+
+    },
+    "- Forbedre og udvide vores app" : {
+
+    },
+    "- Forstå og analysere, hvordan du bruger vores app" : {
+
+    },
+    "- Levere, drive og vedligeholde vores app" : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%lld like" : {
+
+    },
+    "%lld likes" : {
+
+    },
+    "Adgangskode" : {
+
+    },
+    "Annullér" : {
+
+    },
+    "Antal ord inden sætningen opdateres:" : {
+
+    },
+    "år siden" : {
+
+    },
+    "Arabisk" : {
+
+    },
+    "Billede er nu slettet" : {
+
+    },
+    "d siden" : {
+
+    },
+    "Dansk" : {
+
+    },
+    "De personoplysninger, som du bliver bedt om at give, og årsagerne til, at du bliver bedt om at give dem, vil blive gjort klart for dig på det tidspunkt, vi beder dig om at give dine personoplysninger." : {
+
+    },
+    "Det kan jo ske! Men bliv ikke bekymret, vi sender dig et link til din email" : {
+
+    },
+    "Email" : {
+
+    },
+    "Engelsk" : {
+
+    },
+    "er" : {
+
+    },
+    "Er du sikker på, at du vil slette billedet?" : {
+
+    },
+    "Færdig" : {
+
+    },
+    "Fransk" : {
+
+    },
+    "Glemt adgangskode?" : {
+
+    },
+    "Gyldig fra: 25. marts 2024" : {
+
+    },
+    "Hear it All" : {
+
+    },
+    "Hear it All følger en standard procedure for brug af logfiler. Disse filer logger besøgende, når de bruger apps. De oplysninger, der indsamles af logfiler, inkluderer enhedstype og hvilken type nedbrud, der fik appen til at gå ned" : {
+
+    },
+    "Hos Hear it All, tilgængelig fra WSAudiology, er et af vores primære prioriteter privatlivets fred for vores brugere. Dette dokument med privatlivspolitik indeholder typer af oplysninger, der indsamles og registreres af Hear it All, og hvordan vi anvender dem." : {
+
+    },
+    "Hvis du har yderligere spørgsmål eller behøver mere information om vores privatlivspolitik, så tøv ikke med at kontakte os." : {
+
+    },
+    "Hvordan vi bruger dine oplysninger" : {
+
+    },
+    "Indlæg" : {
+
+    },
+    "Indlæg er nu postet!" : {
+
+    },
+    "Indstillinger" : {
+
+    },
+    "Indtast titel" : {
+
+    },
+    "Info om privatlivspolitik" : {
+
+    },
+    "Ja" : {
+
+    },
+    "Japansk" : {
+
+    },
+    "Kinesisk HK. SAR China" : {
+
+    },
+    "Koden er nu ændret!" : {
+
+    },
+    "Kommentarer" : {
+
+    },
+    "Koreansk" : {
+
+    },
+    "Lige nu" : {
+
+    },
+    "Log ind" : {
+
+    },
+    "Log ud" : {
+
+    },
+    "Logfiler" : {
+
+    },
+    "Lydgenkendelse" : {
+
+    },
+    "m siden" : {
+
+    },
+    "Mail el. adgangskode er forkert" : {
+
+    },
+    "Mail sendt, tjek venligst din mail" : {
+
+    },
+    "måned" : {
+
+    },
+    "Når du registrerer dig for en konto, kan vi bede om dine kontaktoplysninger, herunder ting som visningsnavn, e-mailadresse og evt. posts og profilbillede." : {
+
+    },
+    "Navn er nu ændret!" : {
+
+    },
+    "Noget gik galt" : {
+
+    },
+    "Opdatér" : {
+
+    },
+    "Oplysninger, vi indsamler" : {
+
+    },
+    "Opret post" : {
+
+    },
+    "Opret profil" : {
+
+    },
+    "Oprettet ny profil!" : {
+
+    },
+    "Post" : {
+
+    },
+    "Privatlivspolitik for Hear it All" : {
+
+    },
+    "Profil" : {
+
+    },
+    "Profil nu slettet" : {
+
+    },
+    "Profilbillede" : {
+
+    },
+    "Profilbillede er nu uploadet!" : {
+
+    },
+    "Profilindstillinger" : {
+
+    },
+    "Prøv igen, eller log ud og ind igen" : {
+
+    },
+    "Reset" : {
+
+    },
+    "Russisk" : {
+
+    },
+    "Send mail" : {
+
+    },
+    "siden" : {
+
+    },
+    "Skift" : {
+
+    },
+    "Skift adgangskode" : {
+
+    },
+    "Skift visningsnavn" : {
+
+    },
+    "Skriv din tekst her" : {
+
+    },
+    "Slå alle fra" : {
+
+    },
+    "Slå alle til" : {
+
+    },
+    "Slet" : {
+
+    },
+    "Slet billede" : {
+
+    },
+    "Slet profil" : {
+
+    },
+    "Søg efter lyde" : {
+
+    },
+    "Spansk" : {
+
+    },
+    "t siden" : {
+
+    },
+    "Tale" : {
+
+    },
+    "Talegenkendelse" : {
+
+    },
+    "Tilføj en kommentar..." : {
+
+    },
+    "Tysk" : {
+
+    },
+    "Upload" : {
+
+    },
+    "Vælg foto for dit indlæg" : {
+
+    },
+    "Vælg hvordan du vil bruge en profil" : {
+
+    },
+    "Vælg lyde" : {
+
+    },
+    "Vælg sprog" : {
+
+    },
+    "Vær den første til at kommentere!😃" : {
+
+    },
+    "Vi bruger de oplysninger, vi indsamler, på forskellige måder, herunder til at:" : {
+
+    },
+    "Visningsnavn" : {
+
+    }
+  },
+  "version" : "1.0"
+}

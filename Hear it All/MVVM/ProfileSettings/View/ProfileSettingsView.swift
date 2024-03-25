@@ -48,7 +48,7 @@ struct ProfileSettingsView: View {
                                     Circle()
                                         .fill(Color.gray.opacity(0.3))
                                         .frame(width: 100, height: 100)
-                                        .overlay(Text("Profilbillede").foregroundColor(.white))
+                                        .overlay(Text(Localized.ProfileLocalized.profile_picture).foregroundColor(.white))
                                 }
                             }
                         }
@@ -61,12 +61,12 @@ struct ProfileSettingsView: View {
                             })
                             .alert(isPresented: $showDeleteConfirmation) {
                                 Alert(
-                                    title: Text("Slet billede"),
-                                    message: Text("Er du sikker på, at du vil slette billedet?"),
-                                    primaryButton: .destructive(Text("Ja")) {
+                                    title: Text(Localized.ProfileLocalized.delete_picture),
+                                    message: Text(Localized.ProfileLocalized.you_sure),
+                                    primaryButton: .destructive(Text(Localized.ProfileLocalized.yes)) {
                                         vm.deletePicture()
                                     },
-                                    secondaryButton: .cancel(Text("Annullér"))
+                                    secondaryButton: .cancel(Text(Localized.ProfileLocalized.cancel))
                                 )
                             }
                         }
@@ -75,7 +75,7 @@ struct ProfileSettingsView: View {
                         Section {
                             HStack {
                                 Image(systemName: "person.fill").foregroundColor(.blue)
-                                Text("Visningsnavn")
+                                Text(Localized.ProfileLocalized.display_name)
                                 Spacer()
                                 Text(vm.profile?.displayName ?? "")
                             }
@@ -98,7 +98,7 @@ struct ProfileSettingsView: View {
                             
                             HStack {
                                 Image(systemName: "lock.fill").foregroundColor(.gray)
-                                Text("Adgangskode")
+                                Text(Localized.ProfileLocalized.password)
                                 Spacer()
                                 Text(String(repeating: "•", count: 8))
                             }
@@ -113,11 +113,11 @@ struct ProfileSettingsView: View {
                         }
                         
                         Section {
-                            Button("Log ud") {
+                            Button(Localized.ProfileLocalized.sign_out) {
                                 vm.signOut()
                             }
                             
-                            Button("Slet Profil") {
+                            Button(Localized.ProfileLocalized.delete_profile) {
                                 showingDeleteAccount.toggle()
                             }
                             .foregroundColor(.red)
@@ -129,7 +129,7 @@ struct ProfileSettingsView: View {
                     }
                     .scrollContentBackground(.hidden)
                     .listStyle(GroupedListStyle())
-                    .navigationBarTitle("Profil", displayMode: .large)
+                    .navigationBarTitle(Localized.ProfileLocalized.profile, displayMode: .large)
                     .background(Color.backgroundColor)
                 }
                 .onChange(of: photosPickerItem) { _, _ in
@@ -160,13 +160,13 @@ struct EditDisplayNameView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("Visningsnavn", text: $changedDisplayName)
+                TextField(Localized.ProfileLocalized.display_name, text: $changedDisplayName)
                     .textFieldStyle(.roundedBorder)
                     .submitLabel(.done)
             }
             .background(Color.backgroundColor)
-            .navigationBarTitle("Skift Visningsnavn", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Skift") {
+            .navigationBarTitle(Localized.ProfileLocalized.change_display_name, displayMode: .inline)
+            .navigationBarItems(trailing: Button(Localized.ProfileLocalized.change) {
                 vm.changeDisplayName(to: changedDisplayName)
                 showMe = false
             }.disabled(changedDisplayName.isEmpty || displayName.elementsEqual(changedDisplayName)))
@@ -183,13 +183,13 @@ struct EditPasswordView: View {
     var body: some View {
         NavigationView {
             Form {
-                SecureField("Adgangskode", text: $password)
+                SecureField(Localized.ProfileLocalized.password, text: $password)
                     .textFieldStyle(.roundedBorder)
                     .submitLabel(.done)
             }
             .background(Color.backgroundColor)
-            .navigationBarTitle("Skift adgangskode", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Skift") {
+            .navigationBarTitle(Localized.ProfileLocalized.change_password, displayMode: .inline)
+            .navigationBarItems(trailing: Button(Localized.ProfileLocalized.change) {
                 vm.changePassword(to: password)
                 showMe = false
             }.disabled(password.count < 6))
@@ -205,13 +205,13 @@ struct DeleteAccountView: View {
     var body: some View {
         NavigationView {
             Form {
-                SecureField("Adgangskode", text: $password)
+                SecureField(Localized.ProfileLocalized.password, text: $password)
                     .textFieldStyle(.roundedBorder)
                     .submitLabel(.done)
             }
             .background(Color.backgroundColor)
-            .navigationBarTitle("Slet profil", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Slet") {
+            .navigationBarTitle(Localized.ProfileLocalized.delete_profile, displayMode: .inline)
+            .navigationBarItems(trailing: Button(Localized.SeePostsLocalized.delete) {
                 vm.deleteProfile(password: password)
             }.disabled(password.count < 6))
         }

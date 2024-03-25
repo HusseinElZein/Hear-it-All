@@ -35,7 +35,7 @@ struct ChooseLanguageView: View {
             }
             .scrollContentBackground(.hidden)
             .background(Color.backgroundColor)
-            .navigationBarTitle("Vælg sprog", displayMode: .large)
+            .navigationBarTitle(Localized.LanguageLocalized.choose_language, displayMode: .large)
         }
     }
 }

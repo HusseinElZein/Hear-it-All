@@ -49,11 +49,11 @@ class ProfileSettingsViewmodel {
             if error != nil{
                 //if error occured
                 NotificationInApp.error = true
-                NotificationInApp.message = "Prøv igen, eller log ud og ind igen"
+                NotificationInApp.message = Localized.ProfileLocalized.try_again
             }else{
                 //if no error
                 NotificationInApp.success = true
-                NotificationInApp.message = "Koden er nu ændret!"
+                NotificationInApp.message = Localized.ProfileLocalized.password_changed
             }
         }
     }
@@ -63,11 +63,11 @@ class ProfileSettingsViewmodel {
         { error in
             if error != nil{
                 NotificationInApp.error = true
-                NotificationInApp.message = "Noget gik galt"
+                NotificationInApp.message = Localized.CreatePostLocalized.something_wrong
             }else{
                 self.profile?.displayName = newName
                 NotificationInApp.success = true
-                NotificationInApp.message = "Navn er nu skiftet"
+                NotificationInApp.message = Localized.ProfileLocalized.name_changed
             }
         }
     }
@@ -86,7 +86,7 @@ class ProfileSettingsViewmodel {
                 guard let downloadURL = url else {
                     NotificationInApp.loading = false
                     NotificationInApp.error = true
-                    NotificationInApp.message = "Noget gik galt"
+                    NotificationInApp.message = Localized.CreatePostLocalized.something_wrong
                     return
                 }
                 
@@ -96,10 +96,10 @@ class ProfileSettingsViewmodel {
                 self.db.collection("profiles").document(self.profile?.id ?? "NoId").updateData(["profilePhoto": downloadURL.absoluteString]) { error in
                     if error != nil {
                         NotificationInApp.error = true
-                        NotificationInApp.message = "Noget gik galt"
+                        NotificationInApp.message = Localized.CreatePostLocalized.something_wrong
                     } else {
                         NotificationInApp.success = true
-                        NotificationInApp.message = "Profilbillede er nu uploadet!"
+                        NotificationInApp.message = Localized.ProfileLocalized.picture_uploaded
                     }
                     NotificationInApp.loading = false
                 }
@@ -125,12 +125,12 @@ class ProfileSettingsViewmodel {
                 if error != nil {
                     NotificationInApp.loading = false
                     NotificationInApp.error = true
-                    NotificationInApp.message = "Noget gik galt"
+                    NotificationInApp.message = Localized.CreatePostLocalized.something_wrong
                 } else {
                     NotificationInApp.loading = false
                     self.profile?.profilePhoto = nil
                     NotificationInApp.success = true
-                    NotificationInApp.message = "Billede er nu slettet"
+                    NotificationInApp.message = Localized.ProfileLocalized.picture_deleted
                 }
             }
         }
@@ -157,7 +157,7 @@ class ProfileSettingsViewmodel {
         user.reauthenticate(with: credential) { authResult, error in
             if error != nil {
                 NotificationInApp.error = true
-                NotificationInApp.message = "Noget gik galt"
+                NotificationInApp.message = Localized.CreatePostLocalized.something_wrong
                 return
             }
             
@@ -168,12 +168,12 @@ class ProfileSettingsViewmodel {
                 if error != nil {
                     NotificationInApp.loading = false
                     NotificationInApp.error = true
-                    NotificationInApp.message = "Noget gik galt"
+                    NotificationInApp.message = Localized.CreatePostLocalized.something_wrong
                     return
                 }else{
                     NotificationInApp.loading = false
                     NotificationInApp.success = true
-                    NotificationInApp.message = "Profil nu slettet"
+                    NotificationInApp.message = Localized.ProfileLocalized.profile_deleted
                 }
             }
         }

@@ -12,14 +12,14 @@ struct SoundSettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Talegenkendelse")) {
+                Section(header: Text(Localized.SoundsLocalized.speech_recognition)) {
                     Toggle(isOn: $viewModel.speechRecognitionEnabled) {
-                        Text("Talegenkendelse")
+                        Text(Localized.SoundsLocalized.speech_recognition)
                     }.tint(.green)
                         .disabled(!viewModel.soundRecognitionEnabled)
                     VStack{
                         HStack{
-                            Text("Antal ord inden sætningen opdateres: \(String(format: "%.0f", viewModel.numberOfWords))")
+                            Text("\(Localized.SettingsLocalized.words_before_update) \(String(format: "%.0f", viewModel.numberOfWords))")
                                 .font(.footnote)
                             Spacer()
                         }
@@ -34,29 +34,29 @@ struct SoundSettingsView: View {
                         .animation(.easeInOut, value: viewModel.numberOfWords)
                     }
                 }
-                Section(header: Text("Lydkendelse")) {
+                Section(header: Text(Localized.SoundsLocalized.sound_recognition)) {
                     Toggle(isOn: $viewModel.soundRecognitionEnabled) {
-                        Text("Lydkendelse")
+                        Text(Localized.SoundsLocalized.sound_recognition)
                     }.tint(.green)
                         .disabled(!viewModel.speechRecognitionEnabled)
                 }
-                Section(header: Text("Profilindstillinger")) {
+                Section(header: Text(Localized.SettingsLocalized.profile_settings)) {
                     NavigationLink {
                         ProfileSettingsView()
                     } label: {
-                        Text("Profilindstillinger")
+                        Text(Localized.SettingsLocalized.profile_settings)
                     }
                 }
 
                 Section {
                     NavigationLink(destination: PrivacyPolicyView()) {
-                        Text("Info om privatlivspolitik")
+                        Text(Localized.SettingsLocalized.info_privacy)
                     }
                 }
             }
             .scrollContentBackground(.hidden)
             .background(Color.backgroundColor)
-            .navigationBarTitle("Indstillinger", displayMode: .large)
+            .navigationBarTitle(Localized.SettingsLocalized.settings, displayMode: .large)
         }
     }
 }

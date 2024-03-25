@@ -18,8 +18,6 @@
 		E300BDE32B9DFCA600AA57C5 /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300BDE22B9DFCA600AA57C5 /* SignViewModel.swift */; };
 		E300BDE62B9E027C00AA57C5 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300BDE52B9E027C00AA57C5 /* DatabaseService.swift */; };
 		E300BDE82B9E030800AA57C5 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300BDE72B9E030800AA57C5 /* ProfileModel.swift */; };
-		E300BDEB2B9E15AF00AA57C5 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E300BDEA2B9E15AF00AA57C5 /* Toast */; };
-		E300BDEE2B9E1ED400AA57C5 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = E300BDED2B9E1ED400AA57C5 /* PopupView */; };
 		E300BDF02B9E2EA000AA57C5 /* UserAuthListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300BDEF2B9E2EA000AA57C5 /* UserAuthListener.swift */; };
 		E300BDF32B9E30FF00AA57C5 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = E300BDF22B9E30FF00AA57C5 /* AlertToast */; };
 		E30572692B8CD05800AF956D /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30572682B8CD05800AF956D /* LanguageModel.swift */; };
@@ -51,6 +49,9 @@
 		E3A7F5A22B8BF2ED0006AF4D /* ColorsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */; };
 		E3A7F5A42B8C02DE0006AF4D /* SentenceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */; };
 		E3C22A672BB1C84000FD3E08 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C22A662BB1C84000FD3E08 /* PrivacyPolicyView.swift */; };
+		E3C22A6A2BB1F90800FD3E08 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C22A692BB1F90800FD3E08 /* LocalizedStrings.swift */; };
+		E3C22A6C2BB20B6A00FD3E08 /* Hear-it-All-InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E3C22A6B2BB20B6A00FD3E08 /* Hear-it-All-InfoPlist.xcstrings */; };
+		E3C22A6E2BB20B6A00FD3E08 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E3C22A6D2BB20B6A00FD3E08 /* Localizable.xcstrings */; };
 		E3D703ED2B8A4981000813B9 /* SpeechAndSoundToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */; };
 		E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */; };
 		E3D70DD92B98B62D004435F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3D70DD82B98B62C004435F4 /* GoogleService-Info.plist */; };
@@ -130,6 +131,9 @@
 		E3A7F5A12B8BF2ED0006AF4D /* ColorsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsExtensions.swift; sourceTree = "<group>"; };
 		E3A7F5A32B8C02DE0006AF4D /* SentenceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceUtils.swift; sourceTree = "<group>"; };
 		E3C22A662BB1C84000FD3E08 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		E3C22A692BB1F90800FD3E08 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		E3C22A6B2BB20B6A00FD3E08 /* Hear-it-All-InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "Hear-it-All-InfoPlist.xcstrings"; sourceTree = "<group>"; };
+		E3C22A6D2BB20B6A00FD3E08 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E3D703E92B8A46B9000813B9 /* Hear-it-AllUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-AllUITests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-All-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechAndSoundToTextView.swift; sourceTree = "<group>"; };
@@ -149,9 +153,7 @@
 				E3D70DE22B98B6D3004435F4 /* FirebaseDatabaseSwift in Frameworks */,
 				E300BDF32B9E30FF00AA57C5 /* AlertToast in Frameworks */,
 				E3D70DE02B98B6D3004435F4 /* FirebaseDatabase in Frameworks */,
-				E300BDEE2B9E1ED400AA57C5 /* PopupView in Frameworks */,
 				E3D70DDC2B98B6D3004435F4 /* FirebaseAuth in Frameworks */,
-				E300BDEB2B9E15AF00AA57C5 /* Toast in Frameworks */,
 				E3D70DE42B98B6D3004435F4 /* FirebaseFirestore in Frameworks */,
 				E3D901552B9B4E9F0050D935 /* SplineRuntime in Frameworks */,
 				E3D70DE82B98B6D3004435F4 /* FirebaseStorage in Frameworks */,
@@ -206,6 +208,7 @@
 				E3FF4D342B8A2FC600A132EB /* App */,
 				E3FF4D352B8A302D00A132EB /* Services */,
 				E3FF4D362B8A303E00A132EB /* Utilities */,
+				E3C22A682BB1F8EF00FD3E08 /* Localized */,
 				E3D703EB2B8A4931000813B9 /* MVVM */,
 				D7C243F12B6A41ED005DD0FB /* Preview Content */,
 			);
@@ -277,6 +280,14 @@
 				E354DAE42B9F44D7005AFD29 /* ProfileSettingsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E3C22A682BB1F8EF00FD3E08 /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				E3C22A692BB1F90800FD3E08 /* LocalizedStrings.swift */,
+			);
+			path = Localized;
 			sourceTree = "<group>";
 		};
 		E3D703EB2B8A4931000813B9 /* MVVM */ = {
@@ -438,6 +449,8 @@
 		E3FF4D342B8A2FC600A132EB /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E3C22A6B2BB20B6A00FD3E08 /* Hear-it-All-InfoPlist.xcstrings */,
+				E3C22A6D2BB20B6A00FD3E08 /* Localizable.xcstrings */,
 				D7C243EB2B6A41EC005DD0FB /* Hear_it_AllApp.swift */,
 				D7C243ED2B6A41EC005DD0FB /* StartView.swift */,
 				D7C243EF2B6A41ED005DD0FB /* Assets.xcassets */,
@@ -494,8 +507,6 @@
 				E3D70DE52B98B6D3004435F4 /* FirebaseFirestoreSwift */,
 				E3D70DE72B98B6D3004435F4 /* FirebaseStorage */,
 				E3D901542B9B4E9F0050D935 /* SplineRuntime */,
-				E300BDEA2B9E15AF00AA57C5 /* Toast */,
-				E300BDED2B9E1ED400AA57C5 /* PopupView */,
 				E300BDF22B9E30FF00AA57C5 /* AlertToast */,
 			);
 			productName = "Hear it All";
@@ -563,18 +574,17 @@
 			};
 			buildConfigurationList = D7C243E32B6A41EC005DD0FB /* Build configuration list for PBXProject "Hear it All" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = da;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				da,
 			);
 			mainGroup = D7C243DF2B6A41EC005DD0FB;
 			packageReferences = (
 				E3D70DDA2B98B6D3004435F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E3D901532B9B4E9F0050D935 /* XCRemoteSwiftPackageReference "spline-ios" */,
-				E300BDE92B9E15AF00AA57C5 /* XCRemoteSwiftPackageReference "toast-swift" */,
-				E300BDEC2B9E1ED400AA57C5 /* XCRemoteSwiftPackageReference "PopupView" */,
 				E300BDF12B9E30FF00AA57C5 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = D7C243E92B6A41EC005DD0FB /* Products */;
@@ -593,7 +603,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3C22A6C2BB20B6A00FD3E08 /* Hear-it-All-InfoPlist.xcstrings in Resources */,
 				D7C243F32B6A41ED005DD0FB /* Preview Assets.xcassets in Resources */,
+				E3C22A6E2BB20B6A00FD3E08 /* Localizable.xcstrings in Resources */,
 				E3D70DD92B98B62D004435F4 /* GoogleService-Info.plist in Resources */,
 				E3EBE6492B875CD000C779DD /* .gitignore in Resources */,
 				D7C243F02B6A41ED005DD0FB /* Assets.xcassets in Resources */,
@@ -651,6 +663,7 @@
 				E300BDE62B9E027C00AA57C5 /* DatabaseService.swift in Sources */,
 				E33F47EB2B9F1D4700AA142C /* ForgotPasswordView.swift in Sources */,
 				E354DAE72B9F4B47005AFD29 /* ProfileSettingsViewmodel.swift in Sources */,
+				E3C22A6A2BB1F90800FD3E08 /* LocalizedStrings.swift in Sources */,
 				E398550F2BA61B260015CFDE /* CommentView.swift in Sources */,
 				E30572692B8CD05800AF956D /* LanguageModel.swift in Sources */,
 				D7C243EE2B6A41EC005DD0FB /* StartView.swift in Sources */,
@@ -918,7 +931,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 579DK7H5M9;
+				DEVELOPMENT_TEAM = 77U6BBK6Y5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
@@ -938,7 +951,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 579DK7H5M9;
+				DEVELOPMENT_TEAM = 77U6BBK6Y5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
@@ -957,7 +970,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 579DK7H5M9;
+				DEVELOPMENT_TEAM = 77U6BBK6Y5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hear-it-AllUITests-Info.plist";
 				MARKETING_VERSION = 1.0;
@@ -976,7 +989,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 579DK7H5M9;
+				DEVELOPMENT_TEAM = 77U6BBK6Y5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hear-it-AllUITests-Info.plist";
 				MARKETING_VERSION = 1.0;
@@ -1031,22 +1044,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E300BDE92B9E15AF00AA57C5 /* XCRemoteSwiftPackageReference "toast-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/BastiaanJansen/toast-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.2;
-			};
-		};
-		E300BDEC2B9E1ED400AA57C5 /* XCRemoteSwiftPackageReference "PopupView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/PopupView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.9.0;
-			};
-		};
 		E300BDF12B9E30FF00AA57C5 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elai950/AlertToast";
@@ -1074,16 +1071,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E300BDEA2B9E15AF00AA57C5 /* Toast */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E300BDE92B9E15AF00AA57C5 /* XCRemoteSwiftPackageReference "toast-swift" */;
-			productName = Toast;
-		};
-		E300BDED2B9E1ED400AA57C5 /* PopupView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E300BDEC2B9E1ED400AA57C5 /* XCRemoteSwiftPackageReference "PopupView" */;
-			productName = PopupView;
-		};
 		E300BDF22B9E30FF00AA57C5 /* AlertToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E300BDF12B9E30FF00AA57C5 /* XCRemoteSwiftPackageReference "AlertToast" */;

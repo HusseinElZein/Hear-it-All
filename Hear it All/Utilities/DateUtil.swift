@@ -18,17 +18,17 @@ class DateUtil {
         let components = Calendar.current.dateComponents([.minute, .hour, .day, .month, .year], from: pastDate, to: Date())
 
         if let year = components.year, year > 0 {
-            return "\(year) år siden"
+            return "\(year) \(Localized.DateLocalized.years_ago)"
         } else if let month = components.month, month > 0 {
-            return "\(month) måned\(month > 1 ? "er" : "") siden"
+            return "\(month) \(Localized.DateLocalized.month)\(month > 1 ? "\(Localized.DateLocalized.months_plural)" : "") \(Localized.DateLocalized.ago)"
         } else if let day = components.day, day > 0 {
-            return "\(day)d siden"
+            return "\(day)\(Localized.DateLocalized.d_ago)"
         } else if let hour = components.hour, hour > 0 {
-            return "\(hour)t siden"
+            return "\(hour)\(Localized.DateLocalized.t_ago)"
         } else if let minute = components.minute, minute > 0 {
-            return "\(minute)m siden"
+            return "\(minute)\(Localized.DateLocalized.m_ago)"
         } else {
-            return "Lige nu"
+            return Localized.DateLocalized.just_now
         }
     }
 }

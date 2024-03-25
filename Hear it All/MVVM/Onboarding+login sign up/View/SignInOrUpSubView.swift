@@ -13,8 +13,7 @@ struct SignInOrUpSubView: View {
                     VStack{
                         Text("Hear it All").font(.largeTitle.bold())
                             .padding(.vertical)
-                        
-                        Text("Vælg hvordan du vil bruge en profil")
+                        Text(Localized.ProfileLocalized.choose_how_use_profile)
                             .foregroundStyle(.secondary)
                     }.padding(.top, 30)
                     
@@ -24,7 +23,7 @@ struct SignInOrUpSubView: View {
                         NavigationLink {
                             SignInView(viewModel: viewModel)
                         } label: {
-                            Text("Log ind")
+                            Text(Localized.ProfileLocalized.sign_in)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 120)
                                 .foregroundStyle(.white)
@@ -35,7 +34,7 @@ struct SignInOrUpSubView: View {
                         NavigationLink {
                             SignUpView(viewModel: viewModel)
                         } label: {
-                            Text("Opret profil")
+                            Text(Localized.ProfileLocalized.sign_up)
                                 .padding(.vertical, 14)
                                 .padding(.horizontal, 115)
                                 .foregroundColor(.black)

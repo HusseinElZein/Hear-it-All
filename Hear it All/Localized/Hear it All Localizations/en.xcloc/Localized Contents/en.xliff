@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Hear it All/App/Hear-it-All-InfoPlist.xcstrings" source-language="da" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.2" build-num="15C500b"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName" xml:space="preserve">
+        <source>Hear it all</source>
+        <target state="translated">Hear it All</target>
+        <note>Bundle display name</note>
+      </trans-unit>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Hear it All</source>
+        <target state="translated">Hear it All</target>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSMicrophoneUsageDescription" xml:space="preserve">
+        <source>App'en bruger din mikrofon til oversættelsen af tale og lyd, til tekst</source>
+        <target state="translated">The app uses your microphone to translate speech and sound into text</target>
+        <note>Privacy - Microphone Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSSpeechRecognitionUsageDescription" xml:space="preserve">
+        <source>App'en bruger din mikrofon for at optage dine omgivelser, mens du er i app'en. Du bestemmer selv om app'en må køre i baggrunden og optage - pr. default er dette slået fra.</source>
+        <target state="translated">The app uses your microphone to record your surroundings while you are in the app. You decide whether the app can run in the background and record - per by default this is turned off.</target>
+        <note>Privacy - Speech Recognition Usage Description</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Hear it All/App/Localizable.xcstrings" source-language="da" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="15.2" build-num="15C500b"/>
+    </header>
+    <body>
+      <trans-unit id="" xml:space="preserve">
+        <source/>
+        <note/>
+      </trans-unit>
+      <trans-unit id="%@ %@" xml:space="preserve">
+        <source>%1$@ %2$@</source>
+        <target state="needs-translation"/>
+        <note/>
+      </trans-unit>
+      <trans-unit id="%lld like" xml:space="preserve">
+        <source>%lld like</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="%lld likes" xml:space="preserve">
+        <source>%lld likes</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="- Forbedre og udvide vores app" xml:space="preserve">
+        <source>- Forbedre og udvide vores app</source>
+        <target state="translated">- Improve and expand our app</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="- Forstå og analysere, hvordan du bruger vores app" xml:space="preserve">
+        <source>- Forstå og analysere, hvordan du bruger vores app</source>
+        <target state="translated">- Understand and analyze how you use our app</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="- Levere, drive og vedligeholde vores app" xml:space="preserve">
+        <source>- Levere, drive og vedligeholde vores app</source>
+        <target state="translated">- Deliver, operate and maintain our app</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Adgangskode" xml:space="preserve">
+        <source>Adgangskode</source>
+        <target state="translated">Password</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Annullér" xml:space="preserve">
+        <source>Annullér</source>
+        <target state="translated">Cancel</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Antal ord inden sætningen opdateres:" xml:space="preserve">
+        <source>Antal ord inden sætningen opdateres:</source>
+        <target state="translated">Number of words before the sentence is updated:</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Arabisk" xml:space="preserve">
+        <source>Arabisk</source>
+        <target state="translated">Arabic</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Billede er nu slettet" xml:space="preserve">
+        <source>Billede er nu slettet</source>
+        <target state="translated">Picture now deleted</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Dansk" xml:space="preserve">
+        <source>Dansk</source>
+        <target state="translated">Danish</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="De personoplysninger, som du bliver bedt om at give, og årsagerne til, at du bliver bedt om at give dem, vil blive gjort klart for dig på det tidspunkt, vi beder dig om at give dine personoplysninger." xml:space="preserve">
+        <source>De personoplysninger, som du bliver bedt om at give, og årsagerne til, at du bliver bedt om at give dem, vil blive gjort klart for dig på det tidspunkt, vi beder dig om at give dine personoplysninger.</source>
+        <target state="translated">The personal data that you are asked to provide and the reasons why you are asked to provide it will be made clear to you at the time we ask you to provide your personal data.</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Det kan jo ske! Men bliv ikke bekymret, vi sender dig et link til din email" xml:space="preserve">
+        <source>Det kan jo ske! Men bliv ikke bekymret, vi sender dig et link til din email</source>
+        <target state="translated">It can happen! But don't worry, we'll send you a link to your email</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Email" xml:space="preserve">
+        <source>Email</source>
+        <target state="translated">Email</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Engelsk" xml:space="preserve">
+        <source>Engelsk</source>
+        <target state="translated">English</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Er du sikker på, at du vil slette billedet?" xml:space="preserve">
+        <source>Er du sikker på, at du vil slette billedet?</source>
+        <target state="translated">Are you sure to delete the picture?</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Fransk" xml:space="preserve">
+        <source>Fransk</source>
+        <target state="translated">French</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Færdig" xml:space="preserve">
+        <source>Færdig</source>
+        <target state="translated">Done</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Glemt adgangskode?" xml:space="preserve">
+        <source>Glemt adgangskode?</source>
+        <target state="translated">Forgot password?</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Gyldig fra: 25. marts 2024" xml:space="preserve">
+        <source>Gyldig fra: 25. marts 2024</source>
+        <target state="translated">Valid from: 25 March 2024</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Hear it All" xml:space="preserve">
+        <source>Hear it All</source>
+        <target state="translated">Hear it All</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Hear it All følger en standard procedure for brug af logfiler. Disse filer logger besøgende, når de bruger apps. De oplysninger, der indsamles af logfiler, inkluderer enhedstype og hvilken type nedbrud, der fik appen til at gå ned" xml:space="preserve">
+        <source>Hear it All følger en standard procedure for brug af logfiler. Disse filer logger besøgende, når de bruger apps. De oplysninger, der indsamles af logfiler, inkluderer enhedstype og hvilken type nedbrud, der fik appen til at gå ned</source>
+        <target state="translated">Hear it All follows a standard procedure for using log files. These files log visitors when they use apps. The information collected by logs includes device type and the type of crash that caused the app to crash</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Hos Hear it All, tilgængelig fra WSAudiology, er et af vores primære prioriteter privatlivets fred for vores brugere. Dette dokument med privatlivspolitik indeholder typer af oplysninger, der indsamles og registreres af Hear it All, og hvordan vi anvender dem." xml:space="preserve">
+        <source>Hos Hear it All, tilgængelig fra WSAudiology, er et af vores primære prioriteter privatlivets fred for vores brugere. Dette dokument med privatlivspolitik indeholder typer af oplysninger, der indsamles og registreres af Hear it All, og hvordan vi anvender dem.</source>
+        <target state="translated">At Hear it All, available from WSAudiology, one of our top priorities is the privacy of our users. This privacy policy document describes the types of information collected and recorded by Hear it All and how we use it.</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Hvis du har yderligere spørgsmål eller behøver mere information om vores privatlivspolitik, så tøv ikke med at kontakte os." xml:space="preserve">
+        <source>Hvis du har yderligere spørgsmål eller behøver mere information om vores privatlivspolitik, så tøv ikke med at kontakte os.</source>
+        <target state="translated">If you have any further questions or need more information about our privacy policy, please do not hesitate to contact us.</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Hvordan vi bruger dine oplysninger" xml:space="preserve">
+        <source>Hvordan vi bruger dine oplysninger</source>
+        <target state="translated">How we use your information</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Indlæg" xml:space="preserve">
+        <source>Indlæg</source>
+        <target state="translated">Posts</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Indlæg er nu postet!" xml:space="preserve">
+        <source>Indlæg er nu postet!</source>
+        <target state="translated">Post is now uploaded</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Indstillinger" xml:space="preserve">
+        <source>Indstillinger</source>
+        <target state="translated">Settings</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Indtast titel" xml:space="preserve">
+        <source>Indtast titel</source>
+        <target state="translated">Enter title</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Info om privatlivspolitik" xml:space="preserve">
+        <source>Info om privatlivspolitik</source>
+        <target state="translated">Info on privacy policy</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Ja" xml:space="preserve">
+        <source>Ja</source>
+        <target state="translated">Yes</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Japansk" xml:space="preserve">
+        <source>Japansk</source>
+        <target state="translated">Japanese</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Kinesisk HK. SAR China" xml:space="preserve">
+        <source>Kinesisk HK. SAR China</source>
+        <target state="translated">Chinese HK. SAR China</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Koden er nu ændret!" xml:space="preserve">
+        <source>Koden er nu ændret!</source>
+        <target state="translated">Password is changed!</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Kommentarer" xml:space="preserve">
+        <source>Kommentarer</source>
+        <target state="translated">Comments</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Koreansk" xml:space="preserve">
+        <source>Koreansk</source>
+        <target state="translated">Korean</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Lige nu" xml:space="preserve">
+        <source>Lige nu</source>
+        <target state="translated">Just now</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Log ind" xml:space="preserve">
+        <source>Log ind</source>
+        <target state="translated">Sign in</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Log ud" xml:space="preserve">
+        <source>Log ud</source>
+        <target state="translated">Sign out</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Logfiler" xml:space="preserve">
+        <source>Logfiler</source>
+        <target state="translated">Logs</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Lydgenkendelse" xml:space="preserve">
+        <source>Lydgenkendelse</source>
+        <target state="translated">Sound recognition</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Mail el. adgangskode er forkert" xml:space="preserve">
+        <source>Mail el. adgangskode er forkert</source>
+        <target state="translated">Wrong mail or password</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Mail sendt, tjek venligst din mail" xml:space="preserve">
+        <source>Mail sendt, tjek venligst din mail</source>
+        <target state="translated">Mail sent, check your inbox</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Navn er nu ændret!" xml:space="preserve">
+        <source>Navn er nu ændret!</source>
+        <target state="translated">Name is changed!</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Når du registrerer dig for en konto, kan vi bede om dine kontaktoplysninger, herunder ting som visningsnavn, e-mailadresse og evt. posts og profilbillede." xml:space="preserve">
+        <source>Når du registrerer dig for en konto, kan vi bede om dine kontaktoplysninger, herunder ting som visningsnavn, e-mailadresse og evt. posts og profilbillede.</source>
+        <target state="translated">When you register for an account, we may ask for your contact information, including things like your display name, email address, and any posts and profile picture.</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Noget gik galt" xml:space="preserve">
+        <source>Noget gik galt</source>
+        <target state="translated">Something went wrong</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Opdatér" xml:space="preserve">
+        <source>Opdatér</source>
+        <target state="translated">Update</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Oplysninger, vi indsamler" xml:space="preserve">
+        <source>Oplysninger, vi indsamler</source>
+        <target state="translated">Information, we collect</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Opret post" xml:space="preserve">
+        <source>Opret post</source>
+        <target state="translated">Create post</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Opret profil" xml:space="preserve">
+        <source>Opret profil</source>
+        <target state="translated">Create profile</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Oprettet ny profil!" xml:space="preserve">
+        <source>Oprettet ny profil!</source>
+        <target state="translated">Created new profile</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Post" xml:space="preserve">
+        <source>Post</source>
+        <target state="translated">Post</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Privatlivspolitik for Hear it All" xml:space="preserve">
+        <source>Privatlivspolitik for Hear it All</source>
+        <target state="translated">Privacy Policy for Hear it All</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Profil" xml:space="preserve">
+        <source>Profil</source>
+        <target state="translated">Profile</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Profil nu slettet" xml:space="preserve">
+        <source>Profil nu slettet</source>
+        <target state="translated">Profile is now deleted</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Profilbillede" xml:space="preserve">
+        <source>Profilbillede</source>
+        <target state="translated">Profile picture</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Profilbillede er nu uploadet!" xml:space="preserve">
+        <source>Profilbillede er nu uploadet!</source>
+        <target state="translated">Profile picture changed!</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Profilindstillinger" xml:space="preserve">
+        <source>Profilindstillinger</source>
+        <target state="translated">Profile settings</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Prøv igen, eller log ud og ind igen" xml:space="preserve">
+        <source>Prøv igen, eller log ud og ind igen</source>
+        <target state="translated">Try again, or sign out and in again</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Reset" xml:space="preserve">
+        <source>Reset</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Russisk" xml:space="preserve">
+        <source>Russisk</source>
+        <target state="translated">Russian</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Send mail" xml:space="preserve">
+        <source>Send mail</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Skift" xml:space="preserve">
+        <source>Skift</source>
+        <target state="translated">Change</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Skift adgangskode" xml:space="preserve">
+        <source>Skift adgangskode</source>
+        <target state="translated">Change password</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Skift visningsnavn" xml:space="preserve">
+        <source>Skift visningsnavn</source>
+        <target state="translated">Change display name</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Skriv din tekst her" xml:space="preserve">
+        <source>Skriv din tekst her</source>
+        <target state="translated">Enter your content here</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Slå alle fra" xml:space="preserve">
+        <source>Slå alle fra</source>
+        <target state="translated">Turn all off</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Slå alle til" xml:space="preserve">
+        <source>Slå alle til</source>
+        <target state="translated">Turn all on</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Slet" xml:space="preserve">
+        <source>Slet</source>
+        <target state="translated">Delete</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Slet billede" xml:space="preserve">
+        <source>Slet billede</source>
+        <target state="translated">Delete picture</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Slet profil" xml:space="preserve">
+        <source>Slet profil</source>
+        <target state="translated">Delete profile</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Spansk" xml:space="preserve">
+        <source>Spansk</source>
+        <target state="translated">Spanish</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Søg efter lyde" xml:space="preserve">
+        <source>Søg efter lyde</source>
+        <target state="translated">Search sounds</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Tale" xml:space="preserve">
+        <source>Tale</source>
+        <target state="translated">Speech</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Talegenkendelse" xml:space="preserve">
+        <source>Talegenkendelse</source>
+        <target state="translated">Speech recognition</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Tilføj en kommentar..." xml:space="preserve">
+        <source>Tilføj en kommentar...</source>
+        <target state="translated">Add a comment...</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Tysk" xml:space="preserve">
+        <source>Tysk</source>
+        <target state="translated">German</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Upload" xml:space="preserve">
+        <source>Upload</source>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Vi bruger de oplysninger, vi indsamler, på forskellige måder, herunder til at:" xml:space="preserve">
+        <source>Vi bruger de oplysninger, vi indsamler, på forskellige måder, herunder til at:</source>
+        <target state="translated">We use the information we collect in various ways, including to:</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Visningsnavn" xml:space="preserve">
+        <source>Visningsnavn</source>
+        <target state="translated">Display name</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Vælg foto for dit indlæg" xml:space="preserve">
+        <source>Vælg foto for dit indlæg</source>
+        <target state="translated">Choose photo for your post</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Vælg hvordan du vil bruge en profil" xml:space="preserve">
+        <source>Vælg hvordan du vil bruge en profil</source>
+        <target state="translated">Choose you you want to use a profile</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Vælg lyde" xml:space="preserve">
+        <source>Vælg lyde</source>
+        <target state="translated">Choose sounds</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Vælg sprog" xml:space="preserve">
+        <source>Vælg sprog</source>
+        <target state="translated">Choose language</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Vær den første til at kommentere!😃" xml:space="preserve">
+        <source>Vær den første til at kommentere!😃</source>
+        <target state="translated">Be the first to comment😃</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="år siden" xml:space="preserve">
+        <source>år siden</source>
+        <target state="translated">y ago</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="d siden" xml:space="preserve">
+        <source>d siden</source>
+        <target state="translated">d ago</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="er" xml:space="preserve">
+        <source>er</source>
+        <target state="translated">s</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="m siden" xml:space="preserve">
+        <source>m siden</source>
+        <target state="translated">m ago</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="måned" xml:space="preserve">
+        <source>måned</source>
+        <target state="translated">month</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="siden" xml:space="preserve">
+        <source>siden</source>
+        <target state="translated">ago</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="t siden" xml:space="preserve">
+        <source>t siden</source>
+        <target state="translated">h ago</target>
+        <note/>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

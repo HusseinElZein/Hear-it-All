@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 ///To sign in
 struct SignInView: View {
     var viewModel: SignViewModel
@@ -32,7 +31,7 @@ struct SignInView: View {
                         .padding(.vertical)
                         
                         VStack(alignment: .leading){
-                            Text("Adgangskode")
+                            Text(Localized.ProfileLocalized.password)
                                 .font(.callout)
                                 .foregroundColor(.gray)
                                 .padding(.leading)
@@ -50,7 +49,7 @@ struct SignInView: View {
                                 Button(action: {
                                     showForgotPassword.toggle()
                                 }, label: {
-                                    Text("Glemt adgangskode?")
+                                    Text(Localized.ProfileLocalized.forgot_password)
                                         .padding(.trailing)
                                         .foregroundStyle(Color.blueLinkColor)
                                         .font(.callout)
@@ -64,7 +63,7 @@ struct SignInView: View {
                     Button {
                         viewModel.signIn(email: email, password: password)
                     } label: {
-                        Text("Log ind")
+                        Text(Localized.ProfileLocalized.sign_in)
                             .padding(.vertical, 10)
                             .padding(.horizontal, 120)
                             .foregroundStyle(.white)
