@@ -49,8 +49,12 @@ class CommentViewModel: ObservableObject {
             } catch {}
         }
     }
+    
+    @Published var isLoading = true
 
     func fetchComments(for postId: String) async -> [CommentModel] {
+        isLoading = true
+        
         do {
             let querySnapshot = try await db.collection("posts").document(postId).collection("comments").getDocuments()
             var comments = querySnapshot.documents.compactMap { document -> CommentModel? in
@@ -62,9 +66,10 @@ class CommentViewModel: ObservableObject {
                 comments[i].displayName = name
                 comments[i].isOwned = comments[i].ownerId == profile?.id ?? ""
             }
+            isLoading = false
             return comments
         } catch {
-            print("Error fetching comments: \(error)")
+            isLoading = false
             return []
         }
     }

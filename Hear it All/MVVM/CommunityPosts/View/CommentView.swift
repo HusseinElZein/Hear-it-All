@@ -10,7 +10,7 @@ struct CommentView: View {
     
     var body: some View {
         VStack {
-            if viewModel.comments.isEmpty{
+            if viewModel.comments.isEmpty && !viewModel.isLoading{
                 Text(Localized.CommentsLocalized.be_first)
                     .font(.headline)
                     .padding(.top)
