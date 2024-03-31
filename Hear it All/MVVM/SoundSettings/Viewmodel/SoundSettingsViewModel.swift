@@ -34,7 +34,7 @@ class SoundSettingsViewModel {
     
     init() {
         self.speechRecognitionEnabled = UserDefaults.standard.object(forKey: "speechRecognitionEnabled") as? Bool ?? true
-        self.numberOfWords = UserDefaults.standard.object(forKey: "numberOfWords") as? Double ?? 26.0
+        self.numberOfWords = UserDefaults.standard.object(forKey: "numberOfWords") as? Double ?? 28.0
         self.soundRecognitionEnabled = UserDefaults.standard.object(forKey: "soundRecognitionEnabled") as? Bool ?? true
     }
 }

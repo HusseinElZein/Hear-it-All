@@ -20,7 +20,7 @@ class CreatePostViewModel{
         fetchProfileData()
     }
     var profile: ProfileModel?
-    private func fetchProfileData() {
+    func fetchProfileData() {
         guard let email = auth.currentUser?.email else {
             return
         }

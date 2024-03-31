@@ -2,7 +2,7 @@ import Foundation
 
 
 ///Language model to choose different languges
-struct LanguageModel: Identifiable {
+struct LanguageModel: Identifiable, Equatable {
     var id : String = UUID().uuidString
     var title: String
     var locale_id: String

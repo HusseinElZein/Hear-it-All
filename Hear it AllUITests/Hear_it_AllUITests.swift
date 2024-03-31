@@ -1,10 +1,3 @@
-//
-//  Hear_it_AllUITests.swift
-//  Hear it AllUITests
-//
-//  Created by Hussein on 31/01/2024.
-//
-
 import XCTest
 
 final class Hear_it_AllUITests: XCTestCase {

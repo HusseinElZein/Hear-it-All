@@ -20,7 +20,7 @@ struct SeePostsView: View {
                                 .padding(.top, 30)
                         }
                     }
-                    LazyVStack{
+                    VStack{
                         ForEach($seePostsViewModel.posts, id: \.id) { $post in
                             PostView(post: $post, vm: seePostsViewModel) {
                                 seePostsViewModel.toggleLike(postId: post.id ?? "")

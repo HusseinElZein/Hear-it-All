@@ -28,7 +28,7 @@ class SpeechRecognizer: NSObject, ObservableObject {
     func startRecording() throws {
         // Check if recognizer is available
         if !(speechRecognizer?.isAvailable ?? false) {
-            throw NSError(domain: "SFSpeechRecognizerErrorDomain", code: -1, userInfo: [NSLocalizedDescriptionKey: "Speech recognition is not currently available."])
+            return
         }
         
         // Configure the audio session

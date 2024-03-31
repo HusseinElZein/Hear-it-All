@@ -42,6 +42,11 @@
 		E37DD2B02BA1EDDF00F445DD /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2AF2BA1EDDF00F445DD /* PostModel.swift */; };
 		E37DD2B22BA215E500F445DD /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B12BA215E500F445DD /* CreatePostViewModel.swift */; };
 		E37DD2B62BA24A1400F445DD /* SeePostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37DD2B52BA24A1400F445DD /* SeePostsViewModel.swift */; };
+		E38B0B092BB9AFA400636347 /* SoundSettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38B0B082BB9AFA400636347 /* SoundSettingsViewModelTests.swift */; };
+		E38B0B0B2BB9B33200636347 /* SignViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38B0B0A2BB9B33200636347 /* SignViewModelTests.swift */; };
+		E38B0B0D2BB9B7AB00636347 /* SpeechRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38B0B0C2BB9B7AB00636347 /* SpeechRecognizerTests.swift */; };
+		E38B0B0F2BB9BDAF00636347 /* SoundRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38B0B0E2BB9BDAF00636347 /* SoundRecognizerTests.swift */; };
+		E38B0B112BB9C30000636347 /* DateUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38B0B102BB9C30000636347 /* DateUtilTests.swift */; };
 		E395D73A2BA3400A00FE1E5B /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395D7392BA3400A00FE1E5B /* DateUtil.swift */; };
 		E395D73C2BA3A13500FE1E5B /* KeyboardUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */; };
 		E398550D2BA61A780015CFDE /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E398550C2BA61A780015CFDE /* CommentModel.swift */; };
@@ -52,6 +57,9 @@
 		E3C22A6A2BB1F90800FD3E08 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C22A692BB1F90800FD3E08 /* LocalizedStrings.swift */; };
 		E3C22A6C2BB20B6A00FD3E08 /* Hear-it-All-InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E3C22A6B2BB20B6A00FD3E08 /* Hear-it-All-InfoPlist.xcstrings */; };
 		E3C22A6E2BB20B6A00FD3E08 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E3C22A6D2BB20B6A00FD3E08 /* Localizable.xcstrings */; };
+		E3D513912BB464A0003CF66B /* CreatePostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D513902BB464A0003CF66B /* CreatePostViewModelTests.swift */; };
+		E3D513932BB467F2003CF66B /* SeePostsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D513922BB467F2003CF66B /* SeePostsViewModelTests.swift */; };
+		E3D513972BB4CBF6003CF66B /* ProfileSettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D513962BB4CBF6003CF66B /* ProfileSettingsViewModelTests.swift */; };
 		E3D703ED2B8A4981000813B9 /* SpeechAndSoundToTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */; };
 		E3D703EF2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D703EE2B8A4FED000813B9 /* SpeechRecognizerViewModel.swift */; };
 		E3D70DD92B98B62D004435F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3D70DD82B98B62C004435F4 /* GoogleService-Info.plist */; };
@@ -124,6 +132,11 @@
 		E37DD2AF2BA1EDDF00F445DD /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		E37DD2B12BA215E500F445DD /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
 		E37DD2B52BA24A1400F445DD /* SeePostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostsViewModel.swift; sourceTree = "<group>"; };
+		E38B0B082BB9AFA400636347 /* SoundSettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingsViewModelTests.swift; sourceTree = "<group>"; };
+		E38B0B0A2BB9B33200636347 /* SignViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewModelTests.swift; sourceTree = "<group>"; };
+		E38B0B0C2BB9B7AB00636347 /* SpeechRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerTests.swift; sourceTree = "<group>"; };
+		E38B0B0E2BB9BDAF00636347 /* SoundRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecognizerTests.swift; sourceTree = "<group>"; };
+		E38B0B102BB9C30000636347 /* DateUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilTests.swift; sourceTree = "<group>"; };
 		E395D7392BA3400A00FE1E5B /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		E395D73B2BA3A13500FE1E5B /* KeyboardUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardUtil.swift; sourceTree = "<group>"; };
 		E398550C2BA61A780015CFDE /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
@@ -134,6 +147,9 @@
 		E3C22A692BB1F90800FD3E08 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		E3C22A6B2BB20B6A00FD3E08 /* Hear-it-All-InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = "Hear-it-All-InfoPlist.xcstrings"; sourceTree = "<group>"; };
 		E3C22A6D2BB20B6A00FD3E08 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		E3D513902BB464A0003CF66B /* CreatePostViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModelTests.swift; sourceTree = "<group>"; };
+		E3D513922BB467F2003CF66B /* SeePostsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostsViewModelTests.swift; sourceTree = "<group>"; };
+		E3D513962BB4CBF6003CF66B /* ProfileSettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewModelTests.swift; sourceTree = "<group>"; };
 		E3D703E92B8A46B9000813B9 /* Hear-it-AllUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-AllUITests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E3D703EA2B8A46F9000813B9 /* Hear-it-All-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hear-it-All-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E3D703EC2B8A4981000813B9 /* SpeechAndSoundToTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechAndSoundToTextView.swift; sourceTree = "<group>"; };
@@ -227,6 +243,14 @@
 			isa = PBXGroup;
 			children = (
 				D7C243FC2B6A41ED005DD0FB /* Hear_it_AllTests.swift */,
+				E3D513902BB464A0003CF66B /* CreatePostViewModelTests.swift */,
+				E3D513922BB467F2003CF66B /* SeePostsViewModelTests.swift */,
+				E3D513962BB4CBF6003CF66B /* ProfileSettingsViewModelTests.swift */,
+				E38B0B082BB9AFA400636347 /* SoundSettingsViewModelTests.swift */,
+				E38B0B0A2BB9B33200636347 /* SignViewModelTests.swift */,
+				E38B0B0C2BB9B7AB00636347 /* SpeechRecognizerTests.swift */,
+				E38B0B0E2BB9BDAF00636347 /* SoundRecognizerTests.swift */,
+				E38B0B102BB9C30000636347 /* DateUtilTests.swift */,
 			);
 			path = "Hear it AllTests";
 			sourceTree = "<group>";
@@ -564,6 +588,7 @@
 					};
 					D7C243F72B6A41ED005DD0FB = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 						TestTargetID = D7C243E72B6A41EC005DD0FB;
 					};
 					D7C244012B6A41ED005DD0FB = {
@@ -708,7 +733,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D513912BB464A0003CF66B /* CreatePostViewModelTests.swift in Sources */,
+				E38B0B0F2BB9BDAF00636347 /* SoundRecognizerTests.swift in Sources */,
+				E38B0B0B2BB9B33200636347 /* SignViewModelTests.swift in Sources */,
+				E3D513932BB467F2003CF66B /* SeePostsViewModelTests.swift in Sources */,
 				D7C243FD2B6A41ED005DD0FB /* Hear_it_AllTests.swift in Sources */,
+				E38B0B112BB9C30000636347 /* DateUtilTests.swift in Sources */,
+				E38B0B0D2BB9B7AB00636347 /* SpeechRecognizerTests.swift in Sources */,
+				E3D513972BB4CBF6003CF66B /* ProfileSettingsViewModelTests.swift in Sources */,
+				E38B0B092BB9AFA400636347 /* SoundSettingsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -929,6 +962,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77U6BBK6Y5;
@@ -938,6 +972,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "HgPrograms.Hear-it-AllTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hear it All.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hear it All";
@@ -949,6 +984,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 77U6BBK6Y5;
