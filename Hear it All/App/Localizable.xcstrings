@@ -150,6 +150,17 @@
         }
       }
     },
+    "Du er nu logget ind!" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have now signed in"
+          }
+        }
+      }
+    },
     "Email" : {
       "localizations" : {
         "en" : {

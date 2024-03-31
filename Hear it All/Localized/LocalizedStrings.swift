@@ -25,7 +25,7 @@ class Localized {
         static let forgot_password = String(localized: "Glemt adgangskode?")
         static let display_name = String(localized: "Visningsnavn")
         static let can_happen = String(localized: "Det kan jo ske! Men bliv ikke bekymret, vi sender dig et link til din email")
-        static let logged_in_message = String(localized: "Visningsnavn")
+        static let logged_in_message = String(localized: "Du er nu logget ind!")
         static let mail_wrong_message = String(localized: "Mail el. adgangskode er forkert")
         static let created_profile_message = String(localized: "Oprettet ny profil!")
         static let mail_sent_message = String(localized: "Mail sendt, tjek venligst din mail")
