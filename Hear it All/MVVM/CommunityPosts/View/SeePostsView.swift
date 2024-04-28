@@ -95,6 +95,7 @@ struct PostView: View {
     var vm: SeePostsViewModel
     var likeButtonAction: () -> Void
     @State var showCommentSheet = false
+    @State var showActionSheet = false
     
     var body: some View {
         VStack{
@@ -193,16 +194,24 @@ struct PostView: View {
             .padding([.horizontal, .bottom, .top])
             .font(.subheadline)
             
-            if post.isOwned ?? false{
-                Menu {
-                    //Button("Redigér", action: {})
-                    Button(Localized.SeePostsLocalized.delete, action: {vm.deletePost(postId: post.id ?? "")})
-                } label: {
+            if post.isOwned ?? false {
+                Button(action: {
+                    showActionSheet = true
+                }) {
                     Image(systemName: "ellipsis")
                         .frame(width: 24, height: 24)
                         .foregroundColor(.gray)
                 }
                 .padding(.bottom, 5)
+                .actionSheet(isPresented: $showActionSheet) {
+                    ActionSheet(
+                        title: Text(""),
+                        buttons: [
+                            .destructive(Text(Localized.SeePostsLocalized.delete), action: { vm.deletePost(postId: post.id ?? "") }),
+                            .cancel()
+                        ]
+                    )
+                }
             }
         }
         .background(Color.postBackgroundColor)
