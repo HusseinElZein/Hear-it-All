@@ -1,4 +1,5 @@
 This application was written for my bachelors thesis at DTU - Technical University of Denmark.
+It is written in SwiftUI, in Xcode, for iOS 17 and up
 
 What it can do:
 * Simultaniously listen for / transcribe identified sounds and and speech.
